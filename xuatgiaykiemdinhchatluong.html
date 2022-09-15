@@ -292,12 +292,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Duyệt bài nhu cầu</h1>
+            <h1>Xuất giấy kiểm định chất lượng</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Duyệt bài nhu cầu</li>
+              <li class="breadcrumb-item active">Xuất giấy kiểm định chất lượng</li>
             </ol>
           </div>
         </div>
@@ -324,7 +324,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách các bài nhu cầu chờ duyệt</h3> 
+                <h3 class="card-title">Danh sách các phiếu kiểm định</h3> 
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -343,65 +343,104 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Tiêu đề</th>
-                      <th>Thời lượng đọc</th>
+                      <th>Mã phiếu</th>
+                      <th>Tên phiếu</th>
+                      <th>Ngày yêu cầu</th>
                       <th>Nội dung</th>
-                      <th>Tác vụ</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>183</td>
-                      <td>John Doe</td>
-                      <td><span class="tag tag-success">5 phút</span></td>
-                      <td><a href="">Xem chi tiết</a></td>
-                    
-                      <td>
-                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </td>
-
+                      <td>Phiếu 001</td>
+                      <td>15/9/2022</td>
+                      <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
                     </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>5 phút</td>
-                      <td><a href="">Xem chi tiết</a></td>
+
                    
-                      <td>
-                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </td>
 
-                    </tr>
                     <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>5 phút</td>
-                      <td><a href="">Xem chi tiết</a></td>
-                      
-                      <td>
-                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </td>
+                        <td>183</td>
+                        <td>Phiếu 001</td>
+                        <td>15/9/2022</td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
+                      </tr>
 
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>5 phút</td>
-                      <td><a href="">Xem chi tiết</a></td>
-                     
-                      <td>
-                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </td>
+                      <tr>
+                        <td>183</td>
+                        <td>Phiếu 001</td>
+                        <td>15/9/2022</td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
+                      </tr>
 
-                    </tr>
+                      <tr>
+                        <td>183</td>
+                        <td>Phiếu 001</td>
+                        <td>15/9/2022</td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
+                      </tr>
                   </tbody>
                 </table>
               </div>
+
+
+
+              <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail55">Mã phiếu</label>
+                                <input type="email" class="form-control" id="inputEmail55" disabled value="#0023" >
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword122">Tên phiếu</label>
+                                <input type="text" class="form-control" id="inputPassword122" disabled value="Trái cây" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress81">Ngày yêu cầu</label>
+                              <input type="text" class="form-control" id="inputAddress81" disabled value="#15/9/2022" >
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress82">Trạng thái</label>
+                              <input type="text" class="form-control" id="inputAddress82" disabled value="Chờ Duyệt" >
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputAddress86">Mã nông sản</label>
+                              <input type="text" class="form-control" id="inputAddress86" disabled value="#0065" >
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputAddress87">Mã nhà cung cấp</label>
+                              <input type="text" class="form-control" id="inputAddress87" disabled value="#003" >
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress88">Mã nhân viên</label>
+                                <input type="text" class="form-control" id="inputAddress88" disabled value="#0002" >
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Xuất giấy</button>
+                          <button type="button" class="btn btn-success">Tải file</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Modal -->
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
