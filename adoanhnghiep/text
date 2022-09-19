@@ -1,0 +1,29 @@
+     <ul class="navbar-nav navbar-list" >
+        <li class="nav-item active">
+            <a class="nav-link nav-item" href="#">Về chúng tôi</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Giải pháp
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Trái cây</a>
+              <a class="dropdown-item" href="#">Rau củ</a>
+              <a class="dropdown-item" href="#">Khác</a>
+            </div>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link nav-item" href="#">Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Tin tức</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Tuyển dụng</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Liên hệ</a>
+          </li>
+      </ul>
