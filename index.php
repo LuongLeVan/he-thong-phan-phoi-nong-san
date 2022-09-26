@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +62,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Trái cây</a>
-              <a class="dropdown-item" href="#">Rau củ</a>
+              <a class="dropdown-item" href="#">Rau</a>
+              <a class="dropdown-item" href="#">Củ</a>
               <a class="dropdown-item" href="#">Khác</a>
+              
             </div>
           </li>
         <li class="nav-item">
@@ -317,7 +322,7 @@
             <h5 class="item-heading">Su su non - 300gr</h5>
             <span class="item-price">7,000 Đ</span>
             <div class="btn-buying">
-            
+
             </div>
           </div>
         </div>

@@ -10,17 +10,19 @@
     <?php
         class clsketnoi{
             function ketnoiDB(& $conn){
-                $conn = mysql_connect("localhost","admin","123456");
-                mysql_set_charset("utf8");
+                $conn = mysqli_connect("localhost","admin","123456");
+                //mysqli_select_db($conn,'altislife-dev');
+                //mysqli_set_charset("utf8");
                 if($conn){
-                    return mysql_select_db("nonsanviet");
+
+                    return mysqli_select_db($conn,"nongsanviet");
                 }else{
                     return false;
                 }
             }
 
             function dongketnoi($conn){
-                mysql_close($conn);
+                mysqli_close($conn);
             }
         }
     ?>
