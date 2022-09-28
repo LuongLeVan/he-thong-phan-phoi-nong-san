@@ -281,7 +281,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./duyetbainongsan.html" class="nav-link">
+              <a href="./vduyetbainongsan.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Duyệt bài đăng nông sản</p>
               </a>
