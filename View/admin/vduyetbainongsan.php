@@ -1,3 +1,11 @@
+<?php
+    session_start();
+?>
+<?php
+  if ($_SESSION["dn"]==False) {
+      include("../../View/login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,7 +176,17 @@
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">
+          <?php
+              if (isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
+                //echo 1123;
+                //echo $_SESSION['role'];
+                if($_SESSION['role']==3){
+                  include('vadmin.php');
+                }
+              }
+            ?> 
+          </a>
         </div>
       </div>
 
@@ -338,76 +356,44 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Mã bài</th>
-                      <th>Tên bài</th>
-                      <th>Ngàytaọ</th>
-                      <th>Nội dung</th>
-                      <th>Tác vụ</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>183</td>
-                      <td>Phiếu 001</td>
-                      <td>15/9/2022</td>
-                      <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
-                   
-                      <td>
-                        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                      </td>
-                   
-                   
-                    </tr>
+                  <?php
 
-                   
+                    include("../../Controller/cnongsan.php");
 
-                    <tr>
-                        <td>183</td>
-                        <td>Phiếu 001</td>
-                        <td>15/9/2022</td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
-                     
-                        <td>
-                            <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                            <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                          </td>
-                    
-                    
-                    </tr>
-
-                      <tr>
-                        <td>183</td>
-                        <td>Phiếu 001</td>
-                        <td>15/9/2022</td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
-                     
-                    
-                        <td>
-                            <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                            <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                          </td>
-                    
-                    </tr>
-
-                      <tr>
-                        <td>183</td>
-                        <td>Phiếu 001</td>
-                        <td>15/9/2022</td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>
-                     
-                    
-                        <td>
-                            <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
-                            <a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
-                          </td>
-                    
-                    </tr>
-                  </tbody>
-                </table>
+                    $p = new cnongsan();
+                    $table = $p-> view_nongsan();
+                    if($table){
+                      echo '<table class="table table-hover text-nowrap">';
+                      echo '<thead>';
+                        echo '<tr>';
+                          echo '<th> Tên bài </th>';
+                          echo '<th>Người tạo</th>';
+                          echo '<th>Trạng thái</th>';
+                          echo '<th>Chi tiết</th>';
+                          echo '<th>Tác vụ</th>';
+                      echo '</tr>';
+                     echo '</thead>';
+                        while($row = mysqli_fetch_array($table)){
+                          echo '<tbody>';
+                            echo '<tr>';
+                              echo '<td>'.$row["tennongsan"].'</td>';
+                              echo '<td>'.$row["tenncc"].'</td>';
+                              echo '<td>'.$row["trangthai"].'</td>';
+                              
+                              //echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>';
+                              echo '<td>';
+                                echo '<a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  |
+                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                              echo '</td>';
+                          echo '</tr>';
+                          echo '</tbody>';
+                      }
+                      echo '</table>';
+                    }
+                  ?>
+                
+                  
+                
               </div>
 
                <!-- Modal -->
