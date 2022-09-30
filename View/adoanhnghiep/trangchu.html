@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Simple Tables</title>
+  <title>Trang chủ</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -16,71 +16,64 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-
+  <button type="button" class="btn btn-danger btn-floating btn-lg backtop blocked-btn" id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
           <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-       <a href="../akhachhangle/hoadon.html" style="all: unset;">
-        <span style="margin-right:2px"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-        <span>0</span>
-        <span style="margin: 0 2px">sản phẩm</span>
-        <span>0.00</span>
-
-       </a>
-      </ul>
-      <div class="mx-auto">
-        <img class="img-logo" src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:100px ;">
-      </div>
-      <form class="form-inline my-2 my-lg-0">
-<!--         <span><i class="fa fa-search"></i></span>
- -->        <input class="form-control mr-sm-2 outline-success" type="search" placeholder="Từ khóa" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-      </form>
-    </div>
-  </nav>
-
-
-
-  <!-- Menu -->
-  <nav class="navbar navbar-expand-lg navbar_display">
-    <h3 class="img-logo_mobile">Tự hào nông sản việt</h3>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav navbar-list" >
-        <li class="nav-item active">
-          <a class="nav-link nav-item" href="#">Trang chủ</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link nav-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Nông sản
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Trái cây</a>
-              <a class="dropdown-item" href="#">Rau củ</a>
-              <a class="dropdown-item" href="#">Khác</a>
+            <div class="container-fluid px-md-5">
+              <div class="row justify-content-between">
+                <div class="col-md-8 order-md-last">
+                  <div class="row">
+                    <div class="col-md-8 text-center">
+                      <form class="form-inline  my-lg-0" style="min-height: 100px">
+                        <input class="input-search mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color:#fff ;margin:0 8px 0 0;padding:6px 12px">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
+                    <div class="col-md-4 d-md-flex justify-content-end mb-md-0 mb-3"  style="min-height: 100px;max-height: 200px;">
+                      <ul class="login-list" >
+                        <li class="login-list-item"><a class="login-list-text" href="#">Đăng nhập</a></li> |
+                        <li class="login-list-item"><a class="login-list-text" href="#">Đăng ký</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                  <div class="social-media">
+                    <p class="mb-0 d-flex">
+                      <img class="d-flex align-items-center justify-content-center" src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:100px ;">
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </li>
-        <li class="nav-item">
-            <a class="nav-link nav-item" href="#">Giới thiệu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-item" href="#">Tin tức</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-item" href="#">Liên hệ</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
+            <div class="container-navbar">
+              <nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                <div class="container-fluid container-nav">
+                
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                  </button>
+                  <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                      <li class="nav-item active"><a href="#" class="nav-link">Trang chủ</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nông sản</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                          <a class="dropdown-item" href="#">Trái cây</a>
+                          <a class="dropdown-item" href="#">Rau củ</a>
+                          <a class="dropdown-item" href="#">Khác</a>
+                        </div>
+                      </li>
+                      <li class="nav-item"><a href="#" class="nav-link">Giới thiệu</a></li>
+                      <li class="nav-item"><a href="#" class="nav-link">Tin tức</a></li>
+                      <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <!-- END nav -->
 
 <!-- Slider -->
 
@@ -578,13 +571,13 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="padding-top:30px">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">THÔNG TIN CÔNG TY</h6>
-            <p>Công Ty TNHH Thương Mại Dịch Vụ Đầu Tư Vạn Phú</p>
+            <p>Công Ty TNHH Phân Phối Nông Sản Việt</p>
             <p>
                 <i class="fa fa-map-marker"></i>
-              vnaz.vn Tầng 7 Đoàn Hải Plaza, Số 756 Trường Chinh, Tân Bình, Hồ Chí Minh 
+              Số 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh 
             </p>
             <p><i class="fas fa-phone me-3"></i> 02866860863 </p>
-            <p><i class="fa fa-envelope"></i>kinhdoanh@vnaz.vn</p>
+            <p><i class="fa fa-envelope"></i>dhcn@gmail.com</p>
           </div>
           <!-- Grid column -->
         </div>
@@ -615,5 +608,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

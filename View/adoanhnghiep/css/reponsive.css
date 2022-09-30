@@ -28,7 +28,7 @@
   } 
    .list-image{
     width: 50%;
-    background-size: contain;
+    background-size: contain; 
    }
 
    .container-posts{
