@@ -122,3 +122,35 @@
     text-shadow: 0 0 0 rgba(0,0,0,1);
 
 }
+.img-content{
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.container-about a,
+.about-info {
+    color: #808080;
+    font-size: 12px;
+    margin: 0 4px;
+
+}
+.btn-parent .btn-primary{
+  background: #82ae46;
+  border: 1px solid #82ae46;
+  color: #fff;
+  border-radius: 50px;
+}
+.heading-content{
+  font-size: 15px;
+  margin: 0 0 16px;
+  color: #808080;
+}
+.heading .heading-parent{
+  font-size: 20px;
+  color: #000000;
+}
+.block-content{
+  margin: 16px 0;
+}
