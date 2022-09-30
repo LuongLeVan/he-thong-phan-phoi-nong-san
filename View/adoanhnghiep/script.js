@@ -1,6 +1,5 @@
 const navbar = document.getElementById('ftco-navbar')
 const btn = document.getElementById('btn-back-to-top')
-console.log(navbar);
 const handleScroll = () => {
     if(window.scrollY >=200){
       navbar.classList.add('navbarfixed')
