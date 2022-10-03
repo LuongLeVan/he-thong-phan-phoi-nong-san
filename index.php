@@ -43,6 +43,12 @@
                           echo '</a>';
                         echo '</li> |
                         <li class="login-list-item"><a class="login-list-text" href="#">Đăng xuất</a></li>';
+                              }else{
+                                echo '<li class="login-list-item">
+                                  <a class="login-list-text" href="#">Đăng ký |</a>
+                                  <a class="login-list-text" href="View/login_logout/login.php">Đăng nhập</a>
+                                  </li>';
+
                               }
                               ?>
                       </ul>
