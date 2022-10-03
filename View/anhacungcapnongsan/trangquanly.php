@@ -33,7 +33,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="../../index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -185,8 +185,8 @@
               if (isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
                 //echo 1123;
                 //echo $_SESSION['role'];
-                if($_SESSION['role']==3){
-                  include('vadmin.php');
+                if($_SESSION['role']==1){
+                  include('vnhacungcap.php');
                 }
               }
             ?> 
@@ -217,26 +217,34 @@
             <p>
               Quản lý
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">2</span>
+              <span class="badge badge-info right">3</span>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./quanlythongtinnguoidung.html" class="nav-link">
+            <?php
+                  echo '<a href="trangquanly?capnhatthongtin" class="nav-link">';
+              ?>
                 <i class="far fa-circle nav-icon"></i>
-                <p>Quản lý thông tin người dùng</p>
+                <p>Quản lý thông tin nhà cung cấp</p>
               </a>
             </li>
             <li class="nav-item">
-              <?php
-                echo '<a href="trangchuadmin?quanlynhanvien" class="nav-link">';
+              <a href="./quanlynhanvien.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Quản lý mã QR</p>
+              </a>
+            </li>
+            <li class="nav-item">
+            <?php
+                  echo '<a href="trangquanly?nongsan" class="nav-link">';
               ?>
                 <i class="far fa-circle nav-icon"></i>
-                <p>Quản lý thông tin nhân viên</p>
+                <p>Quản lý thông tin nông sản</p>
               </a>
             </li>
 
-          </ul>
+          </ul> 
         </li>
 
 
@@ -248,9 +256,9 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Khác
+              Mua bán
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">1</span>
+              <span class="badge badge-info right">2</span>
             </p>
           </a>
           <ul class="nav nav-treeview">
@@ -258,26 +266,25 @@
             <li class="nav-item">
               <a href="./thongkeadmin.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Thống kê</p>
+                <p>Đăng bán nông sản</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./thongkeadmin.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Đơn hàng</p>
               </a>
             </li>
 
           </ul>
         </li>
-
         <!-- Phân quyền + thống kê báo cáo -->
-
-
-
-
-
         <!-- Duyệt Bài đăng   -->
-          
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Duyệt bài
+              Nông sản
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right">2</span>
             </p>
@@ -289,19 +296,32 @@
               ?>
               
                 <i class="far fa-circle nav-icon"></i>
-                <p>Duyệt bài đăng nông sản</p>
+                <p>Đề xuất hỗ trợ nông sản</p>
               </a>
             </li>
             <li class="nav-item">
-            <?php
-                  echo '<a href="trangchuadmin?duyetbaitinnhucau" class="nav-link">';
-              ?>
+              <a href="./duyettinnhucau.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Duyệt bài đăng nhu cầu</p>
+                <p>Giấy kiểm định nông sản</p>
               </a>
             </li>
-
           </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Thống kê
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Thông báo
+            </p>
+          </a>
         </li>
 
         <!-- Duyệt bài đăng -->
@@ -313,29 +333,25 @@
   </aside>
 <!-- Chỗ này include nội dung vô -->
            <?php
-               if(isset($_REQUEST["duyetnongsan"])){
-                  include("vduyetbainongsan.php");
-               }elseif(isset($_REQUEST["duyetbaitinnhucau"])){
-                  include("vduyetbaitinnhucau.php");
+               if(isset($_REQUEST["nongsan"])){
+                include("vquanlythongtinnongsan.php");
                }elseif(isset($_REQUEST["chitietnongsan"])){
-                //include("vchitietsanpham.php");
-               }elseif(isset($_REQUEST["doitrangthai"]) || isset($_REQUEST["tuchoi"])){
-                  include("vcapnhattrangthai.php");
+                include("vchitietnongsan.php");
+               }elseif(isset($_REQUEST["doitrangthai"])){
+                include("vcapnhattrangthai.php");
                 //include("vchitietnongsan.php");
-              }elseif(isset($_REQUEST["trangthaibaitin"]) || isset($_REQUEST["tuchoibaitin"])){
-                include("vcapnhattrangthaibaitin.php");
-              //include("vchitietnongsan.php");
-              }elseif(isset($_REQUEST["quanlynhanvien"])){
-              include("vquanlythongtinnhanvien.php");
-              }
+               }elseif(isset($_REQUEST["capnhatthongtin"])){
+                include("vcapnhatthongtinnhacungcap.php");
+               }else{
+                include("vquanlythongtinnongsan.php");
+               }
+               
            ?>
 <!-- Chỗ này include nội dung vô -->
+
   
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+   
   </footer>
 
   <!-- Control Sidebar -->

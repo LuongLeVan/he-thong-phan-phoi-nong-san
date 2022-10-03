@@ -1,11 +1,11 @@
 <?php
 
-	include_once("../../Model/mnongsan.php");
+	include_once("../../Model/mtinnhucau.php");
 
-	class cnongsan{
-		function view_nongsan(){
-			$p = new mnongsan();
-			$table  = $p -> select_nongsan();
+	class ctinnhucau{
+		function view_tinnhucau(){
+			$p = new mtinnhucau();
+			$table  = $p -> select_tinnhucau();
 			//var_dump($table);
 			return $table;
 		}
@@ -21,9 +21,9 @@
                 return $tblProduct;
             }
 
-		function capnhat_trangthai($manongsan,$trangthai){
-			$p = new mnongsan();
-			$update = $p -> capnhattrangthai($manongsan,$trangthai);
+		function capnhat_trangthai($mabaitin,$trangthai){
+			$p = new mtinnhucau();
+			$update = $p -> capnhattrangthai($mabaitin,$trangthai);
 			if($update){
 				return 1;
 			}else{

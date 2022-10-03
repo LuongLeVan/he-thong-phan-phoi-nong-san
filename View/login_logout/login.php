@@ -125,6 +125,8 @@
                       //echo header("refresh:0,url='index.php'");
                       if($_SESSION['role'] == 3){
                         echo "<script>window.location.href='../admin/trangchuadmin.php'</script>";
+                      }elseif($_SESSION['role'] == 1){
+                        echo "<script>window.location.href='../../index.php'</script>";
                       }
                       //echo "Đăng nhập thành công";
                       }else {

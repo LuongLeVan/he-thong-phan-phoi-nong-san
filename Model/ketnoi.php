@@ -12,9 +12,8 @@
             function ketnoiDB(& $conn){
                 $conn = mysqli_connect("localhost","admin","123456");
                 //mysqli_select_db($conn,'altislife-dev');
-                //mysqli_set_charset("$conn, utf8");
+                mysqli_set_charset($conn, 'utf8');
                 if($conn){
-
                     return mysqli_select_db($conn,"nongsanviet");
                 }else{
                     return false;

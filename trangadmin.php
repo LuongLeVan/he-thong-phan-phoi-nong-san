@@ -6,114 +6,106 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trang chủ</title>
+  <title>AdminLTE 3 | Simple Tables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="./View/adoanhnghiep/css/style.css">
-  <link rel="stylesheet" href="./View/adoanhnghiep/css/reponsive.css">
+  <link rel="stylesheet" href="./css/style.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <button type="button" class="btn btn-success btn-floating btn-lg backtop blocked-btn" id="btn-back-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </button>	
+
+    <div class="container">
           <!-- Navbar -->
-            <div class="container-fluid px-md-5">
-              <div class="row justify-content-between">
-                <div class="col-md-8 order-md-last">
-                  <div class="row">
-                    <div class="col-md-8 text-center">
-                      <form class="form-inline  my-lg-0" style="min-height: 100px">
-                        <input class="input-search mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color:#fff ;margin:0 8px 0 0;padding:6px 12px">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                      </form>
-                    </div>
-                    <div class="col-md-4 d-md-flex justify-content-end mb-md-0 mb-3"  style="min-height: 100px;max-height: 200px;">
-                      <ul class="login-list" >
-                        <li class="login-list-item">
-                          <a class="login-list-text" href="View/login_logout/login.php">
-                            <?php
-                              if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
-                                include('View/anhacungcapnongsan/vdnnhacungcap.php');
-                          echo '</a>';
-                        echo '</li> |
-                        <li class="login-list-item"><a class="login-list-text" href="#">Đăng xuất</a></li>';
-                              }
-                              ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 d-flex">
-                  <div class="social-media">
-                    <p class="mb-0 d-flex">
-                      <img class="d-flex align-items-center justify-content-center" src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:100px ;">
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="container-navbar">
-              <nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                <div class="container-fluid container-nav">
-                
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span> Menu
-                  </button>
-                  <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav m-auto">
-                      <li class="nav-item active"><a href="#" class="nav-link">Trang chủ</a></li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nông sản</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                          <a class="dropdown-item" href="#">Trái cây</a>
-                          <a class="dropdown-item" href="#">Rau củ</a>
-                          <a class="dropdown-item" href="#">Khác</a>
-                        </div>
-                      </li>
-                      <li class="nav-item"><a href="#" class="nav-link">Giới thiệu</a></li>
-                      <li class="nav-item"><a href="#" class="nav-link">Tin tức</a></li>
-                      <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
-                      <?php
-                        if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
-                          echo '<li class="nav-item"><a href="View/anhacungcapnongsan/trangquanly.php" class="nav-link">Quản lý</a></li>';
+  <nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <a href="../akhachhangle/hoadon.html" style="all: unset;">
+        <span style="margin-right:2px"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+        <span>0</span>
+        <span style="margin: 0 2px">sản phẩm</span>
+        <span>0.00</span>
 
-                        }
-                      ?>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-            </div>
-            <!-- END nav -->
+       </a>
+      </ul>
+      <div class="mx-auto">
+        <img src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:100px ;">
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+<!--         <span><i class="fa fa-search"></i></span>
+ -->        <input class="form-control mr-sm-2 outline-success" type="search" placeholder="Từ khóa" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+      </form>
+    </div>
+  </nav>
 
+
+
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav navbar-list" >
+        <li class="nav-item active">
+          <a class="nav-link nav-item" href="#">Trang chủ</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link nav-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Nông sản
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Trái cây</a>
+              <a class="dropdown-item" href="#">Rau</a>
+              <a class="dropdown-item" href="#">Củ</a>
+              <a class="dropdown-item" href="#">Khác</a>
+              
+            </div>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Tin tức</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-item" href="#">Liên hệ</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  
+    </div>
 <!-- Slider -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner"> 
       <div class="carousel-item active">
-        <img  class="d-block img-size w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/2a2ee41f9a9230e599a60ec5d8fdac37.jpg" alt="First slide">
+        <img style="height:500px; " class="d-block w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/2a2ee41f9a9230e599a60ec5d8fdac37.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img  class="d-block img-size w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/banner-traicay.jpg" alt="Third slide">
+        <img style="height:500px; " class="d-block w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/banner-traicay.jpg" alt="Third slide">
       </div> 
       <div class="carousel-item">
-        <img  class="d-block img-size w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/banner1.jpg" alt="Second slide">
+        <img style="height:500px; " class="d-block w-100" src="https://growmax.weba.vn/shop/images/growmax/slider/banner1.jpg" alt="Second slide">
       </div>
      
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Lùi</span>
+      <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Tới</span>
+      <span class="sr-only">Next</span>
     </a>
   </div>
 
@@ -121,10 +113,7 @@
   
   </div>
   <div class="container  card-circle">
-    <div class="normal-wrapper">
-      
-    </div>
-    <div class="row container__list">
+    <div class="row">
       <a href="#">
         <div class="col">
           <div class="card card-circle__item" style="background-color: transparent; box-shadow:none;">
@@ -186,16 +175,15 @@
 
 
   <!-- Start Introduce -->
-  <!-- Start Introduce -->
 
-<div class="container container-introduce">
-    <div class="row row-introduce">
-      <div class="col introduce__parent">
+  <div class="container container-introduce">
+    <div class="row">
+      <div class="col">
         <div class="controduce">
           <img class="img-controduce" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/hen-suyen-an-trai-cay-2.png" alt="">
         </div>
       </div>
-      <div class="col introduce-text__content">
+      <div class="col">
         <div class="controduce__text">
           <h2 class="controduce-text-heading">SƠ LƯỢC</h2>
           <div class="controduce__content">
@@ -235,8 +223,8 @@
 <div class="list-item">
   <div class="container" style="margin-top:20px">
     <div class="grid-item">
-        <div class="col product-item ml8">
-            <div class="card card-parent" >
+        <div class="col product-item">
+            <div class="card card-parent" style="width: 18rem;">
                 <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/rauden_master.jpg" alt="Card image cap">
                 <a href="#">
                   <button class="btn-btn-buy">
@@ -256,7 +244,7 @@
         </div>
 
         <div class="col product-item">
-          <div class="card card-parent" >
+          <div class="card card-parent" style="width: 18rem;">
               <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_b64c243e49b84e4e8fccf12d271cd7c7_1024x1024.jpg" alt="Card image cap">
               <a href="#">
                 <button class="btn-btn-buy">
@@ -276,7 +264,7 @@
       </div>
 
       <div class="col product-item">
-        <div class="card card-parent" >
+        <div class="card card-parent" style="width: 18rem;">
             <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_51ea93aa42af4d5497d9293f6dd6c608_1024x1024.jpg" alt="Card image cap">
             <a href="#">
               <button class="btn-btn-buy">
@@ -297,7 +285,7 @@
 
 
     <div class="col product-item">
-      <div class="card card-parent" >
+      <div class="card card-parent" style="width: 18rem;">
           <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/su-su-dl_master.jpg" alt="Card image cap">
           <a href="#">
             <button class="btn-btn-buy">
@@ -322,7 +310,7 @@
   <div class="grid-item">
 
     <div class="col product-item">
-      <div class="card card-parent" >
+      <div class="card card-parent" style="width: 18rem;">
           <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/su-su-non_master.jpg" alt="Card image cap">
           <a href="#">
             <button class="btn-btn-buy">
@@ -334,7 +322,7 @@
             <h5 class="item-heading">Su su non - 300gr</h5>
             <span class="item-price">7,000 Đ</span>
             <div class="btn-buying">
-            
+
             </div>
           </div>
         </div>
@@ -342,7 +330,7 @@
   </div>
   
   <div class="col product-item">
-    <div class="card card-parent" >
+    <div class="card card-parent" style="width: 18rem;">
         <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_886589fea40345e0b5d895db3b63b367_1024x1024.jpg" alt="Card image cap">
         <a href="#">
           <button class="btn-btn-buy">
@@ -362,7 +350,7 @@
   </div>
   
   <div class="col product-item">
-    <div class="card card-parent" >
+    <div class="card card-parent" style="width: 18rem;">
         <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/sup-lo-xanh_master.jpg" alt="Card image cap">
         <a href="#">
           <button class="btn-btn-buy">
@@ -382,7 +370,7 @@
   </div>
   
   <div class="col product-item">
-    <div class="card card-parent" >
+    <div class="card card-parent" style="width: 18rem;">
         <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_a7da9a299d4d436bb2b991121f4e8343_1024x1024.png" alt="Card image cap">
         <a href="#">
           <button class="btn-btn-buy">
@@ -437,9 +425,9 @@
 <!-- List Posts  -->
 
 <div class="container">
-  <div class="row ">
-    <div class="col container-posts">
-    <a href="#" class="post-link__item">
+  <div class="row">
+    <div class="col">
+    <a href="#">
       <div class="card posts" >
         <img class="card-img-top card-image_post" src="https://growmax.weba.vn/shop/images/growmax/posts/back.jpg" alt="Card image cap">
         <div class="card-body">
@@ -453,10 +441,11 @@
     </a> 
 
         
+  </div>
 
-  
+  <div class="col">
    
-<a href="#" class="post-link__item">
+<a href="#">
   <div class="card posts" >
     <img class="card-img-top card-image_post" src="https://growmax.weba.vn/shop/images/growmax/posts/cach-chon-rau-cu-qua-sach-tuoi-ngon-khong-ngam-doc-221922.jpg" alt="Card image cap">
     <div class="card-body">
@@ -470,9 +459,11 @@
   
 </a>   
       
+</div>
 
+<div class="col">
  
-  <a href="#" class="post-link__item">
+  <a href="#">
     <div class="card posts" >
       <img class="card-img-top card-image_post" src="https://growmax.weba.vn/shop/images/growmax/posts/5918_hoaqua.jpg" alt="Card image cap">
       <div class="card-body">
@@ -488,12 +479,14 @@
     
 </div>
   </div>
-
 </div>
+
+
 <!-- List Posts  -->
 
+
  <!-- Footer -->
-  <footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-light text-muted" style="margin-top:200px">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
@@ -529,7 +522,7 @@
     <!-- Section: Social media -->
   
     <!-- Section: Links  -->
-    <section class="" style="background-color:#82ae46;color: #fff">
+    <section class="" style="background-color:#3e6500;color: #fff">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3" >
@@ -588,13 +581,13 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="padding-top:30px">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">THÔNG TIN CÔNG TY</h6>
-            <p>Công Ty TNHH Phân Phối Nông Sản Việt</p>
+            <p>Công Ty TNHH Thương Mại Dịch Vụ Đầu Tư Vạn Phú</p>
             <p>
                 <i class="fa fa-map-marker"></i>
-              Số 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh 
+              vnaz.vn Tầng 7 Đoàn Hải Plaza, Số 756 Trường Chinh, Tân Bình, Hồ Chí Minh 
             </p>
             <p><i class="fas fa-phone me-3"></i> 02866860863 </p>
-            <p><i class="fa fa-envelope"></i>dhcn@gmail.com</p>
+            <p><i class="fa fa-envelope"></i>kinhdoanh@vnaz.vn</p>
           </div>
           <!-- Grid column -->
         </div>
@@ -611,9 +604,11 @@
   </footer>
   <!-- Footer -->
 
+ <!-- Footer -->
 
 
-  
+</div>
+
 
 <!-- ./wrapper -->
 
@@ -625,6 +620,5 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script src="script.js"></script>
 </body>
 </html>

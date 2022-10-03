@@ -62,7 +62,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách các bài nông sản chờ duyệt</h3> 
+                <h3 class="card-title">Danh sách các bài tin nhu cầu chờ duyệt</h3> 
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -81,10 +81,10 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/cnongsan.php");
+                    include("../../Controller/ctinnhucau.php");
 
-                    $p = new cnongsan();
-                    $table = $p-> view_nongsan();
+                    $p = new ctinnhucau();
+                    $table = $p-> view_tinnhucau();
                     if($table){
                       $dem = 0;
                       echo '<table class="table table-hover text-nowrap">';
@@ -105,21 +105,21 @@
                             echo "<tr>";
                            }
                             echo '<tr>';
-                              echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'">'.'</td>';
-                              echo '<td>'.'<input type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
+                              echo '<td style="border: non;">'.'<input type="text" name="mabaitin" value="'.$row["mabaitin"].'">'.'</td>';
+                              echo '<td>'.'<input type="text" name="tenbaitin" value="'.$row["tenbaitin"].'">'.'</td>';
                               //<input type="text" name="tenbn" value="'.$row["tenbn"].'">
-                              echo '<td>'.$row["tenncc"].'</td>';
+                              echo '<td>'.$row["tendoanhnghiep"].'</td>';
                               echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
                              // echo '<td>'.'<input type="text" name="tt" value="3">'.'</td>';
 
                               //echo '<td>'.$row["trangthai"].'</td>';
                               echo '<td>';
-                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='vchitietsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
+                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='vchitietsanpham.php?chitietbaitin=".$row["mabaitin"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                               echo '</td>';
                               //echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>';
                               echo '<td>';
                               //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
-                              echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                              echo "</td><td><a href='trangchuadmin.php?trangthaibaitin=".$row['mabaitin']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoibaitin=".$row['mabaitin']."'>Từ chối</a>";
                               //echo "</td><td><a href='admin.php?upProd&&compID=".$row['CompID']."&&ProdID=".$row['ProdID']."'>Sửa|</a><a href='admin.php?delProd&&ProdID=".$row['ProdID']."'>Xóa</a>";
 
 

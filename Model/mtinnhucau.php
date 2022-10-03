@@ -2,12 +2,12 @@
 
 	include_once("ketnoi.php");
 
-	class mnongsan{
-		function select_nongsan(){
+	class mtinnhucau{
+		function select_tinnhucau(){
 			//$aa=mysqli_connect("localhost","admin","1234");
 			$p = new clsketnoi();
 			if($p -> ketnoiDB($con)){
-				$string = "SELECT * FROM nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where trangthai='choduyet'";
+				$string = "SELECT * FROM baitinnhucau join doanhnghiep on baitinnhucau.madoanhnghiep = doanhnghiep.madoanhnghiep where trangthai='choduyet'";
 				//$string = "select * from benhnhan join benhvien on benhnhan.mabv = benhvien.mabv where tt=1";
 
 				//echo $string;
@@ -51,14 +51,14 @@
 				return false;
 			}
 		}
-		function capnhattrangthai($manongsan,$trangthai){
+		function capnhattrangthai($mabaitin,$trangthai){
 			$con;
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){
-				$querystring ="update nongsan ";
+				$querystring ="update baitinnhucau ";
 				$querystring .= "set trangthai='".$trangthai."'";
 				//echo $trangthai;
-				$querystring .= " where manongsan=".$manongsan;
+				$querystring .= " where mabaitin=".$mabaitin;
 				$kq=mysqli_query($con,$querystring);
 				echo $querystring;
 				$p->dongketnoi($con);

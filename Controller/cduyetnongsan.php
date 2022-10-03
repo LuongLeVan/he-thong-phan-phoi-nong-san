@@ -2,16 +2,10 @@
 
 	include_once("../../Model/mnongsan.php");
 
-	class cnongsan{
+	class duyetnongsan{
 		function view_nongsan(){
 			$p = new mnongsan();
 			$table  = $p -> select_nongsan();
-			//var_dump($table);
-			return $table;
-		}
-		function hienthi_nongsan(){
-			$p = new mnongsan();
-			$table  = $p -> xem_nongsan();
 			//var_dump($table);
 			return $table;
 		}
