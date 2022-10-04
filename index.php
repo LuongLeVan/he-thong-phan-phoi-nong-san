@@ -39,10 +39,14 @@
                           <a class="login-list-text" href="View/login_logout/login.php">
                             <?php
                               if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
-                                include('View/anhacungcapnongsan/vdnnhacungcap.php');
+                                if($_SESSION['role']==1){
+                                  include('View/anhacungcapnongsan/vdnnhacungcap.php');
+                                }elseif($_SESSION['role']==2){
+                                  include('View/adoanhnghiep/vdndoanhnghiep.php');
+                                }
                           echo '</a>';
                         echo '</li> |
-                        <li class="login-list-item"><a class="login-list-text" href="#">Đăng xuất</a></li>';
+                        <li class="login-list-item"><a class="login-list-text" href="View/vdangxuat.php">Đăng xuất</a></li>';
                               }else{
                                 echo '<li class="login-list-item">
                                   <a class="login-list-text" href="#">Đăng ký |</a>
