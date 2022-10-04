@@ -635,6 +635,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script src="script.js"></script>
+<script src="View/adoanhnghiep/script.js"></script>
 </body>
 </html>
