@@ -134,7 +134,6 @@
                       //echo "Đăng nhập thành công";
                       }else {
                           echo "<script>alert('Đăng nhập không thành công')</script>";
-                          //echo "<script>window.location.href='HeThongHoTro_COVID19.php'</script>";
                           $_SESSION['dn'] = False;
                       }
                       
