@@ -1,4 +1,3 @@
-
 <?php
 require 'google_login/db_connection.php';
 if(!isset($_SESSION['login_id'])){
@@ -24,8 +23,8 @@ else{
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="./View/adoanhnghiep/css/style.css">
-  <link rel="stylesheet" href="./View/adoanhnghiep/css/reponsive.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/reponsive.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -671,7 +670,8 @@ else{
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        Thiết Kế Web & Marketing Bởi Partner Google:<a class="text-reset fw-bold" href="https://mdbootstrap.com/"> https://vnaz.vn</a>
+      Thiết Kế Web & Ý Tưởng Bởi Founder:<a class="text-reset fw-bold" href="">
+       nongsanviet.vn</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -691,6 +691,6 @@ else{
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script src="View/adoanhnghiep/script.js"></script>
+<script src="/script/script.js"></script>
 </body>
 </html>
