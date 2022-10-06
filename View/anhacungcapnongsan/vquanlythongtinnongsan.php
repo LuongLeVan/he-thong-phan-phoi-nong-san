@@ -167,7 +167,7 @@
                         <div class="form-group">
                             <label> Danh mục nông sản </label>
                             <!-- <input type="text" name="lname" class="form-control" placeholder="Nhập loại nông sản"> -->
-                            <select class="form-control" name="" aria-label="Default select example">
+                            <select class="form-control" name="nguoidung" aria-label="Default select example">
                                 <option value="1">Trái cây</option>
                                 <option value="2">Rau</option>
                                 <option value="3">Củ</option>

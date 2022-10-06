@@ -128,6 +128,7 @@
                       }elseif($_SESSION['role'] == 1){
                         echo "<script>window.location.href='../../index.php'</script>";
                       }elseif($_SESSION['role'] == 2){
+                        $_SESSION['tendoanhnghiep']=$row['tendoanhnghiep'];
                         echo "<script>window.location.href='../../index.php'</script>";
                       }
                       //echo "Đăng nhập thành công";
@@ -152,5 +153,6 @@
 
 
 ?>
+
 </body>
 </html>

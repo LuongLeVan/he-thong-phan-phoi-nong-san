@@ -1,5 +1,19 @@
+
 <?php
-    session_start();
+require 'google_login/db_connection.php';
+if(!isset($_SESSION['login_id'])){
+    header('Location: login.php');
+    exit;
+}
+$id = $_SESSION['login_id'];
+$get_user = mysqli_query($db_connection, "SELECT * FROM `khachhang` WHERE `google_id`='$id'");
+if(mysqli_num_rows($get_user) > 0){
+    $user = mysqli_fetch_assoc($get_user);
+}
+else{
+    header('Location: logout.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,25 +48,68 @@
                       </form>
                     </div>
                     <div class="col-md-4 d-md-flex justify-content-end mb-md-0 mb-3"  style="min-height: 100px;max-height: 200px;">
-                      <ul class="login-list" >
-                        <li class="login-list-item">
-                          <a class="login-list-text" href="View/login_logout/login.php">
+                          
                             <?php
-                              if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
+                              if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
+                                echo '<ul class="navbar__list" >';
+                                    echo '<li class="navbar__item navbar__user">';
+                                      echo "<img src='".$user['hinh']."'  class='navbar__user-img' width='30'>";
+                                      echo '<span class="navbar__user-name">'.$user['tenkhachhang'].'</span>';
+                                      echo '<ul class="navbar__user-menu">';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Tài khoản</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Địa chỉ của tôi</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Đơn mua</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item navbar__user-item-sepharator">';
+                                              echo '<a href="google_login/logout.php">Đăng xuất</a>';
+                                          echo '</li>';
+                                        echo '</ul>';
+                                    echo '</li>';
+                                  echo '</ul>';
+                              }elseif((isset($_SESSION["dn"])&& $_SESSION["dn"]==True)){
                                 if($_SESSION['role']==1){
                                   include('View/anhacungcapnongsan/vdnnhacungcap.php');
+                                  echo '<ul class="navbar__list" >';
+                                    echo '<li class="navbar__item navbar__user">';
+                                      echo "<img src='img/".$_SESSION['hinh']."'  class='navbar__user-img' width='30'>";
+                                      echo '<span class="navbar__user-name">'.$_SESSION["tenncc"].'</span>';
+                                      echo '<ul class="navbar__user-menu">';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Tài khoản</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Địa chỉ của tôi</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Đơn mua</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item navbar__user-item-sepharator">';
+                                              echo '<a href="View/vdangxuat.php">Đăng xuất</a>';
+                                          echo '</li>';
+                                        echo '</ul>';
+                                    echo '</li>';
+                                  echo '</ul>';
+                                
                                 }elseif($_SESSION['role']==2){
-                                  include('View/adoanhnghiep/vdndoanhnghiep.php');
+                                  //include('View/adoanhnghiep/vdndoanhnghiep.php');
+                                  echo $_SESSION['tendoanhnghiep'];
+                                }else{
+                                   echo $user['tenkhachhang'];
                                 }
-                          echo '</a>';
-                        echo '</li> |
-                        <li class="login-list-item"><a class="login-list-text" href="View/vdangxuat.php">Đăng xuất</a></li>';
+                          
                               }else{
+                                echo '<ul class="login-list" >';
+                                echo $user['tenkhachhang'];
                                 echo '<li class="login-list-item">
-                                  <a class="login-list-text" href="#">Đăng ký |</a>
+                                  <a class="login-list-text" href="View/login_logout/register.php">Đăng ký |</a>
                                   <a class="login-list-text" href="View/login_logout/login.php">Đăng nhập</a>
                                   </li>';
-
+                                echo '</lu>';
                               }
                               ?>
                       </ul>
@@ -92,7 +149,6 @@
                       <?php
                         if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
                           echo '<li class="nav-item"><a href="View/anhacungcapnongsan/trangquanly.php" class="nav-link">Quản lý</a></li>';
-
                         }
                       ?>
                     </ul>
