@@ -88,7 +88,8 @@
                                 <th scope="col">Ảnh đại diện</th>
                                 <th scope="col">Số điện thoại</th>
                                 <th scope="col">Email</th>
-                                <th scope="col"> Tác vụ </th>
+                                <th scope="col">username</th>
+                                <th scope="col">Tác vụ</th>
                                 
                             </tr>
                         </thead>
@@ -108,6 +109,8 @@
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
                                 <td> <?php echo $row['sdt']; ?> </td>
                                 <td> <?php echo $row['email']; ?> </td>
+                                <td> <?php echo $row['username']; ?> </td>
+
                                 <!-- <td> <?php //echo $row['id']; ?> </td>
                                 <td> <?php //echo $row['fname']; ?> </td>
                                 <td> <?php// echo $row['lname']; ?> </td>
@@ -144,62 +147,40 @@
   </div>
 
 
-   <!-- Modal them nong san-->
+   <!-- Modal them nhân viên-->
    <div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="width: 600px">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm nông sản</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viên</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form action="../../Model/themnongsan.php" method="POST">
+                <form action="../../Model/themnhanvien.php" method="POST">
 
                     <div class="modal-body">
                         
                         <div class="form-group">
-                            <label> Tên nông sản </label>
-                            <input type="text" name="fname" class="form-control" placeholder="Nhập tên nông sản">
-                        </div>
-                        <div class="form-group">
-                            <label> Danh mục nông sản </label>
-                            <!-- <input type="text" name="lname" class="form-control" placeholder="Nhập loại nông sản"> -->
-                            <select class="form-control" name="" aria-label="Default select example">
-                                <option value="1">Trái cây</option>
-                                <option value="2">Rau</option>
-                                <option value="3">Củ</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label> Loại nông sản </label>
-                            <!-- <input type="text" name="lname" class="form-control" placeholder="Nhập loại nông sản"> -->
-                            <select class="form-control" name="lname" aria-label="Default select example">
-                                <option selected>Xoài</option>
-                                <option value="1">Táo</option>
-                                <option value="2">Cam</option>
-                                <option value="3">Chanh</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label> Số lượng </label>
-                            <input type="text" name="course" class="form-control" placeholder="Nhập số lượng">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Kích thước </label>
-                            <input type="number" name="contact" class="form-control" placeholder="nhập kích thước">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Nhà cung cấp </label>
-                            <input type="number" name="nhacungcap" class="form-control" placeholder="nhập tên nhà cung cấp">
+                            <label> Username </label>
+                            <input type="text" name="fname" class="form-control" placeholder="Nhập username">
                         </div>
                         
+                        <div class="form-group">
+                            <label> Password </label>
+                            <input type="text" name="lname" class="form-control" placeholder="Nhập pass">
+                        </div>
+                        <div class="form-group">
+                        <label> Chức vụ </label>
+                        <select class="form-control" name="chucvu" aria-label="Default select example">
+                                <option selected>Chọn chức vụ</option>
+                                <option value="Nhân viên kiểm định">Nhân viên kiểm định</option>
+                                <option value="Nhân viên phân phối">Nhân viên phân phối</option>
+                                <option value="Nhân viên bán hàng">Nhân viên bán hàng</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -211,47 +192,44 @@
         </div>
     </div>
 
-    <!-- Cập nhật nông sản -->
+    <!-- Cập nhật thông tin nhân viên -->
     <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Cập nhật nông sản </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Cập nhật thông tin </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form action="../../Model/capnhatnongsan.php" method="POST">
+                <form action="../../Model/capnhatnhanvien.php" method="POST">
 
                     <div class="modal-body">
 
                         <input type="hidden" name="update_id" id="update_id">
 
                         <div class="form-group">
-                            <label> Tên nông sản </label>
-                            <input type="text" name="fname" id="fname" class="form-control"
+                            <label> Tên nhân viên </label>
+                            <input type="text" name="ten" id="ten" class="form-control"
                                 placeholder="Enter First Name">
                         </div>
 
                         <div class="form-group">
-                            <label> Loại nông sản </label>
-                            <input type="text" name="lname" id="lname" class="form-control"
+                            <label> Số điện thoại </label>
+                            <input type="text" name="sdt" id="sdt" class="form-control"
                                 placeholder="Enter Last Name">
                                 
                         </div>
-
                         <div class="form-group">
-                            <label> Số lượng </label>
-                            <input type="text" name="course" id="course" class="form-control"
-                                placeholder="Enter Course">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Kích thước </label>
-                            <input type="text" name="contact" id="contact" class="form-control"
-                                placeholder="Enter Phone Number">
+                        <label> Chức vụ </label>
+                        <select class="form-control" name="chucvu" aria-label="Default select example">
+                                <option selected>Chọn chức vụ</option>
+                                <option value="Nhân viên kiểm định">Nhân viên kiểm định</option>
+                                <option value="Nhân viên phân phối">Nhân viên phân phối</option>
+                                <option value="Nhân viên bán hàng">Nhân viên bán hàng</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -264,25 +242,27 @@
         </div>
     </div>
 
-    <!-- Xóa nông sản-->
+    <!-- Xóa nhân viên-->
     <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Xóa nông sản </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Xóa nhân viên </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form action="../../Model/xoanongsan.php" method="POST">
+                <form action="../../Model/xoanhanvien.php" method="POST">
 
                     <div class="modal-body">
 
                         <input type="hidden" name="delete_id" id="delete_id">
+                        <input type="hidden" name="delete_vaitro" id="delete_vaitro">
 
-                        <h4> Bạn có thực sự muốn xóa nông sản này không</h4>
+
+                        <h4> Bạn có thực sự muốn xóa nhân viên này không</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Quay lại </button>
@@ -295,13 +275,13 @@
     </div>
 
 
-    <!-- VIEW POP UP FORM (Bootstrap MODAL) -->
+    <!-- Hiển thị chi tiết -->
     <div class="modal fade" id="viewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> View Student Data </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Chi tiết nhân viên </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -364,8 +344,6 @@
 
         });
     </script>
-
-
     <script>
         $(document).ready(function () {
 
@@ -401,10 +379,13 @@
                 console.log(data);
 
                 $('#delete_id').val(data[0]);
-
+                var str = $.trim(data[6]); // xóa khoản cách 2 bên`;
+                $('#delete_vaitro').val(str);
             });
         });
     </script>
+
+    
 
     <script>
         $(document).ready(function () {
@@ -422,10 +403,10 @@
                 console.log(data);
 
                 $('#update_id').val(data[0]);
-                $('#fname').val(data[1]);
-                $('#lname').val(data[2]);
-                $('#course').val(data[3]);
-                $('#contact').val(data[4]);
+                $('#ten').val(data[1]);
+                $('#sdt').val(data[4]);
+                $('#chucvu').val(data[2]);
+                
             });
         });
     </script>

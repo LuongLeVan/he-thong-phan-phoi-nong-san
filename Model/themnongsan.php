@@ -1,17 +1,19 @@
 <?php
 
+session_start();
+
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'nongsanviet');
 mysqli_set_charset($connection, 'utf8');
 if(isset($_POST['insertdata']))
 {
     $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    $loai2 = $_POST['loai2'];
     $course = $_POST['course'];
     $contact = $_POST['contact'];
-    $manhacungcap = $_POST['nhacungcap'];
+    $manhacungcap = $_SESSION['mancc'];
 
-    $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$lname','$course','$contact')";
+    $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
     $query_run = mysqli_query($connection, $query);
     
     echo $query;

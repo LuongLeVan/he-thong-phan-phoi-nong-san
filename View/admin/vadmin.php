@@ -21,7 +21,6 @@
 				$_SESSION['maadmin'] = $row['maadmin'];
 				//$_SESSION['mabv'] = $row["mabv"];
 				$_SESSION['tenadmin'] = $row["tenadmin"];
-
 				//echo $_SESSION["mabv"];
 			
 			

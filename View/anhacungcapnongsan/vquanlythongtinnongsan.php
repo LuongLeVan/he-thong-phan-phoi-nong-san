@@ -12,6 +12,14 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../dist/js/ajaxdanhmuc.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -75,7 +83,7 @@
                         mysqli_set_charset($connection, 'utf8');
 
 
-                  $query = "SELECT * FROM (nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai";
+                  $query = "SELECT * FROM (nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai where mancc = '".$_SESSION['mancc']."'";
                   $query_run = mysqli_query($connection, $query);
 
                 ?>
@@ -86,8 +94,10 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
-                                <th scope="col">Số lượng</th>
+                                <th scope="col">Trọng lượng</th>
                                 <th scope="col">Kích thước</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
                             </tr>
@@ -108,6 +118,10 @@
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
                                 <td> <?php echo $row['trongluong']; ?> </td>
                                 <td> <?php echo $row['kichthuoc']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['mota']; ?> </td>
+
+
                                 <!-- <td> <?php //echo $row['id']; ?> </td>
                                 <td> <?php //echo $row['fname']; ?> </td>
                                 <td> <?php// echo $row['lname']; ?> </td>
@@ -148,7 +162,7 @@
    <div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 600px">
+            <div class="modal-content" style="width: 120%">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Thêm nông sản</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -164,26 +178,33 @@
                             <label> Tên nông sản </label>
                             <input type="text" name="fname" class="form-control" placeholder="Nhập tên nông sản">
                         </div>
-                        <div class="form-group">
-                            <label> Danh mục nông sản </label>
-                            <!-- <input type="text" name="lname" class="form-control" placeholder="Nhập loại nông sản"> -->
-                            <select class="form-control" name="nguoidung" aria-label="Default select example">
-                                <option value="1">Trái cây</option>
-                                <option value="2">Rau</option>
-                                <option value="3">Củ</option>
-                            </select>
-                        </div>
+                        <div class="col-md-6"><label class="labels">Chọn danh mục nông sản</label>
+                    <select name="danhmuc2" class="form-control danhmuc2" id="select">
+                        <option value="">Danh mục nông sản</option>
+                        <?php
+                            $conn = mysqli_connect("localhost","root","");
+                            $db = mysqli_select_db($conn, 'nongsanviet');
+                                mysqli_set_charset($conn, 'utf8');
+                            $sql = "select * from danhmucnongsan";
+                            $query = mysqli_query($conn, $sql);
+                            $num = mysqli_num_rows($query);          
+                            if($num >0){
+                                while($row = mysqli_fetch_array($query)){
 
-                        <div class="form-group">
-                            <label> Loại nông sản </label>
-                            <!-- <input type="text" name="lname" class="form-control" placeholder="Nhập loại nông sản"> -->
-                            <select class="form-control" name="lname" aria-label="Default select example">
-                                <option selected>Xoài</option>
-                                <option value="1">Táo</option>
-                                <option value="2">Cam</option>
-                                <option value="3">Chanh</option>
-                            </select>
-                        </div>
+                            ?>
+                                <option value="<?php echo $row['madanhmuc'];?>"><?php echo $row['tendanhmuc'];?></option>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </select>
+                    </div>
+
+                    <div class="col-md-6"><label class="labels">Chọn loại nông sản</label>
+                    <select name="loai2" class="form-control loai2" id="select">
+                        <option value="">loại nông sản</option>
+                    </select>
+                    </div>
 
                         <div class="form-group">
                             <label> Số lượng </label>
@@ -195,10 +216,6 @@
                             <input type="number" name="contact" class="form-control" placeholder="nhập kích thước">
                         </div>
 
-                        <div class="form-group">
-                            <label> Nhà cung cấp </label>
-                            <input type="number" name="nhacungcap" class="form-control" placeholder="nhập tên nhà cung cấp">
-                        </div>
                         
                     </div>
                     <div class="modal-footer">
@@ -234,25 +251,47 @@
                             <input type="text" name="fname" id="fname" class="form-control"
                                 placeholder="Enter First Name">
                         </div>
-
-                        <div class="form-group">
-                            <label> Loại nông sản </label>
-                            <input type="text" name="lname" id="lname" class="form-control"
-                                placeholder="Enter Last Name">
-                                
-                        </div>
-
                         <div class="form-group">
                             <label> Số lượng </label>
-                            <input type="text" name="course" id="course" class="form-control"
-                                placeholder="Enter Course">
+                            <input type="text" name="soluong" id="soluong" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label> Kích thước </label>
-                            <input type="text" name="contact" id="contact" class="form-control"
-                                placeholder="Enter Phone Number">
+                            <input type="text" name="contact" id="contact" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label> Mô tả </label>
+                            <input type="text" name="mota" id="mota" class="form-control">
+                        </div>
+
+                        <div class="col-md-6"><label class="labels">Chọn danh mục nông sản</label>
+                    <select name="danhmuc" class="form-control danhmuc" id="select">
+                        <option value="">Danh mục nông sản</option>
+                        <?php
+                            
+                            $sql = "select * from danhmucnongsan";
+                            $query = mysqli_query($conn, $sql);
+                            $num = mysqli_num_rows($query);          
+                            if($num >0){
+                                while($row = mysqli_fetch_array($query)){
+
+                            ?>
+                                <option value="<?php echo $row['madanhmuc'];?>"><?php echo $row['tendanhmuc'];?></option>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </select>
+                    </div>
+                    <div class="col-md-6"><label class="labels">Chọn loại nông sản</label>
+                    <select name="loai" class="form-control loai" id="select">
+                        <option value="">loại nông sản</option>
+                    </select>
+                    </div>
+
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -301,33 +340,30 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> View Student Data </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Thông tin chi tiết nông sản </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
-                <form action="deletecode.php" method="POST">
+                <form action="../../Model/cxemchitietnongsan.php" method="POST">
 
                     <div class="modal-body">
-
-                        <input type="text" name="contact" id="contact">
                         <div class="form-group">
-                            <label> First Name </label>
-                            <input type="text" name="fname" id="fname" class="form-control"
-                                placeholder="Enter First Name">
+                            <label> Tên nông sản </label>
+                            <input type="text" name="fname" id="fname" class="form-control">
                         </div>
 
                         <p id="fname"> </p>
                         <h4 id="fname"> 
-                            <?php 
-                            echo ''; 
-                            ?> 
+                            <?php
+                                //echo $row['tenncc'];
+                            ?>
                         </h4>
                         
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> CLOSE </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Đóng </button>
                         <!-- <button type="submit" name="deletedata" class="btn btn-primary"> Yes !! Delete it. </button> -->
                     </div>
                 </form>
@@ -353,15 +389,14 @@
                 $('#viewmodal').modal('show');
                 $.ajax({ //create an ajax request to display.php
                     type: "GET",
-                    url: "display.php",
-                    dataType: "html", //expect html to be returned                
+                    url: ".php",
+                    dataType: "", //expect html to be returned                
                     success: function (response) {
                         $("#responsecontainer").html(response);
                         //alert(response);
                     }
                 });
             });
-
         });
     </script>
 
@@ -424,8 +459,10 @@
                 $('#update_id').val(data[0]);
                 $('#fname').val(data[1]);
                 $('#lname').val(data[2]);
-                $('#course').val(data[3]);
-                $('#contact').val(data[4]);
+                $('#soluong').val(data[6]);
+                $('#contact').val(data[5]);
+                $('#mota').val(data[7]);
+
             });
         });
     </script>

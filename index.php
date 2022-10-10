@@ -1,19 +1,18 @@
-
+<?php
+  //  session_start();
+?>
 <?php
 require 'google_login/db_connection.php';
-if(!isset($_SESSION['login_id'])){
-    header('Location: login.php');
-    exit;
+if(isset($_SESSION['login_id'])){
+  $id = $_SESSION['login_id'];
+  $get_user = mysqli_query($db_connection, "SELECT * FROM `khachhang` WHERE `google_id`='$id'");
+  if(mysqli_num_rows($get_user) > 0){
+      $user = mysqli_fetch_assoc($get_user);
+  }
 }
-$id = $_SESSION['login_id'];
-$get_user = mysqli_query($db_connection, "SELECT * FROM `khachhang` WHERE `google_id`='$id'");
-if(mysqli_num_rows($get_user) > 0){
-    $user = mysqli_fetch_assoc($get_user);
-}
-else{
-    header('Location: logout.php');
-    exit;
-}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +36,9 @@ else{
     <i class="fas fa-arrow-up"></i>
   </button>	
           <!-- Navbar -->
+          <?php
+            //echo $_SESSION["login_id"];
+          ?>
             <div class="container-fluid px-md-5">
               <div class="row justify-content-between">
                 <div class="col-md-8 order-md-last">
@@ -96,15 +98,38 @@ else{
                                   echo '</ul>';
                                 
                                 }elseif($_SESSION['role']==2){
-                                  //include('View/adoanhnghiep/vdndoanhnghiep.php');
-                                  echo $_SESSION['tendoanhnghiep'];
+                                  include('View/adoanhnghiep/vdndoanhnghiep.php');
+                                  echo '<ul class="navbar__list" >';
+                                    echo '<li class="navbar__item navbar__user">';
+                                      echo "<img src='img/".$_SESSION['tendoanhnghiep']."'  class='navbar__user-img' width='30'>";
+                                      echo '<span class="navbar__user-name">'.$_SESSION['tendoanhnghiep'].'</span>';
+                                      echo '<ul class="navbar__user-menu">';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Tài khoản</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Địa chỉ của tôi</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Đơn mua</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item navbar__user-item-sepharator">';
+                                              echo '<a href="View/vdangxuat.php">Đăng xuất</a>';
+                                          echo '</li>';
+                                        echo '</ul>';
+                                    echo '</li>';
+                                  echo '</ul>';
+                                }elseif($_SESSION['role']==4){
+                                  echo 11;
+                                }elseif($_SESSION['role']==3){
+                                  echo 11;
                                 }else{
                                    echo $user['tenkhachhang'];
                                 }
                           
                               }else{
                                 echo '<ul class="login-list" >';
-                                echo $user['tenkhachhang'];
+                                //echo $user['tenkhachhang'];
                                 echo '<li class="login-list-item">
                                   <a class="login-list-text" href="View/login_logout/register.php">Đăng ký |</a>
                                   <a class="login-list-text" href="View/login_logout/login.php">Đăng nhập</a>

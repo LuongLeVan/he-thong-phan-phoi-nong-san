@@ -231,6 +231,9 @@
             </li>
             <li class="nav-item">
               <a href="./quanlynhanvien.html" class="nav-link">
+              <?php
+                  echo '<a href="trangquanly?taomaqr" class="nav-link">';
+              ?>
                 <i class="far fa-circle nav-icon"></i>
                 <p>Quản lý mã QR</p>
               </a>
@@ -256,7 +259,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Mua bán
+              Nông sản
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right">2</span>
             </p>
@@ -266,13 +269,13 @@
             <li class="nav-item">
               <a href="./thongkeadmin.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Đăng bán nông sản</p>
+                <p>Yêu cầu hỗ trợ nông sản</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="./thongkeadmin.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Đơn hàng</p>
+                <p>GIấy kiểm định nông sản</p>
               </a>
             </li>
 
@@ -284,7 +287,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Nông sản
+              Mua bán
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right">2</span>
             </p>
@@ -292,17 +295,17 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <?php
-                  echo '<a href="trangchuadmin?duyetnongsan" class="nav-link">';
+                  echo '<a href="trangquanly?dangban" class="nav-link">';
               ?>
               
                 <i class="far fa-circle nav-icon"></i>
-                <p>Đề xuất hỗ trợ nông sản</p>
+                <p>Dăng bán nông sản</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="./duyettinnhucau.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Giấy kiểm định nông sản</p>
+                <p>Đơn hàng</p>
               </a>
             </li>
           </ul>
@@ -342,6 +345,12 @@
                 //include("vchitietnongsan.php");
                }elseif(isset($_REQUEST["capnhatthongtin"])){
                 include("vcapnhatthongtinnhacungcap.php");
+               }elseif(isset($_REQUEST["dangban"])){
+                include("vguiyeucauhotro.php");
+               }elseif(isset($_REQUEST["taomaqr"])){
+                include("vtaomaqr.php");
+               }elseif(isset($_REQUEST["guiyeucau"])){
+                include("vcapnhattrangthainongsan.php");
                }else{
                 include("vquanlythongtinnongsan.php");
                }

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +67,9 @@
         </div>
         <p>- Hoặc -</p>
         <a href="#" class="btn btn-block btn-danger">
+          <?php
+              include("../../google_login/login.php");
+          ?>
           <i class="fab fa-google mr-2"></i> Đăng nhập với Google
         </a>
       </div>
@@ -130,6 +133,9 @@
                       }elseif($_SESSION['role'] == 2){
                         $_SESSION['tendoanhnghiep']=$row['tendoanhnghiep'];
                         echo "<script>window.location.href='../../index.php'</script>";
+                      }elseif($_SESSION['role'] == 4){
+                        //$_SESSION['tendoanhnghiep']=$row['tendoanhnghiep'];
+                        echo "<script>window.location.href='../anhanvienkiemdinh/trangquanly.php'</script>";
                       }
                       //echo "Đăng nhập thành công";
                       }else {

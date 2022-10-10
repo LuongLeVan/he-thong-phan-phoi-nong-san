@@ -8,11 +8,11 @@ mysqli_set_charset($connection, 'utf8');
         $id = $_POST['update_id'];
         
         $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $course = $_POST['course'];
+        $loai = $_POST['loai'];
+        $soluong = $_POST['soluong'];
         $contact = $_POST['contact'];
 
-        $query = "UPDATE nongsan SET tennongsan='$fname', maloai='$lname', soluong='$course', kichthuoc='$contact' WHERE manongsan='$id'";
+        $query = "UPDATE nongsan SET tennongsan='$fname', maloai='$loai', soluong='$soluong', kichthuoc='$contact' WHERE manongsan='$id'";
         $query_run = mysqli_query($connection, $query);
         echo $query;
         if($query_run)
@@ -25,10 +25,7 @@ mysqli_set_charset($connection, 'utf8');
         }
         else
         {
-            echo '<script> alert("Cập nhật không thành công"); </script>';
-            echo "<script>
-                window.location.href='../View/anhacungcapnongsan/trangquanly.php?nongsan';
-            </script>";
+            
         }
     }
 ?>
