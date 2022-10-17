@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/blog.css">
-    <link rel="stylesheet" href="/css/magnific-popup.css">
     <link rel="stylesheet" href="/css/flaticon.css">
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
@@ -24,6 +23,37 @@
 </head>
 
 <body class="goto-here">
+    <template id="productTemplate">
+        <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+                <a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg"
+                        alt="Colorlib Template">
+                    <div class="overlay"></div>
+                </a>
+                <div class="text py-3 pb-4 px-3 text-center">
+                    <h3 class="product__name" data-id="name"><a href="#">Bell Pepper</a></h3>
+                    <div class="d-flex">
+                        <div class="pricing">
+                            <p class="price" data-id="price"><span class="mr-2 price-dc">$120.00</span><span
+                                    class="price-sale" data-id="priceSale">$80.00</span></p>
+                        </div>
+                    </div>
+                    <div class="bottom-area d-flex px-3">
+                        <div class="m-auto d-flex list-contact-products">
+                            <a href="#"
+                                class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                <i class="fa fa-bars" aria-hidden="true"></i> </a>
+                            <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> </a>
+                            <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                <span><i class="fa fa-heart"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
     <div class="wrapper">
         <button type="button" class="btn btn-success btn-floating btn-lg backtop blocked-btn" id="btn-back-to-top">
             <i class="fas fa-arrow-up"></i>
@@ -87,37 +117,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg"
-                                alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 pb-4 px-3 text-center">
-                            <h3 class="product__name"><a href="#">Bell Pepper</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span class="mr-2 price-dc">$120.00</span><span
-                                            class="price-sale">$80.00</span></p>
-                                </div>
-                            </div>
-                            <div class="bottom-area d-flex px-3">
-                                <div class="m-auto d-flex list-contact-products">
-                                    <a href="#"
-                                        class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                        <i class="fa fa-bars" aria-hidden="true"></i> </a>
-                                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> </a>
-                                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                        <span><i class="fa fa-heart"></i></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
+            
+            <div id="parent" class="row">
+                
+           <!--      <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg"
                                 alt="Colorlib Template">
@@ -429,7 +432,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
@@ -588,6 +591,7 @@
     </footer>
 
     <script src="/script/script.js"></script>
+    <script src="/script/products.js"></script>
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -597,7 +601,6 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-    <script src="View/adoanhnghiep/script.js"></script>
 
 
 </body>

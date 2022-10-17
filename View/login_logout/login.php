@@ -66,12 +66,11 @@
           <input type="submit" name="submit" value="Đăng Nhập" class="btn btn-primary btn-block">   
         </div>
         <p>- Hoặc -</p>
-        <a href="#" class="btn btn-block btn-danger">
+       
           <?php
               include("../../google_login/login.php");
           ?>
-          <i class="fab fa-google mr-2"></i> Đăng nhập với Google
-        </a>
+         
       </div>
       <!-- /.social-auth-links -->
 

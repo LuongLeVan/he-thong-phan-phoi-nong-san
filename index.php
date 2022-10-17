@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<?php
-  //  session_start();
-?>
-=======
->>>>>>> 5983b0bea1e0132a7dfc6d26708b7e36f356f4ae
 <?php
 require 'google_login/db_connection.php';
 if(isset($_SESSION['login_id'])){
@@ -26,8 +20,8 @@ if(isset($_SESSION['login_id'])){
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/reponsive.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reponsive.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -713,13 +707,13 @@ if(isset($_SESSION['login_id'])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<script src="/script/script.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>
