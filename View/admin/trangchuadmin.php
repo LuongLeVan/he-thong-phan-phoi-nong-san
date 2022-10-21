@@ -33,7 +33,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="../../index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -221,12 +221,29 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
+          <li class="nav-item">
+          <?php
+                echo '<a href="trangchuadmin?capnhatthongtincanhan" class="nav-link">';
+              ?>
+                <i class="far fa-circle nav-icon"></i>
+                <p>Quản lý thông tin cá nhân</p>
+              </a>
+            </li>
+            <li class="nav-item">
+            <?php
+                echo '<a href="trangchuadmin?quanlynhacungcap" class="nav-link">';
+              ?>
+                <i class="far fa-circle nav-icon"></i>
+                <p>Quản lý thông tin nhà cung cấp</p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="./quanlythongtinnguoidung.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Quản lý thông tin người dùng</p>
+                <p>Quản lý thông tin doanh nghiệp</p>
               </a>
             </li>
+          
             <li class="nav-item">
               <?php
                 echo '<a href="trangchuadmin?quanlynhanvien" class="nav-link">';
@@ -264,6 +281,7 @@
 
           </ul>
         </li>
+        
 
         <!-- Phân quyền + thống kê báo cáo -->
 
@@ -303,7 +321,14 @@
 
           </ul>
         </li>
-
+        <li class="nav-item">
+          <a href="../login_logout/vdangxuat.php" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Đăng xuất
+            </p>
+          </a>
+        </li>
         <!-- Duyệt bài đăng -->
       </ul>
     </nav>
@@ -326,7 +351,13 @@
                 include("vcapnhattrangthaibaitin.php");
               //include("vchitietnongsan.php");
               }elseif(isset($_REQUEST["quanlynhanvien"])){
-              include("vquanlythongtinnhanvien.php");
+                include("vquanlythongtinnhanvien.php");
+              }elseif(isset($_REQUEST["quanlynhacungcap"])){
+                include("vquanlythongtinnhacungcap.php");
+              }elseif(isset($_REQUEST["capnhatthongtincanhan"])){
+                include("vcapnhatthongtinadmin.php");
+              }else{
+                include("vquanlythongtinnhanvien.php");
               }
            ?>
 <!-- Chỗ này include nội dung vô -->

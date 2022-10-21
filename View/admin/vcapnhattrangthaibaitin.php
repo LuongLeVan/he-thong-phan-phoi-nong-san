@@ -16,7 +16,7 @@
 <body class="hold-transition sidebar-mini">
 
     <?php
-include("../../Controller/ctinnhucau.php");
+include("../../Controller/chung/ctinnhucau.php");
     if(isset($_REQUEST["trangthaibaitin"])){
       $mabaitin=$_REQUEST["trangthaibaitin"];
       $tt='daduyet';

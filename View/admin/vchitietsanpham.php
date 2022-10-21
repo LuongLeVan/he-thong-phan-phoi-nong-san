@@ -23,7 +23,7 @@
 <body>
       <?php
         
-        include("../../Controller/cnongsan.php");
+        include("../../Controller/chung/cnongsan.php");
         $p = new cnongsan();
         if(isset($_REQUEST["chitietnongsan"])){
             $ns = $_REQUEST["chitietnongsan"];

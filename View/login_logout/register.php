@@ -98,7 +98,7 @@
 <!-- /.register-box -->
 </form>
 <?php
-    include ("../../Controller/ctaikhoan.php");
+    include ("../../Controller/chung/ctaikhoan.php");
     if(isset($_REQUEST["btnsubmit"])&&($_REQUEST['password'] !="")){
         //$Id=rand(1,10);
         $username=$_REQUEST["username"];
@@ -108,14 +108,14 @@
         $p=new ctaikhoan();
         $table=$p->taotaikhoan($username,$password,$loai);
         if($table==1){
-            echo "<script>alert('Cấp tài khoản thành công')</script>";
+            echo "<script>alert('thành công')</script>";
             //echo header("refresh:0; url='index.php?ctk'");
             echo "<script>window.location.href='index.php?ctk'</script>";
         }else{
             echo "error";
         }
     }elseif (isset($_REQUEST["btnsubmit"])) {
-        echo "<script>alert('Cấp tài khoản không thành công')</script>";
+        echo "<script>alert('thành công')</script>";
     }
 ?>
 <!-- jQuery -->

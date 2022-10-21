@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $(".tinh").change(function(){
         var id = $(".tinh").val();
+        //alert($id);
         $.post("../../View/quan.php", {id: id}, function(data){
             $(".quan").html(data);
         })

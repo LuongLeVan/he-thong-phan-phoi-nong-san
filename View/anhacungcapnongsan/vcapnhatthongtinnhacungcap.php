@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/input.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -24,12 +25,18 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+<form action="#" method="post" enctype="multipart/form-data">
+
   <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
       <div class="col-md-3 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-            <td> <?php echo "<img class='rounded-circle mt-5'
-            width='150px' src='../../img/".$_SESSION['hinh']."'/>"; ?> </td>
+            
+            <?php 
+            echo "<img class='rounded-circle mt-5' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
+            echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
+              
+            ?>
 
             <span class="font-weight-bold">
             <?php
@@ -51,7 +58,8 @@
             <div class="col-md-12"><label class="labels">Họ và Tên</label>
               <p class="user-infor form-control">
               <?php
-                echo $_SESSION['tenncc'];
+                echo '<input type="text" name="tenncc" value="'.$_SESSION['tenncc'].'">';
+                //echo $_SESSION['tenncc'];
               ?>
               </p>
             </div>
@@ -60,20 +68,28 @@
             <div class="col-md-6"><label class="labels">Số điện thoại</label>
               <p class="user-infor form-control">
               <?php
-                echo $_SESSION['sdt'];
+                echo '<input type="text" name="sdt" value="'.$_SESSION['sdt'].'">';
+                //echo $_SESSION['sdt'];
               ?>
               </p>
             </div>
             <div class="col-md-6"><label class="labels">Email ID</label>
               <p class="user-infor form-control">
               <?php
-                echo $_SESSION['email'];
+                echo '<input type="text" name="email" value="'.$_SESSION['email'].'">';
               ?>
               </p>
             </div>
+            <div class="col-md-12"><label class="labels">Địa chỉ giao hàng</label>
+              <p class="user-infor form-control">
+                <?php
+                  include("vdiachi.php");
+                ?>
+              </p>
+            </div>
             <div class="col-md-6"><label class="labels">Chọn tỉnh / thành phố</label>
-            <select name="" class="form-control tinh" id="select">
-                <option value="">Thành phố</option>
+            <select name="tinh" class="form-control tinh" id="select">
+                <option value="">Tỉnh/Thành phố</option>
                 <?php
                     $conn = mysqli_connect("localhost","root","");
                     $db = mysqli_select_db($conn, 'nongsanviet');
@@ -93,30 +109,101 @@
             </select>
             </div>
             <div class="col-md-6"><label class="labels">Chọn quận / thành huyện</label>
-            <select name="" class="form-control quan" id="select">
+            <select name="quan" class="form-control quan" id="select">
                 <option value="">Quận/Huyện</option>
             </select>
             </div>
             <div class="col-md-6"><label class="labels">Chọn phường / xã</label>
-            <select name="" class="form-control phuong" id="select">
-                <option value="">Phường/Xã</option>
+            <select name="phuong" class="form-control phuong" id="select">
+                <option value="phuong">Phường/Xã</option>
             </select>
             </div>
-            <div class="col-md-6"><label class="labels">Nhập số nhà - đường</label>
-              <p class="user-infor form-control">12/12</p>
+            <div class="col-md-6"><label class="labels">Số nhà - tên đường</label>
+              <p class="user-infor form-control">
+              <?php
+                echo '<input type="text" name="diachi" value="'.$_SESSION['diachi'].'">';
+              ?>
+              </p>
             </div>
-            <div class="col-md-12"><label class="labels">Mô tả</label>
-              <p class="user-infor form-control">12/12</p>
-            </div>
+            
           </div>
-          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Lưu thông tin</button></div>
+
+          <div class="mt-5 text-center">
+            <input type="submit"  name="btnsubmit" class="btn btn-success" value="Lưu thông tin" id="add">
+          </div>
         </div>
       </div>
+</form> 
       
     </div>
   </div>
   </div>
   </div>
+
+
+  <?php
+//include_once("../../Controller/cnhacungcap.php");
+//$p = new cnhacungcap();
+//if(isset($_REQUEST["btnsubmit"])){
+    //$tenncc=$_REQUEST["tenncc"];
+    //$sdt=$_REQUEST["sdt"];
+    //$email=$_REQUEST["email"];
+    //$tinh=$_REQUEST["tinh"];
+    //$quan=$_REQUEST["quan"];
+    //$phuong=$_REQUEST["phuong"];
+    //$diachi=$_REQUEST["diachi"];
+    //$mancc=$_SESSION['mancc'];
+    //echo $mancc;
+
+    //$p=new cnhacungcap();
+    //$kp=$p->capnhat_thongtin($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong);
+    
+    
+        //echo "<script>
+            //alert('Thông tin đã được cập nhật');
+            //window.location.href='trangquanly.php?capnhatthongtin';
+        //</script>"; 
+    //}
+?>
+
+<?php
+include_once("../../Controller/nhacungcapnongsan/cnhacungcap.php");
+if(isset($_REQUEST["btnsubmit"])){
+    $tenncc=$_REQUEST["tenncc"];
+    $sdt=$_REQUEST["sdt"];
+    $email=$_REQUEST["email"];
+    $tinh=$_REQUEST["tinh"];
+    $quan=$_REQUEST["quan"];
+    $phuong=$_REQUEST["phuong"];
+    $diachi=$_REQUEST["diachi"];
+    $mancc=$_SESSION['mancc'];
+    $file=$_FILES["fflie"]["tmp_name"];
+    $type=$_FILES["fflie"]["type"];
+    $name=$_FILES["fflie"]["name"];
+    $size=$_FILES["fflie"]["size"];
+    
+    $p=new cnhacungcap();
+    $kp=$p->capnhat_thongtin_nhacungcap($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong,$file,$name,$type,$size);
+    if($kp==1){
+        echo "<script>
+            alert('Thông tin đã được cập nhật');
+            window.location.href='trangquanly.php?capnhatthongtin';
+        </script>"; 
+    }elseif ($kp==0) {
+        echo "<script>alert('Không thể Update')</script>";
+    }
+    elseif ($kp==-1) {
+         echo "<script>alert('Không thể upload')</script>";
+    }elseif ($kp==-2) {
+         echo "<script>alert('size quá lớn')</script>";
+    }elseif ($kp==-3) {
+        echo "<script>alert('file không đúng dạng')</script>";
+    }
+    else {
+        echo "error";
+    }
+}
+?>
 </body>
 
 </html>

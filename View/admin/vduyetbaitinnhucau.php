@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/ctinnhucau.php");
+                    include("../../Controller/chung/ctinnhucau.php");
 
                     $p = new ctinnhucau();
                     $table = $p-> view_tinnhucau();

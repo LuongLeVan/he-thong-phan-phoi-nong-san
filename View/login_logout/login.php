@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,10 @@
           <input type="submit" name="submit" value="Đăng Nhập" class="btn btn-primary btn-block">   
         </div>
         <p>- Hoặc -</p>
-        <a href="#" class="btn btn-block btn-danger">
+        <!-- <a href="#" class="btn btn-block btn-danger"> -->
+          <?php
+              include("../../google_login/login.php");
+          ?>
           <i class="fab fa-google mr-2"></i> Đăng nhập với Google
         </a>
       </div>
@@ -92,7 +95,7 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <?php
-  include_once("../../Controller/cdangnhap.php");
+  include_once("../../Controller/chung/cdangnhap.php");
   $dn = new cdangnhap();
     //var_dump($dn);
     if(isset($_REQUEST['submit'])){
@@ -130,6 +133,9 @@
                       }elseif($_SESSION['role'] == 2){
                         $_SESSION['tendoanhnghiep']=$row['tendoanhnghiep'];
                         echo "<script>window.location.href='../../index.php'</script>";
+                      }elseif($_SESSION['role'] == 4){
+                        //$_SESSION['tendoanhnghiep']=$row['tendoanhnghiep'];
+                        echo "<script>window.location.href='../anhanvienkiemdinh/trangquanly.php'</script>";
                       }
                       //echo "Đăng nhập thành công";
                       }else {

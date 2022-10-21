@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/cnongsan.php");
+                    include("../../Controller/chung/cnongsan.php");
 
                     $p = new cnongsan();
                     $table = $p-> view_nongsan();
