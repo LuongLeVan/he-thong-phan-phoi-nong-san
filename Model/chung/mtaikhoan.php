@@ -24,6 +24,21 @@
                 }else{
                     return false;
                 }
+            } 
+            function dangkytaikhoan_khachhang($username,$tenkhachhang,$sdt,$email){
+                $con;
+                $p = new clsketnoi();
+                if($p->ketnoiDB($con)){
+                    $string = "insert into khachhang(username, tenkhachhang, sdt, email) values";
+                    $string .= "(N'".$username."',N'".$tenkhachhang."',N'".$sdt."',N'".$email."')";
+                    echo $string;
+                    $kq = mysqli_query($con,$string);
+                    //var_dump($kq);
+                    $p->dongketnoi($con);
+                    return $kq;
+                }else{
+                    return false;
+                }
             }         
         }
     ?>

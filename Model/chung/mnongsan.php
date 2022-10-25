@@ -19,6 +19,22 @@
 				return false;
 			}
 		}
+		function xem_donhang(){
+			//$aa=mysqli_connect("localhost","admin","1234");
+			$p = new clsketnoi();
+			if($p -> ketnoiDB($con)){
+				$string = "SELECT madonhang, tennongsan, donhang.soluong, donhang.trangthai, tenkhachhang, nongsan.manongsan  FROM ((donhang join nhacungcap on donhang.manhacungcap = nhacungcap.mancc) join khachhang on donhang.makhachhang = khachhang.makhachhang) join nongsan on donhang.manongsan = nongsan.manongsan";
+				//$string = "select * from benhnhan join benhvien on benhnhan.mabv = benhvien.mabv where tt=1";
+
+				//echo $string;
+				$table = mysqli_query($con,$string);
+				$p -> dongketnoi($con);
+				//var_dump($table);
+				return $table;
+			}else{
+				return false;
+			}
+		}
 		
 		
 		function xem_nongsan(){
@@ -60,6 +76,19 @@
 				return false;
 			}
 		}
+		function xem_nongsan_duocduyetban(){
+			//$aa=mysqli_connect("localhost","admin","1234");
+			$p = new clsketnoi();
+			if($p -> ketnoiDB($con)){
+				$string = "SELECT * FROM (nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai where trangthai = 'daduyet' and  mancc = '".$_SESSION['mancc']."'";
+				$table = mysqli_query($con,$string);
+				$p -> dongketnoi($con);
+				//var_dump($table);
+				return $table;
+			}else{
+				return false;
+			}
+		}
 		function xem_nongsan_chuakiemdinh(){
 			//$aa=mysqli_connect("localhost","admin","1234");
 			$p = new clsketnoi();
@@ -78,6 +107,19 @@
 			$p = new clsketnoi();
 			if($p -> ketnoiDB($con)){
 				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'chokiemdinh'";
+				$table = mysqli_query($con,$string);
+				$p -> dongketnoi($con);
+				//var_dump($table);
+				return $table;
+			}else{
+				return false;
+			}
+		}
+		function xem_nongsan_dakiemdinh(){
+			//$aa=mysqli_connect("localhost","admin","1234");
+			$p = new clsketnoi();
+			if($p -> ketnoiDB($con)){
+				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'dakiemdinh'";
 				$table = mysqli_query($con,$string);
 				$p -> dongketnoi($con);
 				//var_dump($table);
@@ -262,6 +304,22 @@
 				$p->dongketnoi($con);
 				return $kq;
 			}else{	
+				return false;
+			}
+		}
+
+		function capnhatthongtin_hinh($manongsan,$hinh){
+			$p=new clsketnoi();
+			if($p->ketnoiDB($con)){
+				$querystring="update nongsan ";
+				$querystring .= " set hinhanh='".$hinh."'";
+				$querystring .= " where manongsan=".$manongsan;
+				echo $querystring;
+				$kq=mysqli_query($con,$querystring);
+				echo $querystring;
+				$p->dongketnoi($con);
+				return $kq;
+			}else{
 				return false;
 			}
 		}

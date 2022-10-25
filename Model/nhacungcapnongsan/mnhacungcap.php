@@ -31,6 +31,20 @@
 				return false;
 			}
 		}
+		function capnhatthongtin_hinh($mancc,$hinh){
+			$p=new clsketnoi();
+			if($p->ketnoiDB($con)){
+				$querystring="update nhacungcap ";
+				$querystring .= " set hinh='".$hinh."'";
+				$querystring .= " where mancc=".$mancc;
+				$kq=mysqli_query($con,$querystring);
+				echo $querystring;
+				$p->dongketnoi($con);
+				return $kq;
+			}else{
+				return false;
+			}
+		}
 		function capnhatthongtinncc($mancc,$tenncc,$sdt,$emai,$diachi,$tinh,$quan,$phuong){
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){

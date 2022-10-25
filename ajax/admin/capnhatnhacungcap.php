@@ -7,21 +7,19 @@ mysqli_set_charset($connection, 'utf8');
     {   
         $id = $_POST['update_id'];
         
-        $ten = $_POST['ten'];
+        $nguoidaidien = $_POST['nguoidaidien'];
         $sdt = $_POST['sdt'];
-        $chucvu = $_POST['chucvu'];
+        $email = $_POST['email'];
 
-        $query = "UPDATE nhanvien SET tennhanvien='$ten', sdt='$sdt', chucvu='$chucvu' WHERE manhanvien='$id'";
+        $query = "UPDATE nhacungcap SET tennguoidaidien='$nguoidaidien', sdt='$sdt', email='$email' WHERE mancc='$id'";
         $query_run = mysqli_query($connection, $query);
         echo $query;
         if($query_run)
         {
-            echo '<script> alert("Nhân viên này đã được cập nhật thành công"); 
-            </script>';
-            header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
-        echo "<script>
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
-        </script>";
+            echo "<script>alert('Thông tin nhà cung cấp đã được cập nhật')</script>";
+       echo "<script>
+            window.location.href='../../View/admin/trangchuadmin.php?quanlynhacungcap';
+        </script>";  
     
         }
         else

@@ -40,7 +40,7 @@
 				}    
 			}else{
 				$p = new madmin();
-				$update = $p -> capnhatthongtinadmin($maadmin,$tenadmin,$sdt,$emai,$diachi,$tinh,$quan,$phuong);
+				$update = $p -> capnhatthongtinadmin($maadmin,$tenadmin,$sdt,$email,$diachi,$tinh,$quan,$phuong);
 				var_dump($update);
 				if($update){
 					return 1;

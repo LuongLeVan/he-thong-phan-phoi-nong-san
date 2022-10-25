@@ -9,6 +9,12 @@
 			//var_dump($table);
 			return $table;
 		}
+		function hienthi_donhang(){
+			$p = new mnongsan();
+			$table  = $p -> xem_donhang();
+			//var_dump($table);
+			return $table;
+		}
 		function hienthi_nongsan(){
 			$p = new mnongsan();
 			$table  = $p -> xem_nongsan();
@@ -27,9 +33,21 @@
 			//var_dump($table);
 			return $table;
 		}
+		function hienthi_nongsan_duocduyetban(){
+			$p = new mnongsan();
+			$table  = $p -> xem_nongsan_duocduyetban();
+			//var_dump($table);
+			return $table;
+		}
 		function hienthi_nongsan_chuakiemdinh(){
 			$p = new mnongsan();
 			$table  = $p -> xem_nongsan_chuakiemdinh();
+			//var_dump($table);
+			return $table;
+		}
+		function hienthi_nongsan_dakiemdinh(){
+			$p = new mnongsan();
+			$table  = $p -> xem_nongsan_dakiemdinh();
 			//var_dump($table);
 			return $table;
 		}
@@ -117,6 +135,30 @@
 			}else{
 				return 0;
 
+			}
+		}
+		function capnhat_thongtin_hinh($manongsan,$file,$tenanh,$loaianh,$sizeanh){
+			if($tenanh !=""){
+				if($loaianh == "image/png" || $loaianh == "image/jpeg" ){
+					if($sizeanh<=2*1024*1024){
+						if(move_uploaded_file($file,"../../img/".$tenanh)){
+							$p= new mnhacungcap();
+							$ins = $p->capnhatthongtin_hinh($manongsan,$tenanh);
+							var_dump($ins);
+							if($ins || $ins2){
+								return 1;
+							}else{
+								return 0; //không   thể insert
+							}
+						}else {
+							return -1; //Không thể upload
+						}
+					}else{
+						return -2; //File quá lớn
+					}
+				}else{
+					return -3; //Không đúng định dạng file
+				}    
 			}
 		}
     }

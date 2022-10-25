@@ -34,7 +34,7 @@ function count_all_member()
 function get_all_member($limit, $start)
 {
     global $conn;
-    $sql = 'select * from nongsan limit '.(int)$start . ','.(int)$limit;
+    $sql = 'select * from nongsan where trangthai="daduyet" limit '.(int)$start . ','.(int)$limit;
     $query = mysqli_query($conn, $sql);
      
     $result = array();

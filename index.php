@@ -88,6 +88,7 @@ if(isset($_SESSION['login_id'])){
   .page_li, .page_a, .page_span{
     position: relative;
     left: 350px;
+    bottom: 10px;
   }
   .list-item {
     position: relative;
@@ -142,7 +143,8 @@ if(isset($_SESSION['login_id'])){
                                               echo '<a href="#">Giỏ hàng</a>';
                                           echo '</li>';
                                           echo '<li class="navbar__user-item navbar__user-item-sepharator">';
-                                              echo '<a href="google_login/logout.php">Đăng xuất</a>';
+                                          echo '<a href="View/login_logout/vdangxuat.php">Đăng xuất</a>';
+
                                           echo '</li>';
                                         echo '</ul>';
                                     echo '</li>';
@@ -195,7 +197,7 @@ if(isset($_SESSION['login_id'])){
                                   echo '</ul>';
                         
                                   }elseif($_SESSION['role']==3){
-                                    include('View/adoanhnghiep/vdndoanhnghiep.php');
+                                    //include('View/adoanhnghiep/vdndoanhnghiep.php');
                                     echo '<ul class="navbar__list" >';
                                       echo '<li class="navbar__item navbar__user">';
                                         echo "<img src='img/".$_SESSION['hinh']."'  class='navbar__user-img' width='30'>";
@@ -208,7 +210,7 @@ if(isset($_SESSION['login_id'])){
                                                 echo '<a href="#">Địa chỉ của tôi</a>';
                                             echo '</li>';
                                             echo '<li class="navbar__user-item">';
-                                                echo '<a href="#">Giỏ hàng</a>';
+                                                echo '<a href="View/admin/trangchuadmin.php">Truy cập trang admin</a>';
                                             echo '</li>';
                                             echo '<li class="navbar__user-item navbar__user-item-sepharator">';
                                                 echo '<a href="View/login_logout/vdangxuat.php">Đăng xuất</a>';
@@ -238,7 +240,29 @@ if(isset($_SESSION['login_id'])){
                                           echo '</ul>';
                                       echo '</li>';
                                     echo '</ul>';
-                                  }
+                                  }elseif($_SESSION['role']==5){
+                                  include('View/akhachhang/vdnkhachhang.php');
+                                  echo '<ul class="navbar__list" >';
+                                    echo '<li class="navbar__item navbar__user">';
+                                      echo "<img src='img/".$_SESSION['hinh']."'  class='navbar__user-img' width='30'>";
+                                      echo '<span class="navbar__user-name">'.$_SESSION['tenkhachhang'].'</span>';
+                                      echo '<ul class="navbar__user-menu">';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Tài khoản</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Địa chỉ của tôi</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">Giỏ hàng</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item navbar__user-item-sepharator">';
+                                              echo '<a href="View/login_logout/vdangxuat.php">Đăng xuất</a>';
+                                          echo '</li>';
+                                        echo '</ul>';
+                                    echo '</li>';
+                                  echo '</ul>';
+                                }
                                 else{
                                    echo $user['tenkhachhang'];
                                 }
@@ -487,7 +511,10 @@ if(isset($_SESSION['login_id'])){
                               <a href="#">
                                 <button class="btn-btn-buy">
                                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                  <span>Mua hàng</span>
+                                  <span>Thêm vào giỏ hàng</span>
+                                   <?php echo '<button class="btn btn-success" >'."<a  style='color:white; text-decoration: none' href='trangsanpham.php?chitietnongsan=".$item["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>"; ?>
+                                   <?php echo "<a  style='color:white; text-decoration: none' href='blog/chitietbaiblog.php?chitietnongsan=".$item["manongsan"]."'>"."Xem nguồn gốc"."</a>"; ?>
+
                                 </button>
                               </a>
                               <div class="card-body">
@@ -549,7 +576,13 @@ if(isset($_SESSION['login_id'])){
                                 html += '<a href="#">';
                                 html += ' <button class="btn-btn-buy">';
                                 html += '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
-                                html += '<span>Mua hàng</span>';
+                                html += '<span>Thêm vào giỏ hàng</span>';
+                                html += '</button>';
+                                html += '<button class="btn btn-success" >';
+
+                                html += '<a  style="color: #fff;text-decoration: none" href="trangsanpham.php?chitietnongsan=' + item["manongsan"]+ '">Xem chi tiết</a>';
+
+
                                 html += '</button>';  
                                 html += '</a>';
                                 html += '<div class="card-body">';

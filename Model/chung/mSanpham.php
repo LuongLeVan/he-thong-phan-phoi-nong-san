@@ -2,151 +2,77 @@
 	
 	include_once("ketnoi.php");
 	
-	class mSanpham{
-		function get_sanpham(){
-			$conn;
+	class msanpham{
+		function SelectAllchitietBynongsan($comp){
+			$con;
 			$p = new clsketnoi();
-			if($p -> ketnoiDB($conn)){
-				$string = "SELECT * FROM nongsan";
-				$table = mysqli_query($conn,$string);
-				$p -> dongketnoi($conn);
+			if($p->ketnoiDB($con)){
+				$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$comp;
+				//echo $string;
+				$table = mysqli_query($con,$string);
+				$p->dongketnoi($con);
 				return $table;
 			}else{
 				return false;
 			}
 		}
-		
-		//phân trang
-		function get_sanpham_phantrang($start,$limit){
-			$conn;
+		function hienthichitietsanpham($comp){
+			$con;
 			$p = new clsketnoi();
-			if($p -> ketnoiDB($conn)){
-				$string = "SELECT * FROM nongsan order by manongsan DESC LIMIT $start, $limit";
-				$table = mysqli_query($conn,$string);
-				//var_dump($table);
-				$p -> dongketnoi($conn);
+			if($p->ketnoiDB($con)){
+				$string = "select * from (nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join qrcode on nongsan.manongsan = qrcode.manongsan where nongsan.manongsan= ".$comp;
+				//echo $string;
+				$table = mysqli_query($con,$string);
+				$p->dongketnoi($con);
 				return $table;
 			}else{
 				return false;
 			}
 		}
-		//
-		function get_product_by_hangsua($mahs){
-			$conn;
+		function xemchitietdathang($comp){
+			$con;
 			$p = new clsketnoi();
-			if($p -> ketnoiDB($conn)){
-				$string = "SELECT * FROM nongsan WHERE manhacungcap ='".$mahs."'";
+			if($p->ketnoiDB($con)){
+				$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$comp;
 				//echo $string;
-				$table = mysqli_query($conn,$string);
-				//var_dump($table);
-				$p -> dongketnoi($conn);
+				$table = mysqli_query($con,$string);
+				$p->dongketnoi($con);
 				return $table;
 			}else{
 				return false;
 			}
 		}
-		///hàm JOIN sanpham voi hangsua
-		function join_sanpham_hangsua($masua){
-			$conn;
-			$p = new ketnoi();
-			if($p-> moketnoi($conn)){
-				$string = "SELECT * FROM sanpham JOIN hangsua "; 
-				$string .= "WHERE sanpham.maHS = hangsua.maHS AND masua =".$masua;
-				$kq = mysql_query($string);
+		function tao_donhangkhachhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan){
+			$con;
+			$p = new clsketnoi();
+			if($p->ketnoiDB($con)){
+				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, soluong, hinhthucthanhtoan) values";
+				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$soluong','$thanhtoan')";
+
 				//echo $string;
-				$p -> dongketnoi($conn);
+				$kq = mysqli_query($con,$string);
+				echo $string;
+				//var_dump($kq);
+				$p->dongketnoi($con);
 				return $kq;
-			}else{
+			}else{	
 				return false;
 			}
 		}
-		//hàm insert sản phẩm mới
-		function insert_sua($tensua,$loaisua,$mahs,$trongluong,$dongia,$thanhphan,$loiich,$name){
-			$conn;
-			$p = new ketnoi();
-			if($p -> moketnoi($conn)){
-				$string = "INSERT INTO sanpham (tensua, loaisua, trongluong, dongia, thanhphan, loiich, hinhanh,maHS) values";
-				$string .= " (N'".$tensua."',N'".$loaisua."',".$trongluong.",".$dongia.",N'".$thanhphan."',N'".$loiich."'";
-				$string .= ",N'".$name."',N'".$mahs."')";
+		function tao_donhangncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan){
+			$con;
+			$p = new clsketnoi();
+			if($p->ketnoiDB($con)){
+				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, soluong, hinhthucthanhtoan) values";
+				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$soluong','$thanhtoan')";
+
 				//echo $string;
-				$kq = mysql_query($string);
-				$p -> dongketnoi($conn);
+				$kq = mysqli_query($con,$string);
+				echo $string;
+				//var_dump($kq);
+				$p->dongketnoi($con);
 				return $kq;
-			}else{
-				return false;
-			}
-		}
-		//hàm thông báo thành công
-		function thongbao_sanpham_thanhcong($masua){
-			$conn;
-			$p = new ketnoi();
-			if($p-> moketnoi($conn)){
-				$string = "SELECT * FROM sanpham JOIN hangsua "; 
-				$string .= "WHERE sanpham.maHS = hangsua.maHS AND masua = ".$masua;
-				$kq = mysql_query($string);
-				//echo $string;
-				$p -> dongketnoi($conn);
-				return $kq;
-			}else{
-				return false;
-			}
-		}
-		//tìm max mã
-		function max_sanpham(){
-			$conn;
-			$p = new ketnoi();
-			if($p -> moketnoi($conn)){
-				$string = "SELECT MAX(masua) as max FROM sanpham";
-				$kq = mysql_query($string);
-				$p -> dongketnoi($conn);
-				return $kq;
-			}else{
-				return false;
-			}
-		}
-		///update_sanpham
-		function update_sanpham($masua,$tensua,$loaisua,$trongluong,$dongia,$thanhphan,$loiich,$hinh,$mahs){
-			$conn;
-			$p = new ketnoi();
-			if($hinh !=""){
-				if($p -> moketnoi($conn)){
-						$string = "UPDATE sanpham ";
-						$string .= " SET tensua = N'".$tensua."', loaisua = '".$loaisua."', trongluong = ".$trongluong.", dongia =".$dongia.",thanhphan = '".$thanhphan."',loiich = '".$loiich."',hinhanh='".$hinh."' ";
-						$string .= " WHERE masua =".$masua;
-						echo $string;
-						$kq = mysql_query($string);
-						//var_dump($kq);
-						$p -> dongketnoi($conn);
-						return $kq;
-					}else{
-						return false;
-					}
-			
-			}else{
-				if($p -> moketnoi($conn)){
-					$string = "UPDATE sanpham ";
-					$string .= " SET tensua = N'".$tensua."', loaisua = '".$loaisua."', trongluong = ".$trongluong.", dongia =".$dongia.",thanhphan = '".$thanhphan."',loiich = '".$loiich."' ";
-					$string .= " WHERE masua =".$masua;
-					echo $string;
-					$kq = mysql_query($string);
-					//var_dump($kq);
-					$p -> dongketnoi($conn);
-					return $kq;
-				}else{
-					return false;
-				}
- 			}
-		}
-		////hàm xóa sản phẩm trong table sản phẩm
-		function delete_sanpham($masua){
-			$conn;
-			$p = new ketnoi();
-			if($p -> moketnoi($conn)){
-				$string = "DELETE FROM sanpham WHERE masua =".$masua;
-				$kq = mysql_query($string);
-				$p -> dongketnoi($conn);
-				return $kq;
-			}else{
+			}else{	
 				return false;
 			}
 		}

@@ -27,8 +27,10 @@
 						if(move_uploaded_file($file,"../../img/".$tenanh)){
 							$p= new mnhacungcap();
 							$ins = $p->capnhatthongtin($mancc,$tenncc,$sdt,$emai,$diachi,$tinh,$quan,$phuong,$tenanh);
+							$ins2 = $p->capnhatthongtin_hinh($mancc,$tenanh);
+							var_dump($ins2);
 							var_dump($ins);
-							if($ins){
+							if($ins || $ins2){
 								return 1;
 							}else{
 								return 0; //không   thể insert

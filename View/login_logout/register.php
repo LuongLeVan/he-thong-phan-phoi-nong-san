@@ -29,7 +29,23 @@
       <p class="login-box-msg">Đăng Ký Thành viên</p>
       <form action="../../index.html" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="username" placeholder="Đăng ký bằng số điện thoại hoặc email">
+          <input type="text" class="form-control" name="username" placeholder="Đăng ký bằng số điện thoại">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="tenkhachhang" placeholder="Tên tài khoản">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="email" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -102,15 +118,18 @@
     if(isset($_REQUEST["btnsubmit"])&&($_REQUEST['password'] !="")){
         //$Id=rand(1,10);
         $username=$_REQUEST["username"];
+        $tenkhachhang=$_REQUEST["tenkhachhang"];
+        $email=$_REQUEST["email"];
         $password=md5($_REQUEST["password"]);
         $loai=$_REQUEST["nguoidung"];
         $_SESSION=$loai;
         $p=new ctaikhoan();
         $table=$p->taotaikhoan($username,$password,$loai);
+        $table2=$p->taokhachhang($username,$tenkhachhang,$username,$email);
         if($table==1){
             echo "<script>alert('thành công')</script>";
             //echo header("refresh:0; url='index.php?ctk'");
-            echo "<script>window.location.href='index.php?ctk'</script>";
+            echo "<script>window.location.href='login.php'</script>";
         }else{
             echo "error";
         }

@@ -15,6 +15,9 @@
 				//$_SESSION['mabv'] = $row["mabv"];
 				$_SESSION['tenncc'] = $row["tenncc"];
 				$_SESSION['hinh'] = $row["hinh"];
+				$_SESSION['email'] = $row["email"];
+				$_SESSION['sdt'] = $row["sdt"];
+
 
 				//echo $_SESSION["mabv"];
 			

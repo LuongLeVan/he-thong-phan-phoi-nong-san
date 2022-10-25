@@ -1,6 +1,6 @@
 <?php
 
-	include("../../../Controller/nhanvien/cdnnhanvien.php");
+	include("Controller/nhanvien/cdnnhanvien.php");
 
 	$p = new cnhanvien();
 	$table = $p-> view_nhanvien();

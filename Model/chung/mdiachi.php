@@ -40,6 +40,18 @@
 				return false;
 			}
 		}
+		function xem_diachi_khachhang(){
+			$p = new clsketnoi();
+			if($p -> ketnoiDB($con)){
+				$string = "SELECT tentinh, tenquan, tenphuong, diachi FROM ((khachhang join tinh on khachhang.matinh = tinh.matinh) join quan on khachhang.maquan = quan.maquan) join phuong on khachhang.maphuong = phuong.maphuong WHERE makhachhang = '".$_SESSION['makhachhang']."' ";
+				$table = mysqli_query($con,$string);
+				$p -> dongketnoi($con);
+				//var_dump($table);
+				return $table;
+			}else{
+				return false;
+			}
+		}
 
 	}	
 

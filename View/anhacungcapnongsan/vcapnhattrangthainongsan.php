@@ -42,6 +42,36 @@
             window.location.href='trangquanly.php?guiyeucauhotro';
         </script>";  
     }
+    if(isset($_REQUEST["capnhathinhanhnongsan"])){
+      $manongsan=$_REQUEST["capnhathinhanhnongsan"];
+      $file=$_FILES["fflie"]["tmp_name"];
+      $type=$_FILES["fflie"]["type"];
+      $name=$_FILES["fflie"]["name"];
+      $size=$_FILES["fflie"]["size"];
+      //echo $tt;
+      $p=new cnongsan();
+      $kp=$p->capnhat_thongtin_hinh($manongsan,$file,$name,$type,$size);
+      if($kp==1){
+          echo "<script>
+              alert('Thông tin đã được cập nhật');
+              window.location.href='trangquanly.php?capnhatthongtin';
+          </script>"; 
+      }elseif ($kp==0) {
+          echo "<script>alert('Không thể Update')</script>";
+      }
+      elseif ($kp==-1) {
+          echo "<script>alert('Không thể upload')</script>";
+      }elseif ($kp==-2) {
+          echo "<script>alert('size quá lớn')</script>";
+      }elseif ($kp==-3) {
+          echo "<script>alert('file không đúng dạng')</script>";
+      }
+      else {
+          echo "error";
+      }  
+    }
+    
+    
                                                                                                                                                                                                                                                                                                                                                                                                               
 ?>
 

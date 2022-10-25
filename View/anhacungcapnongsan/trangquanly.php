@@ -74,7 +74,8 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+            <?php '<img src="../../img/'.$_SESSION["hinh"].'" alt="User Avatar" class="img-size-50 img-circle mr-3">'; ?>
+
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -90,7 +91,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <?php '<img src="../../img/'.$_SESSION["hinh"].'" alt="User Avatar" class="img-size-50 img-circle mr-3">'; ?>
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -170,13 +171,24 @@
       <img src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Nông sản Việt</span>
     </a>
-
+    <?php
+              if (isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
+                //echo 1123;
+                //echo $_SESSION['role'];
+                if($_SESSION['role']==1){
+                  include('vnhacungcap.php');
+                }
+              }
+            ?> 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
+      
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <?php '<img src="../../img/'.$_SESSION["hinh"].'" class="img-circle elevation-2" alt="User Image">'; ?>
+      
+          <!-- <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="info">
             
@@ -186,7 +198,8 @@
                 //echo 1123;
                 //echo $_SESSION['role'];
                 if($_SESSION['role']==1){
-                  include('vnhacungcap.php');
+                  //include('vnhacungcap.php');
+                  echo $_SESSION['tenncc'];
                 }
               }
             ?> 
@@ -307,7 +320,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="./duyettinnhucau.html" class="nav-link">
+            <?php
+                  echo '<a href="trangquanly?donhang" class="nav-link">';
+              ?>
                 <i class="far fa-circle nav-icon"></i>
                 <p>Đơn hàng</p>
               </a>
@@ -353,7 +368,7 @@
                 include("vdangbannongsan.php");
                }elseif(isset($_REQUEST["taomaqr"])){
                 include("vtaomaqr.php");
-               }elseif(isset($_REQUEST["dangbannongsan"])){
+               }elseif(isset($_REQUEST["dangbannongsan"]) /*|| isset($_REQUEST["capnhathinhanhnongsan"])*/){
                 include("vcapnhattrangthainongsan.php");
                }elseif(isset($_REQUEST["guiyeucauhotro"])){
                 include("vyeucauhotronongsan.php");
@@ -363,6 +378,8 @@
                 include("vkiemdinhnongsan.php");
                }elseif(isset($_REQUEST["xemgiaykiemdinh"])){
                 include("giaykiemdinhnongsan.php");
+               }elseif(isset($_REQUEST["donhang"])){
+                include("vquanlydonhang.php");
                }else{
                 include("vquanlythongtinnongsan.php");
                }

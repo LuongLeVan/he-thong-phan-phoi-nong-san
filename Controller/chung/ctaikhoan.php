@@ -18,6 +18,16 @@
                 return 0; //không   thể insert
 		    }
         }
+        function taokhachhang($username,$tenkhachhang,$sdt,$email){
+            $p= new mtaikhoan();
+            $table = $p->dangkytaikhoan_khachhang($username,$tenkhachhang,$sdt,$email);
+            //var_dump($ins);
+            if($table){
+            	return 1;
+            }else{
+                return 0; //không   thể insert
+		    }
+        }
 		function select_bv_byid($loaibv){
             $p= new mtaikhoan();
             $table = $p->select_bv_id($loaibv);

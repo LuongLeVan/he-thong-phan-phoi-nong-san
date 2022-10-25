@@ -114,7 +114,7 @@
 
                               //echo '<td>'.$row["trangthai"].'</td>';
                               echo '<td>';
-                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='vchitietsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
+                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                               echo '</td>';
                               //echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>';
                               echo '<td>';

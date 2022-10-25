@@ -62,7 +62,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách nông sản chưa bán</nav></h3> 
+                <h3 class="card-title">Danh sách nông sản chưa đăng bán</nav></h3> 
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -139,6 +139,76 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
+                <h3 class="card-title">Danh sách nông sản dã đăng bán</h3> 
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+              <form action="#" method="post" enctype="multipart/form-data">
+                  <?php
+
+                   // include("../../Controller/cnongsan.php");
+
+                    $p = new cnongsan();
+                    $table = $p-> hienthi_nongsan_duocduyetban();
+                    if($table){
+                      $dem = 0;
+                      echo '<table class="table table-hover text-nowrap">';
+                      echo '<thead>';
+                        echo '<tr>';
+                          echo '<th>Mã nông sản</th>';
+                          echo '<th>Tên nông sản</th>';
+                          //echo '<th>Người tạo</th>';
+                          echo '<th>Trạng thái</th>';
+                          echo '<th>Hình</th>';
+                          echo '<th>Tác vụ</th>';
+                      echo '</tr>';
+                     echo '</thead>';
+                        while($row = mysqli_fetch_assoc($table)){
+                          if ($dem == 0){
+                            echo '<tbody>';
+                            echo "<tr>";
+                           }
+                              echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'">'.'</td>';
+                              echo '<td>'.'<input type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
+                              //<input type="text" name="tenbn" value="'.$row["tenbn"].'">
+                              //echo '<td>'.$row["tenncc"].'</td>';
+                              echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                              
+                              //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
+                              echo '<td>'."<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>".'</td>';
+                              echo "<td><a href='../../trangsanpham.php?chitietnongsan=".$row['manongsan']."'>Xem chi tiết bài đăng</a>";
+                              echo '</td>';
+                              $dem++;
+                              if ($dem %1 ==0) {
+                                echo '</tr>';
+                                echo '</tbody>';
+                                  $dem = 0;
+                              }
+                      }
+                      echo '</table>';
+                    }
+                  ?>
+                  </form>
+              </div>
+              
+            </div>
+
+            <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
                 <h3 class="card-title">Danh sách nông sản bị từ chối</h3> 
 
                 <div class="card-tools">
@@ -204,8 +274,6 @@
               </div>
               
             </div>
-
-
             
             <!-- /.card -->
           </div>

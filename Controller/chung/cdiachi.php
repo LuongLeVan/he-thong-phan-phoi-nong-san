@@ -20,6 +20,12 @@
 			$table  = $p -> xem_diachi_nhanvien();
 			//var_dump($table);
 			return $table;
+		}
+		function hienthi_diachi_khachhang(){
+			$p = new mdiachi();
+			$table  = $p -> xem_diachi_khachhang();
+			//var_dump($table);
+			return $table;
 		} 
 
     }

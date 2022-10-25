@@ -176,7 +176,20 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <?php
+              if (isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
+                //echo 1123;
+                //echo $_SESSION['role'];
+                if($_SESSION['role']==3){
+                  include('vadmin.php');
+                  //echo $_SESSION['tenadmin'];
+                 echo "<img class='img-circle elevation-2' alt='User Image' src='../../img/".$_SESSION['hinh']."'/>"; 
+
+                }
+              }
+            ?> 
+
+          <!-- <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="info">
             
@@ -186,7 +199,8 @@
                 //echo 1123;
                 //echo $_SESSION['role'];
                 if($_SESSION['role']==3){
-                  include('vadmin.php');
+                  //include('vadmin.php');
+                  echo $_SESSION['tenadmin'];
                 }
               }
             ?> 
@@ -261,26 +275,7 @@
 
 
         <!-- Phân Quyền + Thống kê báo cáo -->
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Khác
-              <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">1</span>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-
-            <li class="nav-item">
-              <a href="./thongkeadmin.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Thống kê</p>
-              </a>
-            </li>
-
-          </ul>
-        </li>
+        
         
 
         <!-- Phân quyền + thống kê báo cáo -->
@@ -329,6 +324,29 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Thống kê
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right">1</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+            <?php
+                  echo '<a href="trangchuadmin?thongkenguoidung" class="nav-link">';
+              ?>
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thống kê người dùng</p>
+                
+              </a>
+            </li>
+
+            </ul>
+          </li>
         <!-- Duyệt bài đăng -->
       </ul>
     </nav>
@@ -356,6 +374,8 @@
                 include("vquanlythongtinnhacungcap.php");
               }elseif(isset($_REQUEST["capnhatthongtincanhan"])){
                 include("vcapnhatthongtinadmin.php");
+              }elseif(isset($_REQUEST["thongkenguoidung"])){
+                include("DEMO_DASHBOARD/index.php");
               }else{
                 include("vquanlythongtinnhanvien.php");
               }
@@ -363,10 +383,6 @@
 <!-- Chỗ này include nội dung vô -->
   
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

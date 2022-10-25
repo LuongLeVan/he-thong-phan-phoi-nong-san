@@ -15,7 +15,7 @@
 		//print_r($row);
 		//echo "</pre>";
 			while($row = mysqli_fetch_array($table)){
-				echo "<b><a href='trangchuadmin.php?maadmin=".$row['maadmin']."'>".$row['tenadmin']."</a></b>";
+				//echo "<b><a href='trangchuadmin.php?maadmin=".$row['maadmin']."'>".$row['tenadmin']."</a></b>";
 				$_SESSION['maadmin'] = $row['maadmin'];
 				$_SESSION['hinh'] = $row['hinh'];
 				$_SESSION['email'] = $row['email'];

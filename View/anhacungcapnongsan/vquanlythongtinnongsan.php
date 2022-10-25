@@ -19,7 +19,25 @@
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../dist/js/ajaxdanhmuc.js"></script>
+    <style>
+        input[type="file"] {
+        display: none;
+        }
+    .custom-file-upload {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom:50px;
+        color: blue;
 
+    }
+    .update_img {
+        position: relative;
+        
+    }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -48,6 +66,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    <form action="#" method="post" enctype="multipart/form-data">
 
     <!-- Main content -->
     <section class="content">
@@ -94,9 +113,9 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
-                                <th scope="col">Trọng lượng</th>
-                                <th scope="col">Kích thước</th>
-                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col" style="display: none;">Trọng lượng</th>
+                                <th scope="col" style="display: none;">Kích thước</th>
+                                <th scope="col">Số lượng</th>
                                 <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
@@ -110,15 +129,30 @@
             ?>
                         <tbody>
                             <tr>
-                                <td> <?php echo $row['manongsan']; ?> </td>
+                            <td> <?php echo $row['manongsan']; ?> </td>
+
+                             <?php //echo '<td><input style="border: none;" type="text" name="manongsan" value="'.$row['manongsan'].'"></td>'; ?>
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
-                                <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
-                <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
-                <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
-                                <td> <?php echo $row['trongluong']; ?> </td>
-                                <td> <?php echo $row['kichthuoc']; ?> </td>
-                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+                                <td class='update_img'> <?php echo "<img width=100px height=100px src='../../img/".$row['hinhanh']."'/>"; ?> 
+                                    <div>
+                                        <label for="file-upload" class="custom-file-upload">
+                                        <i></i>
+                                        </label>
+                                        <input name='fflie'  id="file-upload" type="file"/>
+                                        
+                                        <?php //echo "<a href='trangquanly.php?capnhathinhanhnongsan=".$row['manongsan']."'>Cập nhật</a>";?>
+                                        <!-- <input type="submit"  name="btnsubmit" class="btn btn-success" value="cập nhật" id="add"> -->
+
+
+
+                                    </div>
+                                </td>
+              
+                                
+                                <td style="display: none;"> <?php echo $row['trongluong']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['kichthuoc']; ?> </td>
+                                <td> <?php echo $row['soluong']; ?> </td>
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
 
 
@@ -128,7 +162,7 @@
                                 <td> <?php// echo $row['course']; ?> </td>
                                 <td> <?php// echo $row['contact']; ?> </td> -->
                                 <td>
-                                    <button type="button" class="btn btn-info viewbtn"> Chi tiết </button> | 
+                                    <!-- <button type="button" class="btn btn-info chitietbtn"> Chi tiết </button> |  -->
                                     <button type="button" class="btn btn-success editbtn"> Cập nhật </button> | 
                                     <button type="button" class="btn btn-danger deletebtn"> Xóa </button>
                                 </td>
@@ -151,9 +185,10 @@
           </div>
         </div>
         </div>
-        <!-- /.row -->
+       
       </div><!-- /.container-fluid -->
     </section>
+    </form>
     <!-- /.content -->
   </div>
 
@@ -301,6 +336,81 @@
             </div>
         </div>
     </div>
+
+
+<!-- Chi tiết nông sản nông sản -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Cập nhật nông sản </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="../../ajax/nhacungcapnongsan/capnhatnongsan.php" method="POST">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" name="update_id" id="update_id">
+
+                        <div class="form-group">
+                            <label> Tên nông sản </label>
+                            <input type="text" name="fname" id="fname" class="form-control"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <label> Số lượng </label>
+                            <input type="text" name="soluong" id="soluong" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Kích thước </label>
+                            <input type="text" name="contact" id="contact" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Mô tả </label>
+                            <input type="text" name="mota" id="mota" class="form-control">
+                        </div>
+
+                        <div class="col-md-6"><label class="labels">Chọn danh mục nông sản</label>
+                    <select name="danhmuc" class="form-control danhmuc" id="select">
+                        <option value="">Danh mục nông sản</option>
+                        <?php
+                            
+                            $sql = "select * from danhmucnongsan";
+                            $query = mysqli_query($conn, $sql);
+                            $num = mysqli_num_rows($query);          
+                            if($num >0){
+                                while($row = mysqli_fetch_array($query)){
+
+                        ?>
+                            <option value="<?php echo $row['madanhmuc'];?>"><?php echo $row['tendanhmuc'];?></option>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </select>
+                    </div>
+                    <div class="col-md-6"><label class="labels">Chọn loại nông sản</label>
+                    <select name="loai" class="form-control loai" id="select">
+                        <option value="">loại nông sản</option>
+                    </select>
+                    </div>
+
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Xóa nông sản-->
     <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -466,6 +576,66 @@
         });
     </script>
 
+
+    <script>
+        $(document).ready(function () {
+
+            $('.chitietbtn').on('click', function () {
+
+                $('#editmodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#update_id').val(data[0]);
+                $('#fname').val(data[1]);
+                $('#lname').val(data[2]);
+                $('#soluong').val(data[6]);
+                $('#contact').val(data[5]);
+                $('#mota').val(data[7]);
+
+            });
+        });
+    </script>
+
+
+<?php
+// include_once("../../Controller/chung/cnongsan.php");
+// if(isset($_REQUEST["btnsubmit"])){
+//     $manongsan=$_REQUEST["manongsan"];
+//     echo $manongsan;
+//     $file=$_FILES["fflie"]["tmp_name"];
+//     $type=$_FILES["fflie"]["type"];
+//     $name=$_FILES["fflie"]["name"];
+//     $size=$_FILES["fflie"]["size"];
+    
+//     $p=new cnongsan();
+//     $kp=$p->capnhat_thongtin_hinh($manongsan,$file,$name,$type,$size);
+//     if($kp==1){
+//         echo "<script>
+//             alert('Thông tin đã được cập nhật');
+//             window.location.href='trangquanly.php?capnhatthongtin';
+//         </script>"; 
+//     }elseif ($kp==0) {
+//         echo "<script>alert('Không thể Update')</script>";
+//     }
+//     elseif ($kp==-1) {
+//          echo "<script>alert('Không thể upload')</script>";
+//     }elseif ($kp==-2) {
+//          echo "<script>alert('size quá lớn')</script>";
+//     }elseif ($kp==-3) {
+//         echo "<script>alert('file không đúng dạng')</script>";
+//     }
+//     else {
+//         echo "error";
+//     }
+// }
+?>
  
                   </body>
                   </html>

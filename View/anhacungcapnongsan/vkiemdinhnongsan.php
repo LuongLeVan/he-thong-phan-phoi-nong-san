@@ -84,7 +84,7 @@
                     include("../../Controller/chung/cnongsan.php");
 
                     $p = new cnongsan();
-                    $table = $p-> hienthi_nongsan_chuakiemdinh();
+                    $table = $p-> hienthi_nongsan_dakiemdinh();
                     if($table){
                       $dem = 0;
                       echo '<table class="table table-hover text-nowrap">';

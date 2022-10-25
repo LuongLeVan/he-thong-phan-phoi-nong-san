@@ -213,7 +213,7 @@
                     </button>
                 </div>
 
-                <form action="../../Model/capnhatnhanvien.php" method="POST">
+                <form action="../../ajax/admin/capnhatnhacungcap.php" method="POST">
 
                     <div class="modal-body">
 
@@ -447,8 +447,10 @@
 
                 console.log(data);
                 $('#update_id').val(data[0]);
-                $('#nguoidaidien').val(data[3]);
-                $('#sdt').val(data[3]);                
+                $('#nguoidaidien').val(data[1]);
+                $('#sdt').val(data[3]);    
+                $('#email').val(data[4]);    
+                            
             });
         });
     </script>

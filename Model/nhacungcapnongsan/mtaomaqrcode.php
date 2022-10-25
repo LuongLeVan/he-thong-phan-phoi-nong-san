@@ -18,9 +18,10 @@ mysqli_set_charset($connection, 'utf8');
 
 	$execute = mysqli_query($connection,$query);
 	 while($row = mysqli_fetch_array($execute)){
-		 $fullname = $_SESSION['id']."<br>";
-		 $fullname .= $row['tennongsan']."<br>";
-		 $fullname .= $row['soluong']."<br>";
+		$fullname = 'https://nsvietnam.000webhostapp.com/?manongsan='.$row["manongsan"];
+		 //$fullname = $_SESSION['id'];
+		// $fullname .= $row['tennongsan'];
+		 //$fullname .= $row['soluong'];
 	
 	 }
 	

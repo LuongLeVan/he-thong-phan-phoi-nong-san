@@ -96,7 +96,7 @@
                                 <th scope="col">Hình</th>
                                 <!-- <th scope="col">Trọng lượng</th> -->
                                 <!-- <th scope="col">Kích thước</th> -->
-                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col" >Số lượng</th>
                                 <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
@@ -116,7 +116,7 @@
                                 <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
                                 <!-- <td> <?php //echo $row['trongluong']; ?> </td> -->
                                 <!-- <td> <?php //echo $row['kichthuoc']; ?> </td> -->
-                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+                                <td> <?php echo $row['soluong']; ?> </td>
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
                                 <td>
                                     <button type="button" class="btn btn-info editbtn">Tạo mã QR</button>
@@ -164,9 +164,9 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
-                                <th scope="col">Trọng lượng</th>
+                                <th style="display: none;" scope="col">Trọng lượng</th>
                                 <th scope="col">Mã QR</th>
-                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col">Số lượng</th>
                                 <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
@@ -186,9 +186,9 @@
                                 <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
                 <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
-                                <td> <?php echo $row['trongluong']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['trongluong']; ?> </td>
                                 <td> <?php echo "<img width=80px height=80px src='../../Model/nhacungcapnongsan/qr_assets/".$row['hinh']."'/>"; ?> </td>
-                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+                                <td > <?php echo $row['soluong']; ?> </td>
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
 
 

@@ -33,7 +33,7 @@
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             
             <?php 
-            echo "<img class='rounded-circle mt-5' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
+            echo "<img class='rounded-circle mt-5' style='border-radius: 50%' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
             echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
               
             ?>
