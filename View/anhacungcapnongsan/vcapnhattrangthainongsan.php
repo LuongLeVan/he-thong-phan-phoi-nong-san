@@ -25,9 +25,9 @@
       $p=new cnongsan();
       $kp=$p->capnhat_trangthai($manongsan,$tt);
     
-       echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
+       echo "<script>alert('Bài đăng nông đã được duyệt rồi')</script>";
        echo "<script>
-            window.location.href='trangquanly.php?dangban';
+            //window.location.href='trangquanly.php?dangban';
         </script>";  
     }
     if(isset($_REQUEST["yeucauhotro"])){
@@ -37,20 +37,31 @@
       $p=new cnongsan();
       $kp=$p->capnhat_trangthai_yeucauhotro($manongsan,$tt);
     
-       echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
+       echo "<script>alert('Nông sản đã được gửi yêu cầu để hỗ trợ')</script>";
        echo "<script>
-            window.location.href='trangquanly.php?guiyeucauhotro';
+            //window.location.href='trangquanly.php?guiyeucauhotro';
         </script>";  
     }
     if(isset($_REQUEST["capnhathinhanhnongsan"])){
-      $manongsan=$_REQUEST["capnhathinhanhnongsan"];
-      $file=$_FILES["fflie"]["tmp_name"];
-      $type=$_FILES["fflie"]["type"];
-      $name=$_FILES["fflie"]["name"];
-      $size=$_FILES["fflie"]["size"];
+      //$manongsan=$_REQUEST["capnhathinhanhnongsan"];
+      echo "--";
+
+      echo $manongsan=$_SESSION['manongsan'];
+      echo "--";
+      echo $file=$_SESSION['file'];
+      echo "--";
+      echo $type=$_SESSION['type'];
+      echo "--";
+       echo $name=$_SESSION['name'];
+       echo "--";
+       echo $size=$_SESSION['size'];
+       echo "--";
+       echo $mancc=$_SESSION['mancc'];
+       echo "--";
+       echo $maloai=$_SESSION['maloai'];
       //echo $tt;
       $p=new cnongsan();
-      $kp=$p->capnhat_thongtin_hinh($manongsan,$file,$name,$type,$size);
+      $kp=$p->capnhat_thongtin_hinh($manongsan,$mancc,$maloai,$file,$name,$type,$size);
       if($kp==1){
           echo "<script>
               alert('Thông tin đã được cập nhật');

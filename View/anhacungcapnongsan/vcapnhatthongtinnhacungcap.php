@@ -177,11 +177,14 @@ if(isset($_REQUEST["btnsubmit"])){
     $phuong=$_REQUEST["phuong"];
     $diachi=$_REQUEST["diachi"];
     $mancc=$_SESSION['mancc'];
-    $file=$_FILES["fflie"]["tmp_name"];
+    echo $file=$_FILES["fflie"]["tmp_name"];
     $type=$_FILES["fflie"]["type"];
     $name=$_FILES["fflie"]["name"];
     $size=$_FILES["fflie"]["size"];
-    
+    echo "<script>
+            //alert('$name');
+            //window.location.href='trangquanly.php?capnhatthongtin';
+        </script>"; 
     $p=new cnhacungcap();
     $kp=$p->capnhat_thongtin_nhacungcap($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong,$file,$name,$type,$size);
     if($kp==1){

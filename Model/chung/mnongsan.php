@@ -128,6 +128,7 @@
 				return false;
 			}
 		}
+		
 
 		function xem_nongsan_bituchoi(){
 			//$aa=mysqli_connect("localhost","admin","1234");
@@ -208,12 +209,12 @@
 				return false;
 			}
 		}
-		function hienthigiaykiemdinh($manongsan){
+		function xemgiaykiemdinh($manongsan){
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
-				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'chokiemdinh' and nongsan.manongsan= ".$manongsan;
+				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'dakiemdinh' and nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);
 				$p->dongketnoi($con);
@@ -308,11 +309,11 @@
 			}
 		}
 
-		function capnhatthongtin_hinh($manongsan,$hinh){
+		function capnhatthongtin_hinh($manongsan,$mancc,$maloai,$hinh){
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){
-				$querystring="update nongsan ";
-				$querystring .= " set hinhanh='".$hinh."'";
+				$querystring ="update nongsan ";
+				$querystring .= " set manhacungcap='".$mancc."',maloai='".$maloai."',hinhanh='".$hinh."'";
 				$querystring .= " where manongsan=".$manongsan;
 				echo $querystring;
 				$kq=mysqli_query($con,$querystring);
