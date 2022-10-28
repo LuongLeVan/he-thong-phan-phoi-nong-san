@@ -3,7 +3,11 @@ if(isset($_REQUEST["file"])){
     // Get parameters
     $file = urldecode($_REQUEST["file"]); // Decode URL-encoded string
     //echo $file;
+<<<<<<< HEAD
     $filepath = "C:/wamp/www/he-thong-phan-phoi-nong-san/Model/nhacungcapnongsan/qr_assets/" . $file;
+=======
+    $filepath = "C:/wamp/www/he-thong-phan-phoi-nong-san/Model/qr_assets/" . $file;
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
     echo $filepath;
     if(file_exists($filepath)){
         echo 'hhh';

@@ -19,6 +19,7 @@
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../dist/js/ajaxdanhmuc.js"></script>
+<<<<<<< HEAD
     <style>
         input[type="file"] {
         /* display: none;  */
@@ -38,6 +39,9 @@
         
     }
     </style>
+=======
+
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -113,10 +117,17 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
+<<<<<<< HEAD
                                 <th scope="col" style="display: none;">Trọng lượng</th>
                                 <th scope="col" style="display: none;">Kích thước</th>
                                 <th scope="col">Số lượng</th>
                                 <th scope="col">mô tả</th>
+=======
+                                <th scope="col">Trọng lượng</th>
+                                <th scope="col">Kích thước</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                 <th scope="col"> Tác vụ </th>
                                 
                             </tr>
@@ -134,6 +145,7 @@
                              <?php //echo '<td><input style="border: none;" type="text" name="manongsan" value="'.$row['manongsan'].'"></td>'; ?>
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
+<<<<<<< HEAD
                                 <form action="#" method="post" enctype="multipart/form-data">
                                 <td class='update_img'> <?php echo "<img width=100px height=100px src='../../img/".$row['hinhanh']."'/>"; ?>    
                                     <div>
@@ -158,6 +170,15 @@
                                        echo '<textarea name="mota" id="" cols="30" rows="5" value="'.$row['mota'].'">'.$row["mota"].'</textarea>';
                                     ?> 
                                 </td>
+=======
+                                <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
+                <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
+                <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
+                                <td> <?php echo $row['trongluong']; ?> </td>
+                                <td> <?php echo $row['kichthuoc']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['mota']; ?> </td>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 
 
                                 <!-- <td> <?php //echo $row['id']; ?> </td>
@@ -201,7 +222,7 @@
    <div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 600px">
+            <div class="modal-content" style="width: 120%">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Thêm nông sản</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -316,8 +337,13 @@
                             if($num >0){
                                 while($row = mysqli_fetch_array($query)){
 
+<<<<<<< HEAD
                         ?>
                             <option value="<?php echo $row['madanhmuc'];?>"><?php echo $row['tendanhmuc'];?></option>
+=======
+                            ?>
+                                <option value="<?php echo $row['madanhmuc'];?>"><?php echo $row['tendanhmuc'];?></option>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                         <?php
                                 }
                             }
@@ -575,6 +601,10 @@
                 $('#soluong').val(data[6]);
                 $('#contact').val(data[5]);
                 $('#mota').val(data[7]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
             });
         });
     </script>

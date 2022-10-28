@@ -16,15 +16,22 @@
 <body class="hold-transition sidebar-mini">
 
     <?php
+<<<<<<< HEAD
     include("../../Controller/chung/cnongsan.php");
 
     if(isset($_REQUEST["dangbannongsan"])){
       $manongsan=$_REQUEST["dangbannongsan"];
+=======
+    include("../../Controller/cnongsan.php");
+    if(isset($_REQUEST["guiyeucau"])){
+      $manongsan=$_REQUEST["guiyeucau"];
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
       $tt='choduyet';
       //echo $tt;
       $p=new cnongsan();
       $kp=$p->capnhat_trangthai($manongsan,$tt);
     
+<<<<<<< HEAD
        echo "<script>alert('Bài đăng nông đã được duyệt rồi')</script>";
        echo "<script>
             //window.location.href='trangquanly.php?dangban';
@@ -83,6 +90,13 @@
     }
     
     
+=======
+       echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
+       echo "<script>
+            window.location.href='trangquanly.php?dangban';
+        </script>";  
+    }
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                                                                                                                                                                                                                                                                                                                                                                                               
 ?>
 

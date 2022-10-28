@@ -66,12 +66,20 @@
           <input type="submit" name="submit" value="Đăng Nhập" class="btn btn-primary btn-block">   
         </div>
         <p>- Hoặc -</p>
+<<<<<<< HEAD
         <!-- <a href="#" class="btn btn-block btn-danger"> -->
           <?php
               include("../../google_login/login.php");
           ?>
           <i class="fab fa-google mr-2"></i> Đăng nhập với Google
         </a>
+=======
+       
+          <?php
+              include("../../google_login/login.php");
+          ?>
+         
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
       </div>
       <!-- /.social-auth-links -->
 
@@ -144,7 +152,6 @@
                       //echo "Đăng nhập thành công";
                       }else {
                           echo "<script>alert('Đăng nhập không thành công')</script>";
-                          //echo "<script>window.location.href='HeThongHoTro_COVID19.php'</script>";
                           $_SESSION['dn'] = False;
                       }
                       

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 // Import thư viện data vào
 require_once 'View/phantrang/database.php';
@@ -46,6 +47,8 @@ disconnect();
 <?php
   //  session_start();
 ?>
+=======
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 <?php
 require 'google_login/db_connection.php';
 if(isset($_SESSION['login_id'])){
@@ -68,7 +71,12 @@ if(isset($_SESSION['login_id'])){
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<<<<<<< HEAD
   <link rel="stylesheet" href="./dist/css_index/reponsive.css">
+=======
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reponsive.css">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -187,14 +195,22 @@ if(isset($_SESSION['login_id'])){
                                               echo '<a href="#">Địa chỉ của tôi</a>';
                                           echo '</li>';
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                               echo '<a href="#">Giỏ hàng</a>';
                                           echo '</li>';
                                           echo '<li class="navbar__user-item navbar__user-item-sepharator">';
                                               echo '<a href="View/login_logout/vdangxuat.php">Đăng xuất</a>';
+=======
+                                              echo '<a href="#">Đơn mua</a>';
+                                          echo '</li>';
+                                          echo '<li class="navbar__user-item navbar__user-item-sepharator">';
+                                              echo '<a href="View/vdangxuat.php">Đăng xuất</a>';
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                           echo '</li>';
                                         echo '</ul>';
                                     echo '</li>';
                                   echo '</ul>';
+<<<<<<< HEAD
                         
                                   }elseif($_SESSION['role']==3){
                                     //include('View/adoanhnghiep/vdndoanhnghiep.php');
@@ -264,6 +280,13 @@ if(isset($_SESSION['login_id'])){
                                   echo '</ul>';
                                 }
                                 else{
+=======
+                                }elseif($_SESSION['role']==4){
+                                  echo 11;
+                                }elseif($_SESSION['role']==3){
+                                  echo 11;
+                                }else{
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                    echo $user['tenkhachhang'];
                                 }
                           
@@ -833,7 +856,8 @@ if(isset($_SESSION['login_id'])){
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        Thiết Kế Web & Marketing Bởi Partner Google:<a class="text-reset fw-bold" href="https://mdbootstrap.com/"> https://vnaz.vn</a>
+      Thiết Kế Web & Ý Tưởng Bởi Founder:<a class="text-reset fw-bold" href="">
+       nongsanviet.vn</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -846,15 +870,20 @@ if(isset($_SESSION['login_id'])){
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
+<<<<<<< HEAD
 <script src="../../dist/js/demo.js"></script>
 <script src="View/adoanhnghiep/script.js"></script>
 
 
+=======
+<script src="dist/js/demo.js"></script>
+<script src="script/script.js"></script>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 </body>
 </html>

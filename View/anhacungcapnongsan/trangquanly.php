@@ -292,7 +292,11 @@
                   echo '<a href="trangquanly?kiemdinh" class="nav-link">';
               ?>
                 <i class="far fa-circle nav-icon"></i>
+<<<<<<< HEAD
                 <p>Giấy kiểm định nông sản</p>
+=======
+                <p>GIấy kiểm định nông sản</p>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
               </a>
             </li>
 
@@ -365,6 +369,7 @@
                }elseif(isset($_REQUEST["capnhatthongtin"])){
                 include("vcapnhatthongtinnhacungcap.php");
                }elseif(isset($_REQUEST["dangban"])){
+<<<<<<< HEAD
                 include("vdangbannongsan.php");
                }elseif(isset($_REQUEST["taomaqr"])){
                 include("vtaomaqr.php");
@@ -380,6 +385,13 @@
                 include("giaykiemdinhnongsan.php");
                }elseif(isset($_REQUEST["donhang"])){
                 include("vquanlydonhang.php");
+=======
+                include("vguiyeucauhotro.php");
+               }elseif(isset($_REQUEST["taomaqr"])){
+                include("vtaomaqr.php");
+               }elseif(isset($_REQUEST["guiyeucau"])){
+                include("vcapnhattrangthainongsan.php");
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                }else{
                 include("vquanlythongtinnongsan.php");
                }

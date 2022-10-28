@@ -10,7 +10,7 @@
     <?php
         class clsketnoi{
             function ketnoiDB(& $conn){
-                $conn = mysqli_connect("localhost","admin","123456");
+                $conn = mysqli_connect("localhost","root","");
                 //mysqli_select_db($conn,'altislife-dev');
                 mysqli_set_charset($conn, 'utf8');
                 if($conn){
