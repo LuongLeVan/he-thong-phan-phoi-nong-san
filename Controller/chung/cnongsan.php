@@ -90,11 +90,14 @@
 		function hienthi_giaykiemdinh($manongsan){
             $p = new mnongsan();
             $tblProduct = $p->xemgiaykiemdinh($manongsan);
+<<<<<<< HEAD
             return $tblProduct;
         }
 		function kiem_dinh($manongsan){
             $p = new mnongsan();
             $tblProduct = $p->kiemdinh($manongsan);
+=======
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
             return $tblProduct;
         }
 		function capnhat_trangthai($manongsan,$trangthai){

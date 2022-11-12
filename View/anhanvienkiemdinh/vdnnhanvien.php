@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 	include("Controller/nhanvien/cdnnhanvien.php");
+=======
+	include("Controller/cdnnhanvien.php");
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 
 	$p = new cnhanvien();
 	$table = $p-> view_nhanvien();
@@ -14,7 +18,10 @@
 				$_SESSION['manhanvien'] = $row['manhanvien'];
 				//$_SESSION['mabv'] = $row["mabv"];
 				$_SESSION['tennhanvien'] = $row["tennhanvien"];
+<<<<<<< HEAD
 				$_SESSION['hinh'] = $row["hinh"];
+=======
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 
 				//echo $_SESSION["mabv"];
 			

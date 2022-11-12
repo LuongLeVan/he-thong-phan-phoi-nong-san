@@ -33,7 +33,11 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+<<<<<<< HEAD
         <a href="../../index.php" class="nav-link">Home</a>
+=======
+        <a href="../../index3.html" class="nav-link">Home</a>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -188,7 +192,11 @@
                 if($_SESSION['role']==4){
                   //echo 7887;
                   include('vnhanvien.php');
+<<<<<<< HEAD
                   echo $_SESSION['tennhanvien'];
+=======
+                  //echo $_SESSION['tennhanvien'];
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                 }
               }
             ?> 
@@ -215,9 +223,13 @@
         <!-- Quản lí  -->
 
         <li class="nav-item">
+<<<<<<< HEAD
         <?php
                 echo '<a href="trangquanly?thongtinnhanvien" class="nav-link">';
               ?>
+=======
+          <a href="#" class="nav-link">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
             <i class="nav-icon fas fa-copy"></i>
             <p>
               Thông tin cá nhân
@@ -245,9 +257,13 @@
         <!-- Duyệt bài đăng -->
         <!-- Phân Quyền + Thống kê báo cáo -->
         <li class="nav-item">
+<<<<<<< HEAD
         <?php
                 echo '<a href="trangquanly?giaykiemdinhnongsan" class="nav-link">';
               ?>
+=======
+          <a href="#" class="nav-link">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
             <i class="nav-icon fas fa-copy"></i>
             <p>
               Đề xuất nông sản
@@ -255,6 +271,7 @@
           </a>
         </li>
 
+<<<<<<< HEAD
         <li class="nav-item">
               <?php
                 echo '<a href="trangquanly?giaykiemdinhnongsan" class="nav-link">';
@@ -274,6 +291,8 @@
           </a>
         </li>
 
+=======
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
         <!-- Phân quyền + thống kê báo cáo -->
 
       </ul>
@@ -284,6 +303,7 @@
   </aside>
 <!-- Chỗ này include nội dung vô -->
            <?php
+<<<<<<< HEAD
                if(isset($_REQUEST["thongtinnhanvien"])){
                   include("vcapnhatthongtinnhanvien.php");
                }elseif(isset($_REQUEST["kiemdinhnongsan"])){
@@ -304,12 +324,25 @@
               else{
                 include("vkiemdinhnongsan.php");
 
+=======
+              if(isset($_REQUEST["kiemdinhnongsan"])){
+                include("vkiemdinhnongsan.php");
+              }elseif(isset($_REQUEST["quanlynhanvien"])){
+                include("vquanlythongtinnhanvien.php");
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
               }
            ?>
 <!-- Chỗ này include nội dung vô -->
   
   <footer class="main-footer">
+<<<<<<< HEAD
     
+=======
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
+    </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
   </footer>
 
   <!-- Control Sidebar -->
