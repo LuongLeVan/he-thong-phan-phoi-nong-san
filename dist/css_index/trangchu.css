@@ -1,0 +1,57 @@
+.rowwidth {
+    display: flex;
+    flex-wrap:nowrap;
+    margin-right: -15px;
+    margin-left: -15px; 
+  }
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+}  
+.list-image{
+    width: 369px;
+    height: 260px;
+  }
+  .page_span{
+    background-color: red;
+  }
+
+  /* Phân trang */
+  card-img, .card-img-top{
+    height: 250px}
+
+  .page_li{
+    float:left;
+
+  }
+  .page_a{padding: 5px;}
+  .page_span{
+    display: flex;
+    text-align:center;
+    align-items:center;
+    width:26px;
+    height:26px;
+    border-radius:50%; 
+    display:inline-block;
+     padding: 0px 3px; 
+     background: #82ae46; 
+     color:white; 
+  }
+
+  .panigation{
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .page_a{
+      color: #82ae46;
+  }
+  .page_a:hover{
+    color: #000;
+  }
+
+  .btn-cart{
+    background-color: #82ae46;
+  }
+/* Login */

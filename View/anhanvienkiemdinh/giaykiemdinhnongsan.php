@@ -80,10 +80,10 @@
         <h6> <u> Số 12 / 2022 / KNTP</u></h6>
       </div>
 
-      <div class="title-right">
+      <!-- <div class="title-right">
         <h4 >CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
         <h5 >Dộc lập - tự do - hạnh phúc</h5>
-      </div>
+      </div> -->
         
         <h2 class="title">GIẤY KIỂM NGHIỆM NÔNG SẢN</h2>
         <div class="div-df" style="display: flex;">

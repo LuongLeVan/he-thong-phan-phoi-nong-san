@@ -25,6 +25,16 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+  <div class='row'>
+    <?php
+    
+      // include_once("guimail/sendmail.php");
+      // $mail = new cMailer();
+
+      // $send = $mail -> sendmail();
+    
+    ?>
+  </div>
 <form action="#" method="post" enctype="multipart/form-data">
 
   <div class="container rounded bg-white mt-5 mb-5">
@@ -86,7 +96,9 @@
                       <?php
                         $soluong=$_SESSION['soluong'];
                         $gia=$row['gia'];
-                        echo $gia*$soluong;
+                        echo $tt=$gia*$soluong;
+                        echo '<input  style="display: none;" type="text" name="tongtien" value="'.$tt.'">';
+
                          echo '<input  style="display: none;" type="text" name="mancc" value="'.$row['mancc'].'">';
                          echo '<input  style="display: none;" type="text" name="manongsan" value="'.$row['manongsan'].'">';
 
@@ -194,30 +206,30 @@
      $thanhtoan=$_REQUEST["thanhtoan"];
      $manongsan = $_REQUEST["manongsan"];
      $trangthai = 'chotiepnhan';
-     
+     $tongtien = $_REQUEST["tongtien"];
      $p=new csanpham();
      if($_SESSION['role']==1){
-     $kp=$p->tao_donhang_ncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan);
-
+     $kp=$p->tao_donhang_ncc($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan);
+     //$kp2=$p->tao_chitiethoadon_ncc($madonhang,$manongsan,$soluong);
      }else{
-     $kp=$p->tao_donhang_khachhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan);
+     $kp=$p->tao_donhang_khachhang($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan);
+     //$kp2=$p->tao_chitiethoadon_khachhang($madonhang,$manongsan,$soluong);
 
      }
+     include('guimail/sendmail.php');
+  
+     echo $mailnguoinhan = $_REQUEST['email'];
+     echo $tennguoinhan = $_REQUEST['tenkhachhang'];
+
+     include_once("guimail/sendmail.php");
+     $mail = new cMailer();
+
+     $send = $mail -> sendmail($mailnguoinhan, $tennguoinhan, $tongtien);
      if($kp==1){
       echo "<script>
         alert('Bạn đã đặt hàng thành công');
-        window.location.href='index.php';
+        //window.location.href='index.php';
       </script>";
-
-         //echo header("refresh:0; url='admin?qlsp.php'");
-     }elseif ($kp==0) {
-         echo "<script>alert('Không thể insert')</script>";
-     }elseif ($kp==-1) {
-         echo "<script>alert('Không thể upload')</script>";
-     }elseif ($kp==-2) {
-         echo "<script>alert('size quá lớn')</script>";
-     }elseif ($kp==-3) {
-         echo "<script>alert('file không đúng dạng')</script>";
      }else {
          echo "error";
      }

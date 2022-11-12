@@ -154,7 +154,7 @@
         $p = '';
         if ($this->_config['total_record'] > $this->_config['limit'])
         {
-            $p = '<ul>';
+            $p = '<ul class="panigation">';
              
             // Nút prev và first
             if ($this->_config['current_page'] > 1)

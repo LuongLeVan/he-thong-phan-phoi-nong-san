@@ -21,7 +21,7 @@
     <script src="../../dist/js/ajaxdanhmuc.js"></script>
     <style>
         input[type="file"] {
-        display: none;
+        /* display: none;  */
         }
     .custom-file-upload {
         position: absolute;
@@ -116,7 +116,7 @@
                                 <th scope="col" style="display: none;">Trọng lượng</th>
                                 <th scope="col" style="display: none;">Kích thước</th>
                                 <th scope="col">Số lượng</th>
-                                <th scope="col" style="display: none;">Số lượng</th>
+                                <th scope="col">mô tả</th>
                                 <th scope="col"> Tác vụ </th>
                                 
                             </tr>
@@ -134,26 +134,30 @@
                              <?php //echo '<td><input style="border: none;" type="text" name="manongsan" value="'.$row['manongsan'].'"></td>'; ?>
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
-                                <td class='update_img'> <?php echo "<img width=100px height=100px src='../../img/".$row['hinhanh']."'/>"; ?> 
+                                <form action="#" method="post" enctype="multipart/form-data">
+                                <td class='update_img'> <?php echo "<img width=100px height=100px src='../../img/".$row['hinhanh']."'/>"; ?>    
                                     <div>
-                                        <label for="file-upload" class="custom-file-upload">
-                                        <i></i>
-                                        </label>
-                                        <input name='fflie'  id="file-upload" type="file"/>
-                                        
+                                        <?php //echo "<input class='custom-file-upload' type='file' name='fflie'>"; 
+                                            echo '<input style="display: none;" type="text" name="maloai" id="" value="'.$row["maloai"].'">';
+                                            echo '<input style="display: none;" type="text" name="manongsan" id="" value="'.$row["manongsan"].'">';
+
+                                        ?>
                                         <?php //echo "<a href='trangquanly.php?capnhathinhanhnongsan=".$row['manongsan']."'>Cập nhật</a>";?>
-                                        <!-- <input type="submit"  name="btnsubmit" class="btn btn-success" value="cập nhật" id="add"> -->
-
-
-
+                                        <!-- <input type="submit"  name="btnsubmit" class="btn btn-success" value="chọn" id="add"> -->
                                     </div>
                                 </td>
-              
                                 
+                                </form>
+            
                                 <td style="display: none;"> <?php echo $row['trongluong']; ?> </td>
                                 <td style="display: none;"> <?php echo $row['kichthuoc']; ?> </td>
                                 <td> <?php echo $row['soluong']; ?> </td>
-                                <td style="display: none;"> <?php echo $row['mota']; ?> </td>
+                                <td> 
+                                    <?php 
+                                       //echo '<input type="text" name="" id="" value="'.$row['mota'].'">';
+                                       echo '<textarea name="mota" id="" cols="30" rows="5" value="'.$row['mota'].'">'.$row["mota"].'</textarea>';
+                                    ?> 
+                                </td>
 
 
                                 <!-- <td> <?php //echo $row['id']; ?> </td>
@@ -571,7 +575,6 @@
                 $('#soluong').val(data[6]);
                 $('#contact').val(data[5]);
                 $('#mota').val(data[7]);
-
             });
         });
     </script>
@@ -589,52 +592,39 @@
                 var data = $tr.children("td").map(function () {
                     return $(this).text();
                 }).get();
-
+                
                 console.log(data);
-
+                
                 $('#update_id').val(data[0]);
                 $('#fname').val(data[1]);
                 $('#lname').val(data[2]);
                 $('#soluong').val(data[6]);
                 $('#contact').val(data[5]);
                 $('#mota').val(data[7]);
+                /* var str = $.trim(data[7]);
+                $('#mota').val(str);
+                */
 
             });
         });
     </script>
 
-
 <?php
-// include_once("../../Controller/chung/cnongsan.php");
-// if(isset($_REQUEST["btnsubmit"])){
-//     $manongsan=$_REQUEST["manongsan"];
-//     echo $manongsan;
-//     $file=$_FILES["fflie"]["tmp_name"];
-//     $type=$_FILES["fflie"]["type"];
-//     $name=$_FILES["fflie"]["name"];
-//     $size=$_FILES["fflie"]["size"];
-    
-//     $p=new cnongsan();
-//     $kp=$p->capnhat_thongtin_hinh($manongsan,$file,$name,$type,$size);
-//     if($kp==1){
-//         echo "<script>
-//             alert('Thông tin đã được cập nhật');
-//             window.location.href='trangquanly.php?capnhatthongtin';
-//         </script>"; 
-//     }elseif ($kp==0) {
-//         echo "<script>alert('Không thể Update')</script>";
-//     }
-//     elseif ($kp==-1) {
-//          echo "<script>alert('Không thể upload')</script>";
-//     }elseif ($kp==-2) {
-//          echo "<script>alert('size quá lớn')</script>";
-//     }elseif ($kp==-3) {
-//         echo "<script>alert('file không đúng dạng')</script>";
-//     }
-//     else {
-//         echo "error";
-//     }
-// }
+if(isset($_REQUEST["btnsubmit"])){
+    $file=$_FILES["fflie"]["tmp_name"];
+    $type=$_FILES["fflie"]["type"];
+    $name=$_FILES["fflie"]["name"];
+    $size=$_FILES["fflie"]["size"];
+    $_SESSION['name']=$name;    
+    $_SESSION['type']=$type;    
+    $_SESSION['file']=$file;    
+    $_SESSION['size']=$size;    
+    $_SESSION['maloai']=$_REQUEST["maloai"];
+    $_SESSION['manongsan']=$_REQUEST["manongsan"];
+
+
+    //echo $_SESSION['name'];
+}
 ?>
  
                   </body>

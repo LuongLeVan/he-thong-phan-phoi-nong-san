@@ -106,7 +106,7 @@
         </a>
       </div>
 
-      <a href="login.html" class="text-center">Tôi đã có tài khoản</a>
+      <a href="login.php" class="text-center">Tôi đã có tài khoản</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

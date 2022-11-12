@@ -47,8 +47,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
-
-
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -67,7 +65,6 @@
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
@@ -80,11 +77,11 @@
               <div class="card-body table-responsive p-0">
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
-
                     include("../../Controller/chung/cnongsan.php");
-
                     $p = new cnongsan();
                     $table = $p-> hienthi_donhang();
+                    //var_dump($table);
+                    //var_dump(mysqli_fetch_assoc($table));
                     if($table){
                       $dem = 0;
                       echo '<table class="table table-hover text-nowrap">';
