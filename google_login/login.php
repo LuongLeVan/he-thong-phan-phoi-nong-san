@@ -58,13 +58,6 @@ if(isset($_GET['code'])):
 else: 
     // Google Login Url = $client->createAuthUrl(); 
 ?>
-<<<<<<< HEAD
-    <a style = "width:100%; display:inline-block;height:2rem;display:flex;align-items:center;justify-content:center" class="login-btn btn-lock btn-danger" href="<?php echo $client->createAuthUrl(); ?>">Login  <i class="fab fa-google mr-2"></i> 
+    <a style = "width:100%; display:inline-block;height:2rem;display:flex;align-items:center;justify-content:center" class="login-btn btn-lock btn-danger" href="<?php echo $client->createAuthUrl(); ?>">  <i class="fab fa-google mr-2"></i> 
               Đăng nhập với Google</a>
-=======
-    <a class="btn btn-block btn-danger" href="<?php echo $client->createAuthUrl(); ?>">
-          <i class="fab fa-google mr-2"></i> 
-          Đăng nhập với Google
-        </a>
->>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
 <?php endif; ?>
