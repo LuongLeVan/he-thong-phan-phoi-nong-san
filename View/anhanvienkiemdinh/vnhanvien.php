@@ -1,8 +1,14 @@
 <?php
 	//session_start();
+<<<<<<< HEAD
 	include("../../Controller/nhanvien/cnhanvien.php");
 
 	$p = new cnhanvien();
+=======
+	include("../../Controller/cadmin.php");
+
+	$p = new cadmin();
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 	$table = $p-> view_nhanvien();
 	//var_dump($table);
 	if($table){
@@ -21,12 +27,15 @@
 				$_SESSION['manhanvien'] = $row['manhanvien'];
 				//$_SESSION['mabv'] = $row["mabv"];
 				$_SESSION['tennhanvien'] = $row["tennhanvien"];
+<<<<<<< HEAD
 				$_SESSION['hinh'] = $row["hinh"];
 				$_SESSION['sdt'] = $row["sdt"];
 				$_SESSION['email'] = $row["email"];
 				$_SESSION['diachi'] = $row["diachi"];
 
 
+=======
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 				//echo $_SESSION['tennhanvien'];
 				//echo 112121;
 

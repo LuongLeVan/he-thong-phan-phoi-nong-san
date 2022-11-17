@@ -94,9 +94,15 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
+<<<<<<< HEAD
                                 <!-- <th scope="col">Trọng lượng</th> -->
                                 <!-- <th scope="col">Kích thước</th> -->
                                 <th scope="col" >Số lượng</th>
+=======
+                                <th scope="col">Trọng lượng</th>
+                                <th scope="col">Kích thước</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                 <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
@@ -114,9 +120,15 @@
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
                                 <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
+<<<<<<< HEAD
                                 <!-- <td> <?php //echo $row['trongluong']; ?> </td> -->
                                 <!-- <td> <?php //echo $row['kichthuoc']; ?> </td> -->
                                 <td> <?php echo $row['soluong']; ?> </td>
+=======
+                                <td> <?php echo $row['trongluong']; ?> </td>
+                                <td> <?php echo $row['kichthuoc']; ?> </td>
+                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
                                 <td>
                                     <button type="button" class="btn btn-info editbtn">Tạo mã QR</button>
@@ -164,9 +176,15 @@
                                 <th scope="col">Tên nông sản</th>
                                 <th scope="col">Loại nông sản</th>
                                 <th scope="col">Hình</th>
+<<<<<<< HEAD
                                 <th style="display: none;" scope="col">Trọng lượng</th>
                                 <th scope="col">Mã QR</th>
                                 <th scope="col">Số lượng</th>
+=======
+                                <th scope="col">Trọng lượng</th>
+                                <th scope="col">Mã QR</th>
+                                <th scope="col" style="display: none;">Số lượng</th>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                 <th scope="col" style="display: none;">Số lượng</th>
                                 <th scope="col"> Tác vụ </th>
                                 
@@ -186,9 +204,15 @@
                                 <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
                 <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
+<<<<<<< HEAD
                                 <td style="display: none;"> <?php echo $row['trongluong']; ?> </td>
                                 <td> <?php echo "<img width=80px height=80px src='../../Model/nhacungcapnongsan/qr_assets/".$row['hinh']."'/>"; ?> </td>
                                 <td > <?php echo $row['soluong']; ?> </td>
+=======
+                                <td> <?php echo $row['trongluong']; ?> </td>
+                                <td> <?php echo "<img width=80px height=80px src='../../Model/qr_assets/".$row['hinh']."'/>"; ?> </td>
+                                <td style="display: none;"> <?php echo $row['soluong']; ?> </td>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
 
 
@@ -198,8 +222,13 @@
                                 <td> <?php// echo $row['course']; ?> </td>
                                 <td> <?php// echo $row['contact']; ?> </td> -->
                                 <td>
+<<<<<<< HEAD
                                     <!-- <button type="button" class="btn btn-success editbtn"> Cập nhật mã </button> |  -->
                                     <button type="button" class="btn btn-success deletebtn"> Cập nhật lại mã </button> | 
+=======
+                                    <button type="button" class="btn btn-success editbtn"> Cập nhật mã </button> | 
+                                    <button type="button" class="btn btn-danger deletebtn"> Xóa mã </button> | 
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                     <a href="../../download.php?file=<?php echo $row['hinh'];?>" value="">Tải xuống</a>
                                 </td>
                             </tr>
@@ -225,6 +254,7 @@
     
   </div>
 
+<<<<<<< HEAD
 <!-- Xóa mã -->
 <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -254,6 +284,10 @@
             </div>
         </div>
     </div>   
+=======
+
+   
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
     <!-- Cập nhật nông sản -->
     <div class="modal fade " id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -266,11 +300,16 @@
                     </button>
                 </div>
 
+<<<<<<< HEAD
                 <form action="../../Model/nhacungcapnongsan/mtaomaqrcode.php" method="POST">
+=======
+                <form action="../../Model/mtaomaqrcode.php" method="POST">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 
                     <div class="modal-body">
 
                         <input type="hidden" name="update_id" id="update_id">
+<<<<<<< HEAD
                         <div class="row mt-6">
                             <div class="form-group col-md-6">
                                 <label> Tên nông sản </label>
@@ -320,11 +359,50 @@
 					</div>
                     <div class="form-group">
 						<label>Chọn kích cỡ mã</label>
+=======
+
+                        <div class="form-group col-md-6">
+                            <label> Tên nông sản </label>
+                            <input type="text" name="fname" id="fname" class="form-control"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="row mt-6">
+                            <div class="form-group col-md-6">
+                                <label> Số lượng </label>
+                                <input type="text" name="soluong" id="soluong" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label> Kích thước </label>
+                                <input type="text" name="contact" id="contact" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label> Mô tả </label>
+                            <input type="text" name="mota" id="mota" class="form-control">
+                        </div>
+                        <div class="form-group">
+						<label>QR Code Level</label>
+						<select name="level" class="form-control">
+							<option value="L">L - smallest</option>
+							<option value="M" selected>M</option>
+							<option value="Q">Q</option>
+							<option value="H">H - best</option>
+						</select>
+					</div>
+                    <div class="form-group">
+						<label>QR Code Size</label>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 						<select name="size" class="form-control">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
+<<<<<<< HEAD
 							<option value="4">4</option>
+=======
+							<option value="4" selected>4</option>
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 							<option value="5">5</option>
 							<option value="6">6</option>
 							<option value="7">7</option>
@@ -433,8 +511,13 @@
                 console.log(data);
 
                 $('#update_id').val(data[0]);
+<<<<<<< HEAD
                 $('#tennongsan').val(data[1]);
                 $('#loai').val(data[2]);
+=======
+                $('#fname').val(data[1]);
+                $('#lname').val(data[2]);
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                 $('#soluong').val(data[6]);
                 $('#contact').val(data[5]);
                 $('#mota').val(data[7]);

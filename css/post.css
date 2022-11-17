@@ -1,0 +1,59 @@
+.header__cart-list-post{
+    margin-top: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.header__cart-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 36px;
+
+}
+
+.header__cart-image{
+    width: 150px;
+}
+
+.tilte__list-post{
+    margin-top: 32px;
+}
+.header__cart-post-info{
+    width: 100%;
+}
+
+.header__cart-post-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__cart-post-name{
+    margin-left: 24px;
+}
+.header__cart-post-date{
+    margin-right: 4px;
+}
+.header__cart-post-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.header__cart-post-name-company{
+    margin-left: 24px;
+
+}
+.header__cart-post-message{
+    color: #65a610;
+    margin-right: 16px;
+    border: none;
+}
+.header__cart-post-read{
+    color:#65a610;
+    border: none;
+
+}
+

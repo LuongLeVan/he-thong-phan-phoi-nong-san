@@ -33,9 +33,17 @@
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             
             <?php 
+<<<<<<< HEAD
             echo "<img class='rounded-circle mt-5' style='border-radius: 50%' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
             echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
               
+=======
+            echo'<i class="fa fa-pen" style="color: blue;">';
+            echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
+            echo '</i>';
+            echo "<img class='rounded-circle mt-5' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
+            
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
             ?>
 
             <span class="font-weight-bold">
@@ -83,7 +91,11 @@
             <div class="col-md-12"><label class="labels">Địa chỉ giao hàng</label>
               <p class="user-infor form-control">
                 <?php
+<<<<<<< HEAD
                   include("vdiachi.php");
+=======
+                  include("../vdiachi.php");
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                 ?>
               </p>
             </div>
@@ -167,7 +179,11 @@
 ?>
 
 <?php
+<<<<<<< HEAD
 include_once("../../Controller/nhacungcapnongsan/cnhacungcap.php");
+=======
+include_once("../../Controller/cnhacungcap.php");
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 if(isset($_REQUEST["btnsubmit"])){
     $tenncc=$_REQUEST["tenncc"];
     $sdt=$_REQUEST["sdt"];
@@ -177,6 +193,13 @@ if(isset($_REQUEST["btnsubmit"])){
     $phuong=$_REQUEST["phuong"];
     $diachi=$_REQUEST["diachi"];
     $mancc=$_SESSION['mancc'];
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    echo $file=$_FILES["fflie"]["tmp_name"];
+=======
+<<<<<<< HEAD
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
     echo $file=$_FILES["fflie"]["tmp_name"];
     $type=$_FILES["fflie"]["type"];
     $name=$_FILES["fflie"]["name"];
@@ -187,6 +210,19 @@ if(isset($_REQUEST["btnsubmit"])){
         </script>"; 
     $p=new cnhacungcap();
     $kp=$p->capnhat_thongtin_nhacungcap($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong,$file,$name,$type,$size);
+=======
+    $file=$_FILES["fflie"]["tmp_name"];
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+    $type=$_FILES["fflie"]["type"];
+    $name=$_FILES["fflie"]["name"];
+    $size=$_FILES["fflie"]["size"];
+    echo "<script>
+            //alert('$name');
+            //window.location.href='trangquanly.php?capnhatthongtin';
+        </script>"; 
+    $p=new cnhacungcap();
+    $kp=$p->UpProduct($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong,$file,$name,$type,$size);
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
     if($kp==1){
         echo "<script>
             alert('Thông tin đã được cập nhật');

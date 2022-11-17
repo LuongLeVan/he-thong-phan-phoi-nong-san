@@ -16,18 +16,33 @@
 <body class="hold-transition sidebar-mini">
 
     <?php
+<<<<<<< HEAD
     include("../../Controller/chung/cnongsan.php");
 
     if(isset($_REQUEST["dangbannongsan"])){
       $manongsan=$_REQUEST["dangbannongsan"];
+=======
+    include("../../Controller/cnongsan.php");
+    if(isset($_REQUEST["guiyeucau"])){
+      $manongsan=$_REQUEST["guiyeucau"];
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
       $tt='choduyet';
       //echo $tt;
       $p=new cnongsan();
       $kp=$p->capnhat_trangthai($manongsan,$tt);
     
+<<<<<<< HEAD
        echo "<script>alert('Bài đăng nông sản đã gửi, bạn hãy chờ admin duyệt')</script>";
+=======
+<<<<<<< HEAD
+       echo "<script>alert('Bài đăng nông sản đã gửi, bạn hãy chờ admin duyệt')</script>";
+=======
+<<<<<<< HEAD
+       echo "<script>alert('Bài đăng nông đã được duyệt rồi')</script>";
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
        echo "<script>
-            window.location.href='trangquanly.php?dangban';
+            //window.location.href='trangquanly.php?dangban';
         </script>";  
     }
     if(isset($_REQUEST["yeucauhotro"])){
@@ -62,7 +77,14 @@
       //echo $tt;
       $p=new cnongsan();
       $kp=$p->capnhat_thongtin_hinh($manongsan,$mancc,$maloai,$file,$name,$type,$size);
+<<<<<<< HEAD
       var_dump($kp);
+=======
+<<<<<<< HEAD
+      var_dump($kp);
+=======
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
       if($kp==1){
           echo "<script>
               alert('Thông tin đã được cập nhật');
@@ -84,6 +106,13 @@
     }
     
     
+=======
+       echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
+       echo "<script>
+            window.location.href='trangquanly.php?dangban';
+        </script>";  
+    }
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
                                                                                                                                                                                                                                                                                                                                                                                                               
 ?>
 

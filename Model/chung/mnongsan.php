@@ -209,11 +209,23 @@
 				return false;
 			}
 		}
+<<<<<<< HEAD
 		function kiemdinh($manongsan){
+=======
+<<<<<<< HEAD
+		function kiemdinh($manongsan){
+=======
+		function xemgiaykiemdinh($manongsan){
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
 				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);
@@ -229,6 +241,11 @@
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
 				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'dakiemdinh' and nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);

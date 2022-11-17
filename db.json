@@ -1,0 +1,19 @@
+{
+  "Postes": [
+    {
+      "title": "Bài viết nông sản năm 2019",
+      "content": "Thu mua nông sản từ những vùng đất khó khăn chịu ảnh hưởng từ khí hậu, áp thấp nhiệt đới",
+      "id": 1
+    },
+    {
+      "title": "Bài viết nông sản năm 2020",
+      "content": "Thu mua nông sản từ những vùng đất khó khăn chịu ảnh hưởng từ khí hậu 5",
+      "id": 2
+    },
+    {
+      "title": "Bài viết nông sản năm 2021",
+      "content": "Thu mua nông sản từ những vùng đất khó khăn chịu ảnh hưởng từ khí hậu, áp thấp nhiệt đới",
+      "id": 3
+    }
+  ]
+}

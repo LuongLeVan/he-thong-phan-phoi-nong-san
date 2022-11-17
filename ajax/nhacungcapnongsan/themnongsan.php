@@ -12,6 +12,10 @@ if(isset($_POST['insertdata']))
     $course = $_POST['course'];
     $contact = $_POST['contact'];
     $manhacungcap = $_SESSION['mancc'];
+<<<<<<< HEAD:ajax/nhacungcapnongsan/themnongsan.php
+=======
+
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe:Model/themnongsan.php
     $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
     $query_run = mysqli_query($connection, $query);
     

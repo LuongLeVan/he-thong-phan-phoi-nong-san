@@ -328,3 +328,6 @@ img {
   margin-bottom: 5px;
   line-height: 20px;
 }
+.cart__description-part5{
+  cursor: pointer;
+}
