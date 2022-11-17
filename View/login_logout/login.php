@@ -66,20 +66,21 @@
           <input type="submit" name="submit" value="Đăng Nhập" class="btn btn-primary btn-block">   
         </div>
         <p>- Hoặc -</p>
-        <!-- <a href="#" class="btn btn-block btn-danger"> -->
+        <a href="#"> 
           <?php
               include("../../google_login/login.php");
-          ?>
-          <i class="fab fa-google mr-2"></i> Đăng nhập với Google
+              ?>
+          <!--     <i class="fab fa-google mr-2"></i> 
+              Đăng nhập với Google -->
         </a>
       </div>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      <!-- <p class="mb-1">
         <a href="forgot-password.html">Quên mật khẩu</a>
-      </p>
+      </p> -->
       <p class="mb-0">
-        <a href="register.html" class="text-center">Đăng ký tài khoản</a>
+        <a href="register.php" class="text-center">Đăng ký tài khoản</a>
       </p>
     </div>
     <!-- /.login-card-body -->

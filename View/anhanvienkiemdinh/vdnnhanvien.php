@@ -9,7 +9,7 @@
 		
 			while($row = mysqli_fetch_array($table)){
 				//echo "1";
-				echo "<b><a href='trangquanly.php?manhanvien=".$row['manhanvien']."'>".$row['tennhanvien']."</a></b>";
+				//echo "<b><a href='trangquanly.php?manhanvien=".$row['manhanvien']."'>".$row['tennhanvien']."</a></b>";
 				
 				$_SESSION['manhanvien'] = $row['manhanvien'];
 				//$_SESSION['mabv'] = $row["mabv"];

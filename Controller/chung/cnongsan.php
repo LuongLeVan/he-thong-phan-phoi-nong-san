@@ -51,6 +51,7 @@
 			//var_dump($table);
 			return $table;
 		}
+		
 		function hienthi_nongsan_chokiemdinh(){
 			$p = new mnongsan();
 			$table  = $p -> xem_nongsan_chokiemdinh();
@@ -85,10 +86,15 @@
                 $p = new mnongsan();
                 $tblProduct = $p->SelectAllchitietBynongsan($comp);
                 return $tblProduct;
-            }
+        }
 		function hienthi_giaykiemdinh($manongsan){
             $p = new mnongsan();
-            $tblProduct = $p->hienthigiaykiemdinh($manongsan);
+            $tblProduct = $p->xemgiaykiemdinh($manongsan);
+            return $tblProduct;
+        }
+		function kiem_dinh($manongsan){
+            $p = new mnongsan();
+            $tblProduct = $p->kiemdinh($manongsan);
             return $tblProduct;
         }
 		function capnhat_trangthai($manongsan,$trangthai){
@@ -137,15 +143,15 @@
 
 			}
 		}
-		function capnhat_thongtin_hinh($manongsan,$file,$tenanh,$loaianh,$sizeanh){
+		function capnhat_thongtin_hinh($manongsan,$mancc,$maloai,$file,$tenanh,$loaianh,$sizeanh){
 			if($tenanh !=""){
 				if($loaianh == "image/png" || $loaianh == "image/jpeg" ){
 					if($sizeanh<=2*1024*1024){
 						if(move_uploaded_file($file,"../../img/".$tenanh)){
-							$p= new mnhacungcap();
-							$ins = $p->capnhatthongtin_hinh($manongsan,$tenanh);
+							$p= new mnongsan();
+							$ins = $p->capnhatthongtin_hinh($manongsan,$mancc,$maloai,$tenanh);
 							var_dump($ins);
-							if($ins || $ins2){
+							if($ins){
 								return 1;
 							}else{
 								return 0; //không   thể insert

@@ -42,12 +42,12 @@
 				return false;
 			}
 		}
-		function tao_donhangkhachhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan){
+		function tao_donhangkhachhang($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan){
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
-				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, soluong, hinhthucthanhtoan) values";
-				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$soluong','$thanhtoan')";
+				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, tongtien, hinhthucthanhtoan) values";
+				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$tongtien','$thanhtoan')";
 
 				//echo $string;
 				$kq = mysqli_query($con,$string);
@@ -59,12 +59,12 @@
 				return false;
 			}
 		}
-		function tao_donhangncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan){
+		function tao_donhangncc($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan){
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
-				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, soluong, hinhthucthanhtoan) values";
-				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$soluong','$thanhtoan')";
+				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, tongtien, hinhthucthanhtoan) values";
+				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$tongtien','$thanhtoan')";
 
 				//echo $string;
 				$kq = mysqli_query($con,$string);

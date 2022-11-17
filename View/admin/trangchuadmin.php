@@ -375,7 +375,7 @@
               }elseif(isset($_REQUEST["capnhatthongtincanhan"])){
                 include("vcapnhatthongtinadmin.php");
               }elseif(isset($_REQUEST["thongkenguoidung"])){
-                include("DEMO_DASHBOARD/index.php");
+                //include("DEMO_DASHBOD/index.php");
               }else{
                 include("vquanlythongtinnhanvien.php");
               }

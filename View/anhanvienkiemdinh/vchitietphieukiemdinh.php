@@ -33,7 +33,7 @@
         if(isset($_REQUEST["chitietkiemdinh"])){
             $ns = $_REQUEST["chitietkiemdinh"];
             $_SESSION["manongsan"] = $_REQUEST["chitietkiemdinh"];
-            $tblnongsan = $p->hienthi_giaykiemdinh($ns);
+            $tblnongsan = $p->kiem_dinh($ns);
         }else{
             //$tblnongsan = $p->();
         }
@@ -46,7 +46,7 @@
                   }
                  
       ?>
-<form action="#" method="post" enctype="multipart/form-data">
+<form action="#" method="post" enctype="multipart/form-data" style="margin-left:200px">
 
   <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">

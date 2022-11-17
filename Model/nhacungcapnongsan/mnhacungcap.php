@@ -45,6 +45,7 @@
 				return false;
 			}
 		}
+		
 		function capnhatthongtinncc($mancc,$tenncc,$sdt,$emai,$diachi,$tinh,$quan,$phuong){
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){

@@ -25,7 +25,7 @@
       $p=new cnongsan();
       $kp=$p->tao_phieu_kiemdinh($manongsan,$tt);
     
-       echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
+       echo "<script>alert('Đã gửi yêu cầu thành công')</script>";
        echo "<script>
             window.location.href='trangquanly.php?guiyeucauhotro';
         </script>";  

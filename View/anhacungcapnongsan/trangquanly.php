@@ -368,7 +368,7 @@
                 include("vdangbannongsan.php");
                }elseif(isset($_REQUEST["taomaqr"])){
                 include("vtaomaqr.php");
-               }elseif(isset($_REQUEST["dangbannongsan"]) /*|| isset($_REQUEST["capnhathinhanhnongsan"])*/){
+               }elseif(isset($_REQUEST["dangbannongsan"]) || isset($_REQUEST["capnhathinhanhnongsan"])){
                 include("vcapnhattrangthainongsan.php");
                }elseif(isset($_REQUEST["guiyeucauhotro"])){
                 include("vyeucauhotronongsan.php");
