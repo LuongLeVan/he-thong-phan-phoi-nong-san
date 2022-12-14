@@ -23,6 +23,10 @@
 				$_SESSION['diachi'] = $row['diachi'];
 				
 				$_SESSION['tenadmin'] = $row["tenadmin"];
+<<<<<<< HEAD
+=======
+				//echo $_SESSION["mabv"];
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
 			
 			
 		}

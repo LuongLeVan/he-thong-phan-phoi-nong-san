@@ -23,7 +23,11 @@
 			//$aa=mysqli_connect("localhost","admin","1234");
 			$p = new clsketnoi();
 			if($p -> ketnoiDB($con)){
+<<<<<<< HEAD
 				$string = "SELECT madonhang, nongsan.manongsan, tennongsan, trangthaidathang, tenkhachhang FROM (hoadon JOIN nongsan on hoadon.manongsan = nongsan.manongsan) JOIN khachhang on hoadon.makhachhang = khachhang.makhachhang";
+=======
+				$string = "SELECT madonhang, tennongsan, donhang.trangthai, tenkhachhang, nongsan.manongsan  FROM ((donhang join nhacungcap on donhang.manhacungcap = nhacungcap.mancc) join khachhang on donhang.makhachhang = khachhang.makhachhang) join nongsan on donhang.manongsan = nongsan.manongsan";
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 				//$string = "select * from benhnhan join benhvien on benhnhan.mabv = benhvien.mabv where tt=1";
 
 				//echo $string;
@@ -209,11 +213,30 @@
 				return false;
 			}
 		}
+<<<<<<< HEAD
 		function kiemdinh($manongsan){
+=======
+<<<<<<< HEAD
+		function kiemdinh($manongsan){
+=======
+<<<<<<< HEAD
+		function kiemdinh($manongsan){
+=======
+		function xemgiaykiemdinh($manongsan){
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);
@@ -229,6 +252,14 @@
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'dakiemdinh' and nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);

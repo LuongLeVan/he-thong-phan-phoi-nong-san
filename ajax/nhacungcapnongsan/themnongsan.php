@@ -13,6 +13,7 @@ if(isset($_POST['insertdata']))
     $soluong = $_POST['soluong'];
     $kichthuoc = $_POST['kichthuoc'];
     $manhacungcap = $_SESSION['mancc'];
+<<<<<<< HEAD
     $file=$_FILES["fflie"]["tmp_name"];
     $type=$_FILES["fflie"]["type"];
     $name=$_FILES["fflie"]["name"];
@@ -36,6 +37,14 @@ if(isset($_POST['insertdata']))
     }
     // $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
     // $query_run = mysqli_query($connection, $query);
+=======
+<<<<<<< HEAD:ajax/nhacungcapnongsan/themnongsan.php
+=======
+
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe:Model/themnongsan.php
+    $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
+    $query_run = mysqli_query($connection, $query);
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
     
     
     //echo $query;

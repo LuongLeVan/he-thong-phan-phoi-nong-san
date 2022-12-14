@@ -77,7 +77,11 @@
               <div class="card-body table-responsive p-0">
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
+<<<<<<< HEAD
                     include("Controller/chung/cnongsan.php");
+=======
+                    include("../../Controller/chung/cnongsan.php");
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                     $p = new cnongsan();
                     $table = $p-> hienthi_donhang();
                     //var_dump($table);

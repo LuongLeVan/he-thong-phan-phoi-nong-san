@@ -90,11 +90,26 @@
 		function hienthi_giaykiemdinh($manongsan){
             $p = new mnongsan();
             $tblProduct = $p->xemgiaykiemdinh($manongsan);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
             return $tblProduct;
         }
 		function kiem_dinh($manongsan){
             $p = new mnongsan();
             $tblProduct = $p->kiemdinh($manongsan);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e4b84782c814da02501c19b9a438eb5386fbc170
+>>>>>>> bd87a24a518191a0513ff23a987e0e52eb182ab1
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
             return $tblProduct;
         }
 		function capnhat_trangthai($manongsan,$trangthai){

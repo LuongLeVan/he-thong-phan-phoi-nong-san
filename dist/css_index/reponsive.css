@@ -116,9 +116,18 @@
     transform: translateX(-50%);
 
   }
+<<<<<<< HEAD
   .controduce-text-heading {
     font-size: 40px;
     color: red;
     font-weight: 600;
 }
+=======
+
+  .media-item{
+    width: 100%;
+    text-align: center;
+  }
+
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 }

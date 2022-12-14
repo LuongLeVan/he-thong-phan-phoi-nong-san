@@ -73,27 +73,42 @@ if(isset($_SESSION['login_id'])){
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+=======
+ <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
   <!-- Theme style -->
   <link rel="stylesheet" href="./dist/css/adminlte.min.css">
   <link rel="stylesheet" href="./dist/css_index/style.css">
   <link rel="stylesheet" href="./dist/css_index/trangchu.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="./dist/css_index/reponsive.css">
   <link rel="stylesheet" href="./dist/css_index/grid.scss">
 
+=======
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
   <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
   <style>
+<<<<<<< HEAD
     .navbar__user-menu {
       margin-top: 4px;
       background-color: #fff;
     }
 
+=======
+    .navbar__user-menu{
+      margin-top:4px;
+      background-color:#fff;
+    }
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
     .navbar__user-item a {
       font-weight: 500;
       font-size: 16px;
       line-height: 22px;
+<<<<<<< HEAD
       color: #000
     }
 
@@ -106,6 +121,18 @@ if(isset($_SESSION['login_id'])){
       width: 20px;
       height: 20px;
       color: #000;
+=======
+      color:#000
+    }
+    .navbar__user-img{
+      margin-top:20px;
+    }
+    .logout-icon,
+    .icon{
+      width: 20px;
+      height: 20px;
+      color:#000;
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
     }
   </style>
 </head>
@@ -119,6 +146,7 @@ if(isset($_SESSION['login_id'])){
     <?php
             //echo $_SESSION["login_id"];
           ?>
+<<<<<<< HEAD
     <div class="container-fluid px-md-5">
       <div class="row justify-content-between">
         <div class="col-md-8 order-md-last">
@@ -178,6 +206,74 @@ if(isset($_SESSION['login_id'])){
             </ul>
             <div class="container_login">
               <?php
+=======
+            <div class="container-fluid px-md-5">
+              <div class="row justify-content-between">
+                <div class="col-md-8 order-md-last">
+                  <div class="row">
+                  <!--   <div class="col-md-8 text-center">
+                    <div class="social-media">
+                    <a class="mb-0 d-flex" href="index.php">
+                      <img class="d-flex align-items-center justify-content-center" src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:60px ;">
+                      </a>
+                  </div>
+                    </div> -->
+                  
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="container-navbar">
+              <nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                <div class="container-fluid container-nav" style="height:74px; background-color:#d2caca">
+                
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                  </button>
+                  <div class="collapse navbar-collapse" id="ftco-nav">
+                  <div class="social-media">
+                    <a class="mb-0 d-flex" href="index.php">
+                      <img class="d-flex align-items-center justify-content-center" src="https://vcdn.tikicdn.com/ts/seller/66/44/79/bec621134f5b9cc6f7a9571567f423ac.png" alt="" style="height:70px ;">
+                      </a>
+                  </div>
+                    <ul class="navbar-nav m-auto">
+                      <li class="nav-item active"><a href="#" class="nav-link">Trang chủ</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="trangsanpham.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nông sản</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                          <a class="dropdown-item" href="#">Trái cây</a>
+                          <a class="dropdown-item" href="#">Rau củ</a>
+                          <a class="dropdown-item" href="#">Khác</a>
+                        </div>
+                      </li>
+
+                      
+                      <li class="nav-item"><a href="#" class="nav-link">Giới thiệu</a></li>
+                      <li class="nav-item"><a href="#" class="nav-link">Tin tức</a></li>
+                      <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+                      <?php
+                        if(isset($_SESSION["dn"])&& $_SESSION["dn"]==True){
+                          if($_SESSION['role']==1){
+                            echo '<li class="nav-item"><a href="View/anhacungcapnongsan/trangquanly.php" class="nav-link">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            Quản lý</a></li>';
+                          }elseif($_SESSION['role']==2){
+                            echo '<li class="nav-item"><a href="View/adoanhnghiep/trangquanly.php" class="nav-link">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            Quản lý</a></li>';
+
+                          }
+
+                        }
+                      ?>
+                    </ul>
+                    <div class="container_login">
+                          
+                            <?php
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                               if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
                                 echo '<ul class="navbar__list" style:"margin-top:20px" >';
                                     echo '<li class="navbar__item navbar__user">';
@@ -185,12 +281,22 @@ if(isset($_SESSION['login_id'])){
 /*                                       echo '<span class="navbar__user-name">'.$user['tenkhachhang'].'</span>';
  */                                      echo '<ul class="navbar__user-menu">';
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                               echo '<a href="nongsan.php?capnhatthongtinkhachhanggoogle">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-user icon" aria-hidden="true"></i>
                                               Tài khoản
                                               </a>';
                                           echo '</li>';
+                                         /*  echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">
+                                              <i class="fa fa-address-book" aria-hidden="true"></i>
+                                              Địa chỉ của tôi</a>';
+                                          echo '</li>'; */
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                               echo '<a href="nongsan.php?giohang">
                                               <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
                                               Giỏ hàng</a>';
@@ -199,11 +305,20 @@ if(isset($_SESSION['login_id'])){
                                               echo '<a href="nongsan.php?donhang">
                                               <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
                                               Đơn hàng của tôi</a>';
+=======
+                                              echo '<a href="#">
+                                              <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
+                                              Giỏ hàng</a>';
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                           echo '</li>';
                                           echo '<li class="navbar__user-item navbar__user-item-sepharator">';
                                           echo '<a href="View/login_logout/vdangxuat.php">
                                           <img class="logout-icon" src="./img/right-from-bracket-solid.svg" alt="">
                                           Đăng xuất</a>';
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                           echo '</li>';
                                         echo '</ul>';
                                     echo '</li>';
@@ -217,13 +332,26 @@ if(isset($_SESSION['login_id'])){
 /*                                       echo '<span class="navbar__user-name">'.$_SESSION["tenncc"].'</span>';
  */                                      echo '<ul class="navbar__user-menu">';
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?capnhatthongtinkhachhang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-user icon" aria-hidden="true"></i>
                                               Tài khoản
                                               </a>';
                                           echo '</li>';
+                                         /*  echo '<li class="navbar__user-item">';
+                                              echo '<a href="#">
+                                              <i class="fa fa-address-book" aria-hidden="true"></i>
+                                              Địa chỉ của tôi</a>';
+                                          echo '</li>'; */
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?giohang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
                                               Giỏ hàng</a>';
                                           echo '</li>';
@@ -244,7 +372,11 @@ if(isset($_SESSION['login_id'])){
 /*                                       echo '<span class="navbar__user-name">'.$_SESSION['tendoanhnghiep'].'</span>';
  */                                      echo '<ul class="navbar__user-menu">';
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?capnhatthongtinkhachhang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-user icon" aria-hidden="true"></i>
                                               Tài khoản
                                               </a>';
@@ -255,7 +387,11 @@ if(isset($_SESSION['login_id'])){
                                               Địa chỉ của tôi</a>';
                                           echo '</li>'; */
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?giohang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
                                               Giỏ hàng</a>';
                                           echo '</li>';
@@ -276,7 +412,11 @@ if(isset($_SESSION['login_id'])){
 /*                                         echo '<span class="navbar__user-name">'.$_SESSION['tenadmin'].'</span>';
  */                                        echo '<ul class="navbar__user-menu">';
                                             echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                             echo '<a href="nongsan.php?capnhatthongtinkhachhang">
+=======
+                                                echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                                 <i class="fa fa-user icon" aria-hidden="true"></i>
                                                 Tài khoản
                                                 </a>';
@@ -341,7 +481,11 @@ if(isset($_SESSION['login_id'])){
 /*                                       echo '<span class="navbar__user-name">'.$_SESSION['tenkhachhang'].'</span>';
  */                                      echo '<ul class="navbar__user-menu">';
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?capnhatthongtinkhachhang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-user icon" aria-hidden="true"></i>
                                               Tài khoản
                                               </a>';
@@ -352,7 +496,11 @@ if(isset($_SESSION['login_id'])){
                                               Địa chỉ của tôi</a>';
                                           echo '</li>'; */
                                           echo '<li class="navbar__user-item">';
+<<<<<<< HEAD
                                           echo '<a href="nongsan.php?giohang">
+=======
+                                              echo '<a href="#">
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                                               <i class="fa fa-shopping-cart icon" aria-hidden="true"></i>
                                               Giỏ hàng</a>';
                                           echo '</li>';
@@ -391,6 +539,7 @@ if(isset($_SESSION['login_id'])){
                                 echo '</ul>';
                               }
                               ?>
+<<<<<<< HEAD
               </ul>
             </div>
           </div>
@@ -459,6 +608,13 @@ if(isset($_SESSION['login_id'])){
                 <h5 class="card-title heading-circle">TRÁI CÂY NHẬP KHẨU 100%</h5>
                 <p class="card-text">
               </div>
+=======
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
             </div>
           </div>
         </a>
@@ -493,6 +649,7 @@ if(isset($_SESSION['login_id'])){
       </div>
     </div>
 
+<<<<<<< HEAD
     <div class="container container-introduce">
       <div class="row row-introduce">
         <div class="col introduce__parent">
@@ -528,8 +685,52 @@ if(isset($_SESSION['login_id'])){
             </div>
           </div>
         </div>
+=======
+  <div class="background-circle">
+  
+  </div>
+  <div class="container  card-circle">
+    <div class="normal-wrapper">
+      
+    </div>
+    <div class="row rowwidth container__list">
+      <a href="#">
+        <div class="col">
+          <div class="card card-circle__item" style="background-color: transparent; box-shadow:none; border:none">
+            <img class="card-img-top image-circle" src="https://growmax.weba.vn/shop/images/growmax/posts/traicay-ava2.jpg" alt="Card image cap">
+            <div class="card-body card-body-circle">
+              <h5 class="card-title heading-circle">LỢI ÍCH CỦA THỰC PHẨM SẠCH</h5>
+              <p class="card-text">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="col">
+          <div class="card card-circle__item" style="background-color: transparent; box-shadow:none; border:none">
+            <img class="card-img-top image-circle" src="https://growmax.weba.vn/shop/images/growmax/posts/rau-xanh-tot-cho-benh-nhan-viem-phe-quan.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title heading-circle">TRÁI CÂY NHẬP KHẨU 100%</h5>
+              <p class="card-text">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+      <div class="col">
+        <div class="card card-circle__item" style="background-color: transparent; box-shadow:none; border:none">
+          <img class="card-img-top image-circle" src="https://growmax.weba.vn/shop/images/growmax/posts/loi-ich-suc-khoe-tu-nhung-loai-trai-cay-rau-cu-mau-do-10-.7305.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title heading-circle">THỰC PHẨM HỮU CƠ XANH - SẠCH MỖI NGÀY</h5>
+            <p class="card-text">
+          </div>
+        </div>
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
       </div>
 
+<<<<<<< HEAD
 
     </div>
 
@@ -551,6 +752,69 @@ if(isset($_SESSION['login_id'])){
             <div id="content" class="list-layout">
               <div id="list">
                 <?php $dem=0; //echo $dem; ?>
+=======
+       <a href="#">
+      <div class="col">
+        <div class="card card-circle__item" style="background-color: transparent; box-shadow:none; border:none">
+          <img class="card-img-top image-circle" src="https://growmax.weba.vn/shop/images/growmax/posts/slider-02.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title heading-circle">SALAD NGON MỖI NGÀY</h5>
+            <p class="card-text">
+          </div>
+        </div>
+      </div>
+      </a>
+      
+    </div>
+</div>
+
+<div class="container container-introduce">
+    <div class="row row-introduce">
+      <div class="col introduce__parent">
+        <div class="controduce">
+          <img class="img-controduce" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/hen-suyen-an-trai-cay-2.png" alt="">
+        </div>
+      </div>
+      <div class="col introduce-text__content">
+        <div class="controduce__text">
+          <h2 class="controduce-text-heading">SƠ LƯỢC</h2>
+          <div class="controduce__content">
+           <h3 class="content-text"> <p>Về chúng tôi</p></h3>
+           <p>
+            Trang web này được thành lập bởi 2 founder, được thành lập nhằm mục đích phi lợi nhuận, mục đích là giúp người nông dân giải quyết vấn đề phân phối nông sản đến người tiêu dùng và bên cạnh đó khách hàng cũng có thể mua hàng nhằm xử lí tình trạng tồn khi hàng hòa của bà con nông dân.
+           </p>
+          
+           <div>
+            <ul>
+              <li>Giá trị kinh doanh của chúng tôi là giúp nền nông nghiệp ngày càng phát triển</li>
+              <li>Địa chỉ cửa hàng : số 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh</li>
+              <li><span>Thông tin liên hệ: vui lòng liên lạc chúng tôi qua gmail: dhcn.info@gmail.com</span></li>
+              <li>Ngoài ra các bạn có thể liên lạc qua các mạng xã hội</li>
+            </li>
+            </ul>
+<!--             <p>Bạn có thể chỉnh sửa hoặc xoá bài viết này tại <strong>đây</strong> hoặc thêm những bài viết mới trong phần quản lý <strong>Trang nội dung</strong></p>
+ -->           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  </div>
+
+  <!-- End Introduce -->
+
+
+  <!-- Phân trang start-->
+
+  <!-- Phân trang end -->
+
+<!-- List item -->
+<div class="list-item">
+<div id="content" class="list-layout">
+            <div id="list">
+              <?php $dem=0; //echo $dem; ?>  
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
                 <table border="0" cellspacing="0" cellpadding="0">
                   <?php foreach ($member as $item){ ?>
 
@@ -583,6 +847,7 @@ if(isset($_SESSION['login_id'])){
                         <div class="card card-parent">
                           <?php echo "<img class='card-img-top' src='img/".$item['hinhanh']."'/>"; ?>
 
+<<<<<<< HEAD
                           <!-- <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_b64c243e49b84e4e8fccf12d271cd7c7_1024x1024.jpg" alt="Card image cap"> -->
                           <a href="#">
                             <button class="btn-btn-buy">
@@ -590,6 +855,15 @@ if(isset($_SESSION['login_id'])){
                               <span>Thêm vào giỏ hàng</span>
                               <?php echo '<button class="btn btn-cart" >'."<a  style='color:white; text-decoration: none' href='nongsan.php?chitietnongsan=".$item["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>"; ?>
                               <?php echo "<a  style='color:white; text-decoration: none' href='blog/chitietbaiblog.php?chitietnongsan=".$item["manongsan"]."'>"."Xem nguồn gốc"."</a>"; ?>
+=======
+                              <!-- <img class="card-img-top" src="https://growmax.weba.vn/shop/images/growmax/product/upload_b64c243e49b84e4e8fccf12d271cd7c7_1024x1024.jpg" alt="Card image cap"> -->
+                              <a href="#">
+                                <button class="btn-btn-buy">
+                                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                  <span>Thêm vào giỏ hàng</span>
+                                   <?php echo '<button class="btn btn-cart" >'."<a  style='color:white; text-decoration: none' href='trangsanpham.php?chitietnongsan=".$item["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>"; ?>
+                                   <?php echo "<a  style='color:white; text-decoration: none' href='blog/chitietbaiblog.php?chitietnongsan=".$item["manongsan"]."'>"."Xem nguồn gốc"."</a>"; ?>
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 
                             </button>
                           </a>
@@ -734,6 +1008,7 @@ if(isset($_SESSION['login_id'])){
 
   <!-- Start List Imagae -->
 
+<<<<<<< HEAD
   <div class="">
     <div class="wrap list-image__item">
       <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/Gorgeous-Mix-Fresh-Fruits.jpg"
@@ -754,6 +1029,52 @@ if(isset($_SESSION['login_id'])){
       <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/tey1555934946.jpg" alt="">
       <img class="list-image"
         src="https://growmax.weba.vn/shop/images/growmax/hinhanh/Trai-cay-nhap-khau-tphcm-VinFruits.jpg" alt="">
+=======
+<div class="">
+  <div class="wrap list-image__item">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/Gorgeous-Mix-Fresh-Fruits.jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/16113207_1291856107520109_7899272927030557727_o(1).jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/photo-1-1501135431883.jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/376028-sepik-15657821551051653886997.jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/20180529-nhung-loai-trai-cay-lam-mat-co-the-nhanh-nhat-trong-ngay-nong-1.jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/ba-ba-u-a-n-bu-o-i-1549852744-8567-1549852913.png" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/tey1555934946.jpg" alt="">
+      <img class="list-image" src="https://growmax.weba.vn/shop/images/growmax/hinhanh/Trai-cay-nhap-khau-tphcm-VinFruits.jpg" alt="">
+  </div>
+</div>
+
+
+ 
+<!-- List Posts  -->
+
+<div class="container">
+  <div class="row ">
+    <div class="col container-posts">
+    <a href="#" class="post-link__item">
+      <div class="card posts" >
+        <img class="card-img-top card-image_post" src="https://growmax.weba.vn/shop/images/growmax/posts/back.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title heading-post">Nông Sản Bắc Mỹ Rầm Rộ Tìm Đường Vào Việt Nam</h4>
+          <i class="fa fa-calendar icon-calendar" aria-hidden="true"></i> <span style="margin-right:4px;">30-07-2017</span>
+          <p class="card-text">
+        </div>
+      </div>
+      
+    </a> 
+
+        
+
+  
+   
+<a href="#" class="post-link__item">
+  <div class="card posts" >
+    <img class="card-img-top card-image_post" src="https://growmax.weba.vn/shop/images/growmax/posts/cach-chon-rau-cu-qua-sach-tuoi-ngon-khong-ngam-doc-221922.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title heading-post">Tỏi, Ổi, Thanh Long... Việt Lên Vị Trí Nóng Ở Siêu Thị</h4>
+      <i class="fa fa-calendar icon-calendar" aria-hidden="true"></i> <span style="margin-right:4px ;">30-07-2017</span>
+      <p class="card-text">
+      
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
     </div>
   </div>
 
@@ -934,7 +1255,11 @@ if(isset($_SESSION['login_id'])){
 
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+<<<<<<< HEAD
       <i class="fa fa-copyright"></i> 2022 No copy right
+=======
+    <i class="fa fa-copyright"></i> 2022 No copy right
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
     </div>
     <!-- Copyright -->
   </footer>
@@ -944,6 +1269,7 @@ if(isset($_SESSION['login_id'])){
 
 
 
+<<<<<<< HEAD
   <!-- ./wrapper -->
 
   <!-- jQuery -->
@@ -955,6 +1281,17 @@ if(isset($_SESSION['login_id'])){
   <!-- AdminLTE for demo purposes -->
   <script src="./dist/js/demo.js"></script>
   <script src="./dist/js/script.js"></script>
+=======
+<!-- jQuery -->
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./dist/js/demo.js"></script>
+<script src="./dist/js/script.js"></script>
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 
 
 </body>

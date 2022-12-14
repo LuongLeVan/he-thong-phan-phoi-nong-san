@@ -159,7 +159,15 @@
                     </button>
                 </div>
 
+<<<<<<< HEAD
                 <form action="ajax/admin/themnhanvien.php" method="POST">
+=======
+<<<<<<< HEAD
+                <form action="../../ajax/admin/themnhanvien.php" method="POST">
+=======
+                <form action="../../Model/themnhanvien.php" method="POST">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 
                     <div class="modal-body">
                         
@@ -204,7 +212,15 @@
                     </button>
                 </div>
 
+<<<<<<< HEAD
                 <form action="ajax/admin/capnhatnhanvien.php" method="POST">
+=======
+<<<<<<< HEAD
+                <form action="../../ajax/admin/capnhatnhanvien.php" method="POST">
+=======
+                <form action="../../Model/capnhatnhanvien.php" method="POST">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 
                     <div class="modal-body">
 
@@ -254,7 +270,15 @@
                     </button>
                 </div>
 
+<<<<<<< HEAD
                 <form action="ajax/admin/xoanhanvien.php" method="POST">
+=======
+<<<<<<< HEAD
+                <form action="../../ajax/admin/xoanhanvien.php" method="POST">
+=======
+                <form action="../../Model/xoanhanvien.php" method="POST">
+>>>>>>> cb40d2010451878e806801f4fd735638402ecabe
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 
                     <div class="modal-body">
 

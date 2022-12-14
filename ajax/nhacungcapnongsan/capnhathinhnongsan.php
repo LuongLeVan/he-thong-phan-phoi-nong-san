@@ -20,7 +20,11 @@ mysqli_set_charset($connection, 'utf8');
             echo '<script> alert("Cập nhật nông sản thành công"); </script>';
             //header("Location:index.php");
             echo "<script>
+<<<<<<< HEAD
                 window.location.href='../../trangquanly.php?nongsan';
+=======
+                window.location.href='../../View/anhacungcapnongsan/trangquanly.php?nongsan';
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
             </script>"; 
         }
         else

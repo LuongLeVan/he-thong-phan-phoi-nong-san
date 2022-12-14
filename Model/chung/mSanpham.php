@@ -59,6 +59,7 @@
 				return false;
 			}
 		}
+<<<<<<< HEAD
 		function tao_donhangkhachhangnganhang($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$magiaodichvnpay,$manganhang){
 			$con;
 			$p = new clsketnoi();
@@ -80,6 +81,12 @@
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
+=======
+		function tao_donhangncc($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan){
+			$con;
+			$p = new clsketnoi();
+			if($p->ketnoiDB($con)){
+>>>>>>> ad47394ee8c720a4c929a8e0de0a263386582291
 				$string = "insert into donhang(makhachhang, manhacungcap, manongsan, trangthai, tongtien, hinhthucthanhtoan) values";
 				$string .= "('$makhachhang','$mancc','$manongsan','$trangthai','$tongtien','$thanhtoan')";
 
