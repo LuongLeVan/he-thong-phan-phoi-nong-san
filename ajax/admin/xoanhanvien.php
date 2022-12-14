@@ -20,9 +20,9 @@ if(isset($_POST['deletedata']))
     if($query_run)
     {
         echo '<script> alert("Nhân viên này đã được xóa thành công"); </script>';
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
+        header('Location: ../../trangquanly.php?quanlynhanvien');
         echo "<script>
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
+        header('Location: ../../trangquanly.php?quanlynhanvien');
         </script>";
        
     }

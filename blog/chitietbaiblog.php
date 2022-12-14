@@ -27,21 +27,21 @@
   <body class="goto-here">
   <?php
         
-        include("../Controller/chung/cblog.php");
-        $p = new csanpham();
-        if(isset($_REQUEST["chitietnongsan"])){
-            $ns = $_REQUEST["chitietnongsan"];
-            $tblnongsan = $p->xemchitietsanpham($ns);
-        }else{
-            //$tblnongsan = $p->();
-        }
-        if($tblnongsan){
-          if(mysqli_num_rows($tblnongsan)>0){
-              $dem = 0; 
-              //echo'<table class="table">';
-              while($row = mysqli_fetch_assoc($tblnongsan)){
-                  if($dem==0){      
-                  }
+        // include("../Controller/chung/cblog.php");
+        // $p = new csanpham();
+        // if(isset($_REQUEST["chitietnongsan"])){
+        //     $ns = $_REQUEST["chitietnongsan"];
+        //     $tblnongsan = $p->xemchitietsanpham($ns);
+        // }else{
+        //     //$tblnongsan = $p->();
+        // }
+        // if($tblnongsan){
+        //   if(mysqli_num_rows($tblnongsan)>0){
+        //       $dem = 0; 
+        //       //echo'<table class="table">';
+        //       while($row = mysqli_fetch_assoc($tblnongsan)){
+        //           if($dem==0){      
+        //           }
                  
       ?>
     <div class="wrapper">
@@ -94,7 +94,7 @@
     <section id="content-blog" class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 ftco-animate">
+          <div class="col-lg-12 ftco-animate">
 						<h2 class="mb-3">Nông trại số 1 Đồng Nai</h2>
             <p>
               Từ một cơ sở sản xuất nhỏ khởi nghiệp từ năm 1982 và trở thành HTX mang tên Bình Tiên chuyên sản xuất dép Cao su tại Quận 6 với vài chục công nhân và hơn hết là một tấm lòng vì sự phát triển kinh tế đất nước của những người chủ tâm huyết, Biti’s đã trải qua giai đoạn của nền kinh tế bao cấp với nhiều khó khăn.
@@ -125,20 +125,12 @@ Tiến hàng đào hố trồng cây. Tùy cỡ bầu đất mà đào hố có 
               
               Về vitamin và khoáng chất: Trong súp lơ - bông cải xanh có chứa nhiều loại vitamin và khoáng chất phong phú như vitamin C, K, A, B9, kali, mangan, photpho giúp tăng cường hệ miễn dịch, phục hồi cơ thể và tốt cho xương.</p>
             
-              <div class="col-lg-8 ftco-animate">
+              <div class="col-lg-12s ftco-animate">
 						<h2 class="mb-3">Giấy kiểm định nông sản</h2>
              
-            
-              <div class="tag-widget post-tag-container mb-5 mt-5">
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-              </div>
-            </div>
+          
             <?php  
-                //include('giaykiemdinhnongsan.php');
+                include('giaykiemdinhnongsan.php');
               ?>
 
           </div> <!-- .col-md-8 -->
@@ -284,18 +276,18 @@ Tiến hàng đào hố trồng cây. Tùy cỡ bầu đất mà đào hố có 
 
   <!-- loader -->
   <?php
-                $dem++;
-                  if($dem%4==0){
-                   $dem = 0;
-                  }
-                }
-                //echo "</table>";
-              }else{
-                echo "0 redult";
-              }
-            }else{
-              echo "Khong co gia tri";
-            }
+            //     $dem++;
+            //       if($dem%4==0){
+            //        $dem = 0;
+            //       }
+            //     }
+            //     //echo "</table>";
+            //   }else{
+            //     echo "0 redult";
+            //   }
+            // }else{
+            //   echo "Khong co gia tri";
+            // }
           ?>
 <script src="./script.js"></script>
 

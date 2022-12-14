@@ -29,7 +29,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Quản lý thông tin nhân viên</h1>
+            <h1>Quản lý thông tin doanh nghiệp</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -61,9 +61,9 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách nhân viên | 
+                <h3 class="card-title">Danh sách doanh nghiệp | 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentaddmodal">
-                        Thêm nhân viên 
+                        Thêm doanh nghiệp
                     </button>
                 </h3> 
               </div>
@@ -75,20 +75,20 @@
                         mysqli_set_charset($connection, 'utf8');
 
 
-                  $query = "SELECT * FROM nhanvien";
+                  $query = "SELECT * FROM doanhnghiep";
                   $query_run = mysqli_query($connection, $query);
 
                 ?>
               <table id="datatableid" class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col">Mã nhân viên</th>
-                                <th scope="col">Tên nhân viên</th>
-                                <th scope="col">Chức vụ</th>
+                                <th scope="col">Mã doanh nghiệp</th>
+                                <th scope="col">Tên doanh nghiệp</th>
+                                <th scope="col">Tên người đại diện</th>
                                 <th scope="col">Ảnh đại diện</th>
                                 <th scope="col">Số điện thoại</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">username</th>
+                                <!-- <th scope="col">username</th> -->
                                 <th scope="col">Tác vụ</th>
                                 
                             </tr>
@@ -101,15 +101,15 @@
             ?>
                         <tbody>
                             <tr>
-                                <td> <?php echo $row['manhanvien']; ?> </td>
-                                <td> <?php echo $row['tennhanvien']; ?> </td>
-                                <td> <?php echo $row['chucvu']; ?> </td>
-                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='../../img/".$row['hinh']."'/>"; ?> </td>
+                                <td> <?php echo $row['madoanhnghiep']; ?> </td>
+                                <td> <?php echo $row['tendoanhnghiep']; ?> </td>
+                                <td> <?php echo $row['tennguoidaidien']; ?> </td>
+                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='img/".$row['hinh']."'/>"; ?> </td>
                 <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
                                 <td> <?php echo $row['sdt']; ?> </td>
                                 <td> <?php echo $row['email']; ?> </td>
-                                <td> <?php echo $row['username']; ?> </td>
+                                <!-- <td> <?php //echo $row['username']; ?> </td> -->
 
                                 <!-- <td> <?php //echo $row['id']; ?> </td>
                                 <td> <?php //echo $row['fname']; ?> </td>
@@ -159,7 +159,7 @@
                     </button>
                 </div>
 
-                <form action="../../Model/themnhanvien.php" method="POST">
+                <form action="ajax/admin/themdoanhnghiep.php" method="POST">
 
                     <div class="modal-body">
                         

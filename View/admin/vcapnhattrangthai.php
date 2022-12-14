@@ -9,14 +9,14 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 
     <?php
-include("../../Controller/admin/cduyetnongsan.php");
+include("Controller/admin/cduyetnongsan.php");
     if(isset($_REQUEST["doitrangthai"])){
       $manongsan=$_REQUEST["doitrangthai"];
       $tt='daduyet';
@@ -26,7 +26,7 @@ include("../../Controller/admin/cduyetnongsan.php");
     
        echo "<script>alert('Bài đăng nông đã được duyệt')</script>";
        echo "<script>
-            window.location.href='trangchuadmin.php?duyetnongsan';
+            window.location.href='trangquanly.php?duyetnongsan';
         </script>";  
     }elseif(isset($_REQUEST["tuchoi"])){
       $manongsan=$_REQUEST["tuchoi"];
@@ -37,7 +37,7 @@ include("../../Controller/admin/cduyetnongsan.php");
     
        echo "<script>alert('Bài đăng nông đã bị từ chối')</script>";
        echo "<script>
-            window.location.href='trangchuadmin.php?duyetnongsan';
+            window.location.href='trangquanly.php?duyetnongsan';
         </script>";  
     }
                                                                                                                                                                                                                                                                                                                                                                                                               

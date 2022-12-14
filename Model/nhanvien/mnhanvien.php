@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/chung/ketnoi.php");
+	include_once("Model/chung/ketnoi.php");
 
 	class mnhanvien{
 		function select_nhanvien(){

@@ -23,7 +23,7 @@
 			//$aa=mysqli_connect("localhost","admin","1234");
 			$p = new clsketnoi();
 			if($p -> ketnoiDB($con)){
-				$string = "SELECT madonhang, tennongsan, donhang.soluong, donhang.trangthai, tenkhachhang, nongsan.manongsan  FROM ((donhang join nhacungcap on donhang.manhacungcap = nhacungcap.mancc) join khachhang on donhang.makhachhang = khachhang.makhachhang) join nongsan on donhang.manongsan = nongsan.manongsan";
+				$string = "SELECT madonhang, nongsan.manongsan, tennongsan, trangthaidathang, tenkhachhang FROM (hoadon JOIN nongsan on hoadon.manongsan = nongsan.manongsan) JOIN khachhang on hoadon.makhachhang = khachhang.makhachhang";
 				//$string = "select * from benhnhan join benhvien on benhnhan.mabv = benhvien.mabv where tt=1";
 
 				//echo $string;
@@ -128,12 +128,13 @@
 				return false;
 			}
 		}
+		
 
 		function xem_nongsan_bituchoi(){
 			//$aa=mysqli_connect("localhost","admin","1234");
 			$p = new clsketnoi();
 			if($p -> ketnoiDB($con)){
-				$string = "SELECT * FROM (nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai where trangthai = 'tuchoi' and  mancc = '".$_SESSION['mancc']."'";
+				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join lienhephanhoi on lienhephanhoi.manongsan = nongsan.manongsan where nongsan.trangthai = 'tuchoi' and  mancc = '".$_SESSION['mancc']."'";
 				$table = mysqli_query($con,$string);
 				$p -> dongketnoi($con);
 				//var_dump($table);
@@ -208,12 +209,27 @@
 				return false;
 			}
 		}
-		function hienthigiaykiemdinh($manongsan){
+		function kiemdinh($manongsan){
 			$con;
 			$p = new clsketnoi();
 			if($p->ketnoiDB($con)){
 				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
-				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'chokiemdinh' and nongsan.manongsan= ".$manongsan;
+				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where nongsan.manongsan= ".$manongsan;
+				//echo $string;
+				$table = mysqli_query($con,$string);
+				$p->dongketnoi($con);
+				return $table;
+			}else{
+				return false;
+			}
+		}
+
+		function xemgiaykiemdinh($manongsan){
+			$con;
+			$p = new clsketnoi();
+			if($p->ketnoiDB($con)){
+				//$string = "select * from nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc where manongsan= ".$manongsan;
+				$string = "SELECT * FROM ((nongsan join nhacungcap on nongsan.manhacungcap = nhacungcap.mancc) join loainongsan on nongsan.maloai = loainongsan.maloai) join phieukiemdinh on nongsan.manongsan = phieukiemdinh.manongsan where phieukiemdinh.trangthai = 'dakiemdinh' and nongsan.manongsan= ".$manongsan;
 				//echo $string;
 				$table = mysqli_query($con,$string);
 				$p->dongketnoi($con);
@@ -308,11 +324,11 @@
 			}
 		}
 
-		function capnhatthongtin_hinh($manongsan,$hinh){
+		function capnhatthongtin_hinh($manongsan,$mancc,$maloai,$hinh){
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){
-				$querystring="update nongsan ";
-				$querystring .= " set hinhanh='".$hinh."'";
+				$querystring ="update nongsan ";
+				$querystring .= " set manhacungcap='".$mancc."',maloai='".$maloai."',hinhanh='".$hinh."'";
 				$querystring .= " where manongsan=".$manongsan;
 				echo $querystring;
 				$kq=mysqli_query($con,$querystring);
@@ -323,5 +339,19 @@
 				return false;
 			}
 		}
+
+		function them_nongsan($manhacungcap, $tennongsan, $maloai, $soluong, $kichthuoc, $hinh){
+			$p = new clsketnoi();
+			if ($p->ketnoiDB($con)) {
+				$string = "insert into nongsan(manhacungcap,tennongsan,maloai,soluong,kichthuoc,hinh) values";
+				$string .= "(N'".$manhacungcap."',N'".$tennhacungcap."','".$maloai."',N'".$soluong."',".$kichthuoc.",N'".$hinh."')";
+				$kq = mysqli_query($con, $string);
+				echo $string;
+				$p->dongketnoiDB($con);
+				return $kq;
+			} else {
+				return false;
+			}
+    	}
 	}
 ?>

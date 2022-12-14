@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/chung/ketnoi.php");
+	include_once("Model/chung/ketnoi.php");
 
 	class mnhacungcap{
 		function select_nhacungcap(){
@@ -45,6 +45,7 @@
 				return false;
 			}
 		}
+		
 		function capnhatthongtinncc($mancc,$tenncc,$sdt,$emai,$diachi,$tinh,$quan,$phuong){
 			$p=new clsketnoi();
 			if($p->ketnoiDB($con)){

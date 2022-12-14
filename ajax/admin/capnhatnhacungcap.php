@@ -18,7 +18,7 @@ mysqli_set_charset($connection, 'utf8');
         {
             echo "<script>alert('Thông tin nhà cung cấp đã được cập nhật')</script>";
        echo "<script>
-            window.location.href='../../View/admin/trangchuadmin.php?quanlynhacungcap';
+            window.location.href='../../trangquanly.php?quanlynhacungcap';
         </script>";  
     
         }

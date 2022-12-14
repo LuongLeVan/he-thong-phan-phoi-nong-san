@@ -2,34 +2,50 @@
 
 session_start();
 
-$connection = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($connection, 'nongsanviet');
-mysqli_set_charset($connection, 'utf8');
+// $connection = mysqli_connect("localhost","root","");
+// $db = mysqli_select_db($connection, 'nongsanviet');
+// mysqli_set_charset($connection, 'utf8');
+include ("../../Controller/chung/cthemnongsan.php");
 if(isset($_POST['insertdata']))
 {
-    $fname = $_POST['fname'];
+    $tennongsan = $_POST['tennongsan'];
     $loai2 = $_POST['loai2'];
-    $course = $_POST['course'];
-    $contact = $_POST['contact'];
+    $soluong = $_POST['soluong'];
+    $kichthuoc = $_POST['kichthuoc'];
     $manhacungcap = $_SESSION['mancc'];
-    $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
-    $query_run = mysqli_query($connection, $query);
+    $file=$_FILES["fflie"]["tmp_name"];
+    $type=$_FILES["fflie"]["type"];
+    $name=$_FILES["fflie"]["name"];
+    $size=$_FILES["fflie"]["size"];
+    $p=new cnongsan();
+    $kp=$p->themnongsan($manhacungcap,$tennongsan,$loai2,$soluong,$kichthuoc,$file,$name,$type,$size);
+        if($kp==1){
+            echo "<script>alert('Thêm Dữ liệu thành công')</script>";
+            echo header("refresh:0; url='admin?qlsp.php'");
+        }elseif ($kp==0) {
+            echo "<script>alert('Không thể insert')</script>";
+        }elseif ($kp==-1) {
+            echo "<script>alert('Không thể upload')</script>";
+        }elseif ($kp==-2) {
+            echo "<script>alert('size quá lớn')</script>";
+        }elseif ($kp==-3) {
+            echo "<script>alert('file không đúng dạng')</script>";
+        }else {
+            echo "error";
+        }
+    }
+    // $query = "INSERT INTO nongsan (`manhacungcap`,`tennongsan`,`maloai`,`soluong`,`kichthuoc`) VALUES ('$manhacungcap','$fname','$loai2','$course','$contact')";
+    // $query_run = mysqli_query($connection, $query);
     
-    echo $query;
-    echo $query_run;
+    
+    //echo $query;
+    //echo $query_run;
 
-    if($query_run)
-    {
+    
         echo '<script> alert("Nông sản đã được tạo"); </script>';
-        //header('Location: ../View/anhacungcapnongsan/trangquanly.php?nongsan');
-        echo "<script>
-            window.location.href='../../View/anhacungcapnongsan/trangquanly.php?nongsan';
-        </script>"; 
-    }
-    else
-    {
-        echo '<script> alert("Không thành công"); </script>';
-    }
-}
+        // echo "<script>
+        //     window.location.href='../../trangquanly.php?nongsan';
+        // </script>"; 
+   
 
 ?>

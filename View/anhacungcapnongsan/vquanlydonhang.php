@@ -47,8 +47,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
-
-
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -67,7 +65,6 @@
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
@@ -80,11 +77,11 @@
               <div class="card-body table-responsive p-0">
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
-
-                    include("../../Controller/chung/cnongsan.php");
-
+                    include("Controller/chung/cnongsan.php");
                     $p = new cnongsan();
                     $table = $p-> hienthi_donhang();
+                    //var_dump($table);
+                    //var_dump(mysqli_fetch_assoc($table));
                     if($table){
                       $dem = 0;
                       echo '<table class="table table-hover text-nowrap">';
@@ -104,17 +101,17 @@
                             echo '<tbody>';
                             echo "<tr>";
                            }
-                           if($row['trangthai'] == 'chotiepnhan'){
+                           if($row['trangthaidathang'] == 'chotiepnhan'){
                             echo '<tr style="background-color: #ef98a7">';
                             echo '<td style="border: non;">'.'<input style="border: none; background-color: #ef98a7" type="text" name="manongsan" value="'.$row["madonhang"].'">'.'</td>';
                             echo '<td>'.'<input style="border: none; background-color: #ef98a7" type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
                             echo '<td>'.$row["tenkhachhang"].'</td>';
-                            echo '<td>'.'<input style="border: none; background-color: #ef98a7" type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                            echo '<td>'.'<input style="border: none; background-color: #ef98a7" type="text" name="trangthaidathang" value="'.$row["trangthaidathang"].'">'.'</td>';
                             echo '<td>';
                             echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                             echo '</td>';
                             echo '<td>';
-                            echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                            echo "</td><td><a href='trangchuadmin.php?doitrangthaidathang=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
                             echo '</td>';
                             $dem++;
                             if ($dem %1 ==0) {
@@ -124,17 +121,17 @@
                                 $dem = 0;
                             }
                            }
-                           if($row['trangthai'] == 'datiepnhan'){
+                           if($row['trangthaidathang'] == 'datiepnhan'){
                             echo '<tr style="background-color: #a1c7ed;">';
                             echo '<td style="border: non;">'.'<input style="border: none; background-color: #a1c7ed" type="text" name="manongsan" value="'.$row["madonhang"].'">'.'</td>';
                             echo '<td>'.'<input style="border: none; background-color: #a1c7ed" type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
                             echo '<td>'.$row["tenkhachhang"].'</td>';
-                            echo '<td>'.'<input style="border: none; background-color: #a1c7ed" type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                            echo '<td>'.'<input style="border: none; background-color: #a1c7ed" type="text" name="trangthaidathang" value="'.$row["trangthaidathang"].'">'.'</td>';
                             echo '<td>';
                             echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                             echo '</td>';
                             echo '<td>';
-                            echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                            echo "</td><td><a href='trangchuadmin.php?doitrangthaidathang=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
                             echo '</td>';
                             $dem++;
                             if ($dem %1 ==0) {
@@ -144,17 +141,17 @@
                                 $dem = 0;
                             }
                            }
-                           if($row['trangthai'] == 'dadonggoi'){
+                           if($row['trangthaidathang'] == 'dadonggoi'){
                             echo '<tr style="background-color: #c7de99">';
                             echo '<td style="border: non;">'.'<input style="border: none; background-color: #c7de99" type="text" name="manongsan" value="'.$row["madonhang"].'">'.'</td>';
                             echo '<td>'.'<input style="border: none; background-color: #c7de99" type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
                             echo '<td>'.$row["tenkhachhang"].'</td>';
-                            echo '<td>'.'<input style="border: none; background-color: #c7de99" type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                            echo '<td>'.'<input style="border: none; background-color: #c7de99" type="text" name="trangthaidathang" value="'.$row["trangthaidathang"].'">'.'</td>';
                             echo '<td>';
                             echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                             echo '</td>';
                             echo '<td>';
-                            echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                            echo "</td><td><a href='trangchuadmin.php?doitrangthaidathang=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
                             echo '</td>';
                             $dem++;
                             if ($dem %1 ==0) {
@@ -164,17 +161,17 @@
                                 $dem = 0;
                             }
                            }
-                           if($row['trangthai'] == 'dathanhtoan'){
+                           if($row['trangthaidathang'] == 'dathanhtoan'){
                             echo '<tr style="background-color: #f9e3a1">';
                             echo '<td style="border: non;">'.'<input style="border: none; background-color:  #f9e3a1" type="text" name="manongsan" value="'.$row["madonhang"].'">'.'</td>';
                             echo '<td>'.'<input style="border: none; background-color:  #f9e3a1" type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
                             echo '<td>'.$row["tenkhachhang"].'</td>';
-                            echo '<td>'.'<input style="border: none; background-color:  #f9e3a1" type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                            echo '<td>'.'<input style="border: none; background-color:  #f9e3a1" type="text" name="trangthaidathang" value="'.$row["trangthaidathang"].'">'.'</td>';
                             echo '<td>';
                             echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                             echo '</td>';
                             echo '<td>';
-                            echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                            echo "</td><td><a href='trangchuadmin.php?doitrangthaidathang=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
                             echo '</td>';
                             $dem++;
                             if ($dem %1 ==0) {

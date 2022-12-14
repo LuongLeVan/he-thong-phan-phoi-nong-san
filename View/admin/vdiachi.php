@@ -1,6 +1,6 @@
 <?php
 
-	include("../../Controller/chung/cdiachi.php");
+	include("Controller/chung/cdiachi.php");
 
 	$p = new cdiachi();
 	$table = $p-> hienthi_diachi_admin();

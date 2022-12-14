@@ -14,7 +14,7 @@
         }elseif($row['role'] == 3){
             $id = "Admin";
         }else{
-            $id = "Nhân ciên";
+            $id = "Nhân viên";
 
         }
         $id2 = $row['size_status'];

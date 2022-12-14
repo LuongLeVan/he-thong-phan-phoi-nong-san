@@ -16,7 +16,7 @@
 <body class="hold-transition sidebar-mini">
 
     <?php
-include("../../Controller/chung/ctinnhucau.php");
+include("Controller/chung/ctinnhucau.php");
     if(isset($_REQUEST["trangthaibaitin"])){
       $mabaitin=$_REQUEST["trangthaibaitin"];
       $tt='daduyet';
@@ -26,7 +26,7 @@ include("../../Controller/chung/ctinnhucau.php");
     
        echo "<script>alert('Bài đăng tin nhu cầu đã được duyệt')</script>";
        echo "<script>
-            window.location.href='trangchuadmin.php?duyetbaitinnhucau';
+            window.location.href='trangquanly.php?duyetbaitinnhucau';
         </script>";  
     }elseif(isset($_REQUEST["tuchoibaitin"])){
       $mabaitin=$_REQUEST["tuchoibaitin"];
@@ -37,7 +37,7 @@ include("../../Controller/chung/ctinnhucau.php");
     
        echo "<script>alert('Bài đăng tin nhu cầu đã bị từ chối')</script>";
        echo "<script>
-            window.location.href='trangchuadmin.php?duyetbaitinnhucau';
+            window.location.href='trangquanly.php?duyetbaitinnhucau';
         </script>";  
     }
                                                                                                                                                                                                                                                                                                                                                                                                               

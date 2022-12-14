@@ -1,6 +1,6 @@
 <?php
 
-	include("../../Controller/nhacungcapnongsan/cnhacungcap.php");
+	include("Controller/nhacungcapnongsan/cnhacungcap.php");
 
 	$p = new cnhacungcap();
 	$table = $p-> view_nhacungcap();

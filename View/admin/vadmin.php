@@ -1,6 +1,6 @@
 <?php
 
-	include("../../Controller/admin/cadmin.php");
+	include("Controller/admin/cadmin.php");
 
 	$p = new cadmin();
 	$table = $p-> view_admin();

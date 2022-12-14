@@ -11,17 +11,17 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../../dist/css/input.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/input.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../../dist/js/ajax.js"></script>
+  <script src="dist/js/ajax.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -33,7 +33,7 @@
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             
             <?php 
-            echo "<img class='rounded-circle mt-5' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
+            echo "<img class='rounded-circle mt-5' width='150px' src='img/".$_SESSION['hinh']."'/>"; 
             echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
               
             ?>
@@ -146,7 +146,7 @@
 ?>
 
 <?php
-include_once("../../Controller/admin/cadmin.php");
+include_once("Controller/admin/cadmin.php");
 if(isset($_REQUEST["btnsubmit"])){
     $tenadmin=$_REQUEST["tenadmin"];
     $sdt=$_REQUEST["sdt"];
@@ -166,7 +166,7 @@ if(isset($_REQUEST["btnsubmit"])){
     if($kp==1){
         echo "<script>
             alert('Thông tin đã được cập nhật');
-            window.location.href='trangchuadmin.php?capnhatthongtincanhan';
+            window.location.href='trangquanly.php?capnhatthongtincanhan';
         </script>"; 
     }elseif ($kp==0) {
         echo "<script>alert('Không thể Update')</script>";

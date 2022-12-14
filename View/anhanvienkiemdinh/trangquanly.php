@@ -273,9 +273,7 @@
             </p>
           </a>
         </li>
-
         <!-- Phân quyền + thống kê báo cáo -->
-
       </ul>
     </nav>
       <!-- /.sidebar-menu -->
@@ -303,7 +301,6 @@
               }
               else{
                 include("vkiemdinhnongsan.php");
-
               }
            ?>
 <!-- Chỗ này include nội dung vô -->

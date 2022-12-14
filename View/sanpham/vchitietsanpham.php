@@ -173,13 +173,11 @@
                   if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){ 
                     echo '<button type="button" class="btn btn-primary shop-button">Thêm vào giỏ hàng</button>';
                     echo '<button type="button" class="btn btn-success shop-button" name="btnsubmit">';
-                      
-                        echo "<a style='color: #fff' href='trangsanpham.php?thanhtoan=".$row['manongsan']."'>Thanh toán ngay</a>";
+                        echo "<a style='color: #fff' href='nongsan.php?thanhtoan=".$row['manongsan']."'>Thanh toán ngay</a>";
                   }elseif((isset($_SESSION["dn"])&& $_SESSION["dn"]==True)){
                     echo '<button type="button" class="btn btn-primary shop-button">Thêm vào giỏ hàng </button>';
                     echo '<button type="button" class="btn btn-success shop-button" name="btnsubmit">';
-                      
-                        echo "<a style='color: #fff' href='trangsanpham.php?thanhtoan=".$row['manongsan']."'>Thanh toán ngay</a>";
+                        echo "<a style='color: #fff' href='nongsan.php?thanhtoan=".$row['manongsan']."'>Thanh toán ngay</a>";
                   }
                   ?>
                       

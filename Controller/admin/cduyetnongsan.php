@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/chung/mnongsan.php");
+	include_once("Model/chung/mnongsan.php");
 
 	class duyetnongsan{
 		function view_nongsan(){

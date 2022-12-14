@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/chung/cnongsan.php");
+                    include("Controller/chung/cnongsan.php");
 
                     $p = new cnongsan();
                     $table = $p-> hienthi_nongsan_chokiemdinh();
@@ -105,11 +105,11 @@
                             echo "<tr>";
                            }
           
-                              echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'">'.'</td>';
-                              echo '<td>'.'<input type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
+                              echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'" disabled  >'.'</td>';
+                              echo '<td>'.'<input disabled type="text" name="tennongsan" value="'.$row["tennongsan"].'" disabled>'.'</td>';
                               //<input type="text" name="tenbn" value="'.$row["tenbn"].'">
                               echo '<td>'.$row["tenncc"].'</td>';
-                              echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthai"].'">'.'</td>';
+                              echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthai"].'" disabled>'.'</td>';
                              // echo '<td>'.'<input type="text" name="tt" value="3">'.'</td>';
 
                               //echo '<td>'.$row["trangthai"].'</td>';

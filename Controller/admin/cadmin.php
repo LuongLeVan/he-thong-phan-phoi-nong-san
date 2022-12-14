@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/admin/madmin.php");
+	include_once("Model/admin/madmin.php");
 
 	class cadmin{
 		function view_admin(){
@@ -20,7 +20,7 @@
 			if($tenanh !=""){
 				if($loaianh == "image/png" || $loaianh == "image/jpeg" ){
 					if($sizeanh<=2*1024*1024){
-						if(move_uploaded_file($file,"../../img/".$tenanh)){
+						if(move_uploaded_file($file,"img/".$tenanh)){
 							$p= new madmin();
 							$ins = $p->capnhatthongtin_admin($maadmin,$tenadmin,$sdt,$email,$diachi,$tinh,$quan,$phuong,$tenanh);
 							var_dump($ins);
@@ -40,7 +40,7 @@
 				}    
 			}else{
 				$p = new madmin();
-				$update = $p -> capnhatthongtinadmin($maadmin,$tenadmin,$sdt,$email,$diachi,$tinh,$quan,$phuong);
+				$update = $p -> capnhatthongtin_admin($maadmin,$tenadmin,$sdt,$email,$diachi,$tinh,$quan,$phuong);
 				var_dump($update);
 				if($update){
 					return 1;

@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(".tinh").change(function(){
         var id = $(".tinh").val();
         //alert($id);
-        $.post("../../View/quan.php", {id: id}, function(data){
+        $.post("ajax/chung/quan.php", {id: id}, function(data){
             $(".quan").html(data);
         })
     })
@@ -11,7 +11,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".quan").change(function(){
         var id = $(".quan").val();
-        $.post("../../View/phuong.php", {id: id}, function(data){
+        $.post("ajax/chung/phuong.php", {id: id}, function(data){
             $(".phuong").html(data);
         })
     })

@@ -29,9 +29,9 @@ if(isset($_POST['insertdata']))
     if($query_run)
     {
         echo '<script> alert("Đã thêm nhà cung cấp mới"); </script>';
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhacungcap');
+        header('Location: ../../trangquanly.php?quanlynhacungcap');
         echo "<script>
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhacungcap');
+        header('Location: ../../trangquanly.php?quanlynhacungcap');
         </script>"; 
     }
     else

@@ -80,10 +80,10 @@
         <h6> <u> Số 12 / 2022 / KNTP</u></h6>
       </div>
 
-      <div class="title-right">
+      <!-- <div class="title-right">
         <h4 >CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
         <h5 >Dộc lập - tự do - hạnh phúc</h5>
-      </div>
+      </div> -->
         
         <h2 class="title">GIẤY KIỂM NGHIỆM NÔNG SẢN</h2>
         <div class="div-df" style="display: flex;">
@@ -158,20 +158,15 @@
             <td>Tổng số vi khuẩn hiếu khí</td>
             <td>KL/g</td>
             <td>3.5x10</td>
-
           </tr>
-
           <tr>
             <th scope="row">II. Chỉ tiêu vi sinh</th>
-            
           </tr>
-          
           <tr>
             <th scope="row">1</th>
             <td>Tổng số vi khuẩn hiếu khí</td>
             <td>KL/g</td>
             <td>3.5x10</td>
-
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -186,12 +181,9 @@
         <p>TP.HCM Ngày 20 tháng 10 năm 2022</p>
         <img  src="../../img/condau3.png" alt="">
       </div>
-      
 </div>
-
     <script src="/script/script.js"></script>
     <script src="/script/products.js"></script>
-
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -200,8 +192,6 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-
-
 </body>
 
 </html>

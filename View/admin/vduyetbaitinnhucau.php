@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/chung/ctinnhucau.php");
+                    include("Controller/chung/ctinnhucau.php");
 
                     $p = new ctinnhucau();
                     $table = $p-> view_tinnhucau();
@@ -119,7 +119,7 @@
                               //echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>';
                               echo '<td>';
                               //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
-                              echo "</td><td><a href='trangchuadmin.php?trangthaibaitin=".$row['mabaitin']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoibaitin=".$row['mabaitin']."'>Từ chối</a>";
+                              echo "</td><td><a href='trangquanly.php?trangthaibaitin=".$row['mabaitin']."'>Duyệt | </a><a style='color: red' href='trangquanly.php?tuchoibaitin=".$row['mabaitin']."'>Từ chối</a>";
                               //echo "</td><td><a href='admin.php?upProd&&compID=".$row['CompID']."&&ProdID=".$row['ProdID']."'>Sửa|</a><a href='admin.php?delProd&&ProdID=".$row['ProdID']."'>Xóa</a>";
 
 

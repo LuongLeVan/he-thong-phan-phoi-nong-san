@@ -24,9 +24,9 @@ if(isset($_POST['insertdata']))
     if($query_run){
         if($query_run){
             echo '<script> alert("Đã thêm nhân viên mới"); </script>';
-            header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
+            header('Location: ../../trangquanly.php?quanlynhanvien');
             echo "<script>
-            header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
+            header('Location: ../../trangquanly.php?quanlynhanvien');
             </script>"; 
         }
         

@@ -9,9 +9,9 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -104,7 +104,7 @@
                                 <td> <?php echo $row['manhanvien']; ?> </td>
                                 <td> <?php echo $row['tennhanvien']; ?> </td>
                                 <td> <?php echo $row['chucvu']; ?> </td>
-                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='../../img/".$row['hinh']."'/>"; ?> </td>
+                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='img/".$row['hinh']."'/>"; ?> </td>
                 <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
                                 <td> <?php echo $row['sdt']; ?> </td>
@@ -159,7 +159,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/themnhanvien.php" method="POST">
+                <form action="ajax/admin/themnhanvien.php" method="POST">
 
                     <div class="modal-body">
                         
@@ -204,7 +204,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/capnhatnhanvien.php" method="POST">
+                <form action="ajax/admin/capnhatnhanvien.php" method="POST">
 
                     <div class="modal-body">
 
@@ -254,7 +254,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/xoanhanvien.php" method="POST">
+                <form action="ajax/admin/xoanhanvien.php" method="POST">
 
                     <div class="modal-body">
 

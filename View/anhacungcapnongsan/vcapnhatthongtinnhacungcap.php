@@ -11,17 +11,29 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../../dist/css/input.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/input.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../../dist/js/ajax.js"></script>
+  <script src="dist/js/ajax.js"></script>
+  <script>
+        function chooseFile(fileInput){
+            if (fileInput.files && fileInput.files[0]){
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -33,10 +45,13 @@
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
             
             <?php 
-            echo "<img class='rounded-circle mt-5' style='border-radius: 50%' width='150px' src='../../img/".$_SESSION['hinh']."'/>"; 
-            echo "<input type='file' name='fflie' value='". $_SESSION['hinh']."'>";
+            echo "<img  id='image' class='rounded-circle mt-5' style='border-radius: 50%' width='150px' src='img/".$_SESSION['hinh']."'/>"; 
+            echo "<input type='file' id='imageFile' onchange='chooseFile(this)'  accept='image/gif, image/png, image/jpeg' name='fflie' value='". $_SESSION['hinh']."'>";
               
             ?>
+          <!-- <img src="" alt="" id="image" width="50px" height="50px"> -->
+          <!-- <input type="file" name="" id="imageFile" onchange="chooseFile(this)"  -->
+          <!-- accept="image/gif, image/png, image/jpeg"> -->
 
             <span class="font-weight-bold">
             <?php
@@ -167,7 +182,7 @@
 ?>
 
 <?php
-include_once("../../Controller/nhacungcapnongsan/cnhacungcap.php");
+include_once("Controller/nhacungcapnongsan/cnhacungcap.php");
 if(isset($_REQUEST["btnsubmit"])){
     $tenncc=$_REQUEST["tenncc"];
     $sdt=$_REQUEST["sdt"];
@@ -177,11 +192,14 @@ if(isset($_REQUEST["btnsubmit"])){
     $phuong=$_REQUEST["phuong"];
     $diachi=$_REQUEST["diachi"];
     $mancc=$_SESSION['mancc'];
-    $file=$_FILES["fflie"]["tmp_name"];
+    echo $file=$_FILES["fflie"]["tmp_name"];
     $type=$_FILES["fflie"]["type"];
     $name=$_FILES["fflie"]["name"];
     $size=$_FILES["fflie"]["size"];
-    
+    echo "<script>
+            //alert('$name');
+            //window.location.href='trangquanly.php?capnhatthongtin';
+        </script>"; 
     $p=new cnhacungcap();
     $kp=$p->capnhat_thongtin_nhacungcap($mancc,$tenncc,$sdt,$email,$diachi,$tinh,$quan,$phuong,$file,$name,$type,$size);
     if($kp==1){

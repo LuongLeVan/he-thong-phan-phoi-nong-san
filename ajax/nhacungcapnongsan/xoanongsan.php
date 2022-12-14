@@ -15,15 +15,15 @@ if(isset($_POST['deletedata']))
         echo '<script> alert("Nông sản đã được xóa thành công"); </script>';
         //header("Location:index.php");
         echo "<script>
-            window.location.href='../../View/anhacungcapnongsan/trangquanly.php?nongsan';
+            window.location.href='../../trangquanly.php?nongsan';
         </script>"; 
          
     }
     else
     {
-        echo '<script> alert("Không thành công"); </script>';
+        echo '<script> alert("Nông sản này đã có mã QR và đã được kiểm định nên tác vụ xóa nông sản sẽ không được cho phép"); </script>';
         echo "<script>
-            window.location.href='../../View/anhacungcapnongsan/trangquanly.php?nongsan';
+            window.location.href='../../trangquanly.php?nongsan';
         </script>"; 
     }
 }

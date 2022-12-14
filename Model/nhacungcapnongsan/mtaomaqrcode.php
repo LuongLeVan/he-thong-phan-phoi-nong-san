@@ -70,7 +70,7 @@ mysqli_set_charset($connection, 'utf8');
     //echo $query_run;
 	echo "<script>alert('Tạo mã QR thành công')</script>";
 	echo "<script>
-		 window.location.href='../../View/anhacungcapnongsan/trangquanly.php?taomaqr';
+		 	window.location.href='../../trangquanly.php?taomaqr';
 	 </script>"; 
 
 	?>

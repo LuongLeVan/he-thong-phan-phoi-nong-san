@@ -23,6 +23,16 @@
 
 			}
 		}
+		function tao_donhang_khachhang_nganhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$magiaodichvnpay,$manganhang){
+			$p = new msanpham();
+			$ins = $p->tao_donhangkhachhangnganhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$magiaodichvnpay,$manganhang);
+			if($ins){
+				return 1;
+			}else{
+				return 0;
+
+			}
+		}
 		function tao_donhang_ncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan){
 			$p = new msanpham();
 			$ins = $p->tao_donhangncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan);

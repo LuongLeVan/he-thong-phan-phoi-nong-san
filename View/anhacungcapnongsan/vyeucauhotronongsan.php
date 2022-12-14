@@ -9,10 +9,10 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../../dist/css/input.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="dist/css/input.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/chung/cnongsan.php");
+                    include("Controller/chung/cnongsan.php");
 
                     $p = new cnongsan();
                     $table = $p-> hienthi_nongsan_chuakiemdinh();
@@ -109,7 +109,7 @@
                               echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthaikiemdinh"].'">'.'</td>';
                               
                               //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
-                              echo '<td>'."<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>".'</td>';
+                              echo '<td>'."<img width=80px height=80px src='img/".$row['hinhanh']."'/>".'</td>';
                               echo "<td><a href='trangquanly.php?yeucauhotro=".$row['manongsan']."'>Gửi yêu cầu</a>";
                               echo '</td>';
                               
@@ -186,7 +186,7 @@
                               echo '<td>'.'<input type="text" name="trangthai" value="'.$row["trangthaikiemdinh"].'">'.'</td>';
                               
                               //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
-                              echo '<td>'."<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>".'</td>';
+                              echo '<td>'."<img width=80px height=80px src='img/".$row['hinhanh']."'/>".'</td>';
                               echo "<td><a href='trangquanly.php?guiyeucau=".$row['manongsan']."'>Lý do từ chối</a>";
                               echo '</td>';
                               $dem++;

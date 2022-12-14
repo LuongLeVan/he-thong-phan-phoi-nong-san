@@ -116,5 +116,9 @@
     transform: translateX(-50%);
 
   }
-
+  .controduce-text-heading {
+    font-size: 40px;
+    color: red;
+    font-weight: 600;
+}
 }

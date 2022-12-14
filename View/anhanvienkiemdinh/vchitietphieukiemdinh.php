@@ -28,12 +28,12 @@
 <?php
 	      //include("../../Controller/chung/cdiachi.php");
         
-        include("../../Controller/chung/cnongsan.php");
+        include("Controller/chung/cnongsan.php");
         $p = new cnongsan();
         if(isset($_REQUEST["chitietkiemdinh"])){
             $ns = $_REQUEST["chitietkiemdinh"];
             $_SESSION["manongsan"] = $_REQUEST["chitietkiemdinh"];
-            $tblnongsan = $p->hienthi_giaykiemdinh($ns);
+            $tblnongsan = $p->kiem_dinh($ns);
         }else{
             //$tblnongsan = $p->();
         }
@@ -46,7 +46,7 @@
                   }
                  
       ?>
-<form action="#" method="post" enctype="multipart/form-data">
+<form action="#" method="post" enctype="multipart/form-data" style="margin-left:200px">
 
   <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
@@ -102,7 +102,7 @@
 
             <div class="col-md-12"><label class="labels">Loại nông sản</label>
               <?php
-                echo '<input class="user-infor form-control" type="text" name="sdt" value="'.$_SESSION['sdt'].'">';
+                echo '<input class="user-infor form-control" type="text" name="sdt" value="'.$row["tenloai"].'">';
                 //echo $_SESSION['sdt'];
               ?>
             </div>
@@ -181,7 +181,7 @@
             <?php
                   $_SESSION['mancc']=$row['mancc'];
                   
-                  include("../anhacungcapnongsan/vdiachi.php");
+                  include("View/anhacungcapnongsan/vdiachi.php");
                 ?>
             </textarea>
                
@@ -230,7 +230,7 @@
 ?>
 
 <?php
-include_once("../../Controller/chung/cnongsan.php");
+include_once("Controller/chung/cnongsan.php");
 if(isset($_REQUEST["btnsubmit"])){
     $manongsan = $_SESSION["manongsan"];
     $trangthai='dakiemdinh';

@@ -18,14 +18,14 @@ mysqli_set_charset($connection, 'utf8');
             echo '<script> alert("Cập nhật nông sản thành công"); </script>';
             //header("Location:index.php");
             echo "<script>
-                window.location.href='../View/anhacungcapnongsan/trangquanly.php?nongsan';
+                window.location.href='trangquanly.php?nongsan';
             </script>"; 
         }
         else
         {
             echo '<script> alert("Cập nhật không thành công"); </script>';
             echo "<script>
-                window.location.href='../View/anhacungcapnongsan/trangquanly.php?nongsan';
+                window.location.href='../../trangquanly.php?nongsan';
             </script>";
         }
     }

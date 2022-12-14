@@ -25,6 +25,16 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+  <div class='row'>
+    <?php
+    
+      // include_once("guimail/sendmail.php");
+      // $mail = new cMailer();
+
+      // $send = $mail -> sendmail();
+    
+    ?>
+  </div>
 <form action="#" method="post" enctype="multipart/form-data">
 
   <div class="container rounded bg-white mt-5 mb-5">
@@ -86,10 +96,15 @@
                       <?php
                         $soluong=$_SESSION['soluong'];
                         $gia=$row['gia'];
-                        echo $gia*$soluong;
+                        echo $tt=$gia*$soluong;
+                        echo '<input  style="display: none;" type="text" name="tongtien" value="'.$tt.'">';
+
                          echo '<input  style="display: none;" type="text" name="mancc" value="'.$row['mancc'].'">';
                          echo '<input  style="display: none;" type="text" name="manongsan" value="'.$row['manongsan'].'">';
-
+                          $_SESSION['manongsan']=$row['manongsan'];
+                          $_SESSION['tongtien']=$tt;
+                          
+                          
 
                       ?>
                     </td>
@@ -120,7 +135,14 @@
           <div class="row mt-6">
             <div class="col-md-12"><label class="labels">Họ và Tên</label>
               <?php
-                if($_SESSION['role']==1){
+                if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
+                  include("View/akhachhang/vdnkhachhanggoogle.php");
+                  echo '<input class="user-infor form-control" type="text" name="tenadmin" value="'.$_SESSION['tenkhachhang'].'">';
+                  echo '<input class="user-infor form-control" type="text" name="makhachhang" value="'.$_SESSION['makhachhang'].'">';
+                }elseif($_SESSION['role']==1){
+                  echo '<input class="user-infor form-control" type="text" name="tenadmin" value="'.$_SESSION['tenncc'].'">';
+                  echo '<input class="user-infor form-control" type="text" name="makhachhang" value="'.$_SESSION['mancc'].'">';
+                }elseif((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
                   echo '<input class="user-infor form-control" type="text" name="tenadmin" value="'.$_SESSION['tenncc'].'">';
                   echo '<input class="user-infor form-control" type="text" name="makhachhang" value="'.$_SESSION['mancc'].'">';
                 }else{
@@ -133,7 +155,10 @@
           <di class="row mt-6">
             <div class="col-md-6"><label class="labels">Số điện thoại</label>
               <?php
-                if($_SESSION['role']==1){
+                if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
+                  echo '<input class="user-infor form-control" type="text" name="tenadmin" value="'.$_SESSION['tenkhachhang'].'">';
+                  echo '<input class="user-infor form-control" type="text" name="makhachhang" value="'.$_SESSION['makhachhang'].'">';
+                }elseif($_SESSION['role']==1){
                   echo '<input  class="user-infor form-control" type="text" name="sdt" value="'.$_SESSION['sdt'].'">';
                 //echo $_SESSION['sdt'];
                 }else{
@@ -149,7 +174,10 @@
             <div class="col-md-12"><label class="labels">Địa chỉ giao hàng</label>
               <p class="user-infor form-control">
                 <?php
-                if($_SESSION['role']==1){
+                 if((isset($_SESSION["login_id"])&& $_SESSION["login_id"]==True)){
+                  echo '<input class="user-infor form-control" type="text" name="tenadmin" value="'.$_SESSION['tenkhachhang'].'">';
+                  echo '<input class="user-infor form-control" type="text" name="makhachhang" value="'.$_SESSION['makhachhang'].'">';
+                }elseif($_SESSION['role']==1){
                   include("View/sanpham/vdiachigiaohang.php");
                 }else{
                   include("View/sanpham/vdiachigiaohangkhachhang.php");
@@ -159,17 +187,20 @@
             </div>
           </div>
           <div class="row mt-12">
-            <label class="labels">Hình thức thanh toán</label>
+            <label class="labels">Tiến hàng hanh toán</label>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <input type="radio" name="thanhtoan" value="1" id="">&nbsp Thanh toán khi giao hàng
           </div>
           <div class="row">
             <input type="radio" name="thanhtoan" value="2" id="">&nbsp Thanh toán qua ví điện tử
-          </div>
+          </div> -->
 
           <div class="mt-5 text-center">
-            <input type="submit"  name="btnsubmit" class="btn btn-success" value="Đặt hàng" id="add">
+            <input type="submit"  name="btnsubmit" class="btn btn-success" value="Thanh toán khi giao hàng" id="add">
+            <?php
+            echo "<a href='nongsan.php?thanhtoannganhang=".$_SESSION['manongsan']."'>Thanh toán ngân hàng</a>";
+            ?>
           </div>
         </div>
       </div>
@@ -194,30 +225,30 @@
      $thanhtoan=$_REQUEST["thanhtoan"];
      $manongsan = $_REQUEST["manongsan"];
      $trangthai = 'chotiepnhan';
-     
+     $tongtien = $_REQUEST["tongtien"];
      $p=new csanpham();
      if($_SESSION['role']==1){
-     $kp=$p->tao_donhang_ncc($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan);
-
+     $kp=$p->tao_donhang_ncc($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan);
+     //$kp2=$p->tao_chitiethoadon_ncc($madonhang,$manongsan,$soluong);
      }else{
-     $kp=$p->tao_donhang_khachhang($makhachhang,$mancc,$manongsan,$trangthai,$soluong,$thanhtoan);
+     $kp=$p->tao_donhang_khachhang($makhachhang,$mancc,$manongsan,$trangthai,$tongtien,$thanhtoan);
+     //$kp2=$p->tao_chitiethoadon_khachhang($madonhang,$manongsan,$soluong);
 
      }
+     include('guimail/sendmail.php');
+  
+     echo $mailnguoinhan = $_REQUEST['email'];
+     echo $tennguoinhan = $_REQUEST['tenkhachhang'];
+
+     include_once("guimail/sendmail.php");
+     $mail = new cMailer();
+
+     $send = $mail -> sendmail($mailnguoinhan, $tennguoinhan, $tongtien);
      if($kp==1){
       echo "<script>
         alert('Bạn đã đặt hàng thành công');
-        window.location.href='index.php';
+        //window.location.href='index.php';
       </script>";
-
-         //echo header("refresh:0; url='admin?qlsp.php'");
-     }elseif ($kp==0) {
-         echo "<script>alert('Không thể insert')</script>";
-     }elseif ($kp==-1) {
-         echo "<script>alert('Không thể upload')</script>";
-     }elseif ($kp==-2) {
-         echo "<script>alert('size quá lớn')</script>";
-     }elseif ($kp==-3) {
-         echo "<script>alert('file không đúng dạng')</script>";
      }else {
          echo "error";
      }

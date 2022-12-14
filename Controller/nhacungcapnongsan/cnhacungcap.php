@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/nhacungcapnongsan/mnhacungcap.php");
+	include_once("Model/nhacungcapnongsan/mnhacungcap.php");
 
 	class cnhacungcap{
 		function view_nhacungcap(){
@@ -24,7 +24,7 @@
 			if($tenanh !=""){
 				if($loaianh == "image/png" || $loaianh == "image/jpeg" ){
 					if($sizeanh<=2*1024*1024){
-						if(move_uploaded_file($file,"../../img/".$tenanh)){
+						if(move_uploaded_file($file,"img/".$tenanh)){
 							$p= new mnhacungcap();
 							$ins = $p->capnhatthongtin($mancc,$tenncc,$sdt,$emai,$diachi,$tinh,$quan,$phuong,$tenanh);
 							$ins2 = $p->capnhatthongtin_hinh($mancc,$tenanh);

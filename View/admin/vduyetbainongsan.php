@@ -81,7 +81,7 @@
               <form action="#" method="post" enctype="multipart/form-data">
                   <?php
 
-                    include("../../Controller/chung/cnongsan.php");
+                    include("Controller/chung/cnongsan.php");
 
                     $p = new cnongsan();
                     $table = $p-> view_nongsan();
@@ -90,8 +90,8 @@
                       echo '<table class="table table-hover text-nowrap">';
                       echo '<thead>';
                         echo '<tr>';
-                          echo '<th>Mã bài</th>';
-                          echo '<th>Tên bài</th>';
+                          echo '<th>Mã nong san</th>';
+                          echo '<th>Tên nông sản</th>';
                           echo '<th>Người tạo</th>';
                           echo '<th>Trạng thái</th>';
                           echo '<th>Chi tiết</th>';
@@ -105,7 +105,13 @@
                             echo "<tr>";
                            }
                             echo '<tr>';
-                              echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'">'.'</td>';
+                            echo '<td>';
+                            echo $row["manongsan"];
+                            echo "</td>";
+                            echo '<td>';
+                            echo $row["tennongsan"];
+                            echo "</td>";
+                              // echo '<td style="border: non;">'.'<input type="text" name="manongsan" value="'.$row["manongsan"].'">'.'</td>';
                               echo '<td>'.'<input type="text" name="tennongsan" value="'.$row["tennongsan"].'">'.'</td>';
                               //<input type="text" name="tenbn" value="'.$row["tenbn"].'">
                               echo '<td>'.$row["tenncc"].'</td>';
@@ -114,12 +120,13 @@
 
                               //echo '<td>'.$row["trangthai"].'</td>';
                               echo '<td>';
-                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='../../trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
+                              echo '<button class="btn btn-primary" >'."<a  style='color:white; text-decoration: none' href='trangsanpham.php?chitietnongsan=".$row["manongsan"]."'>"."Xem chi tiết"."</a>"."</button>".'&nbsp';
                               echo '</td>';
                               //echo '<td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Xem chi tiết</button></td>';
                               echo '<td>';
                               //echo '<input type="submit"  name="btnsubmit" class="btn btn-success" value="Xác nhận" id="add">';
-                              echo "</td><td><a href='trangchuadmin.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a><a style='color: red' href='trangchuadmin.php?tuchoi=".$row['manongsan']."'>Từ chối</a>";
+                              echo "</td><td><a href='trangquanly.php?doitrangthai=".$row['manongsan']."'>Duyệt | </a>";
+                              echo '<button type="button" class="btn btn-danger editbtn"> Từ chối </button>';
                               //echo "</td><td><a href='admin.php?upProd&&compID=".$row['CompID']."&&ProdID=".$row['ProdID']."'>Sửa|</a><a href='admin.php?delProd&&ProdID=".$row['ProdID']."'>Xóa</a>";
 
 
@@ -149,8 +156,139 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
+
+     <!-- Cập nhật nông sản -->
+     <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Từ chối đăng nông sản </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="ajax/admin/capnhatnongsan.php" method="POST">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" name="update_id" id="update_id">
+
+                        <div class="form-group">
+                            <label> Mã nông sản </label>
+                            <input type="text" name="manongsan" id="manongsan" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label> Tên nông sản </label>
+                            <input type="text" name="tennongsan" id="tennongsan" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label> Nhập lý do từ chối </label>
+                            <input type="textarea" name="mota" id="mota" class="form-control">
+                        </div>
+                        
+                    </div>
+                   
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" name="updatedata" class="btn btn-primary">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- /.content -->
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.viewbtn').on('click', function () {
+                $('#viewmodal').modal('show');
+                $.ajax({ //create an ajax request to display.php
+                    type: "GET",
+                    url: ".php",
+                    dataType: "", //expect html to be returned                
+                    success: function (response) {
+                        $("#responsecontainer").html(response);
+                        //alert(response);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#datatableid').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search Your Data",
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.deletebtn').on('click', function () {
+
+                $('#deletemodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#delete_id').val(data[0]);
+
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.editbtn').on('click', function () {
+
+                $('#editmodal').modal('show');
+
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $('#manongsan').val(data[0]);
+                $('#tennongsan').val(data[1]);
+                
+            });
+        });
+    </script>
  
                   </body>
                   </html>

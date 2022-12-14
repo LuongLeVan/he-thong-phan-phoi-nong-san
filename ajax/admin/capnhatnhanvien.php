@@ -18,9 +18,8 @@ mysqli_set_charset($connection, 'utf8');
         {
             echo '<script> alert("Nhân viên này đã được cập nhật thành công"); 
             </script>';
-            header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
         echo "<script>
-        header('Location: ../../View/admin/trangchuadmin.php?quanlynhanvien');
+            window.location.href='../../trangquanly.php?quanlynhanvien';
         </script>";
     
         }

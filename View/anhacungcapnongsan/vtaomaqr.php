@@ -113,7 +113,7 @@
                                 <td> <?php echo $row['manongsan']; ?> </td>
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
-                                <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
+                                <td> <?php echo "<img width=80px height=80px src='img/".$row['hinhanh']."'/>"; ?> </td>
                                 <!-- <td> <?php //echo $row['trongluong']; ?> </td> -->
                                 <!-- <td> <?php //echo $row['kichthuoc']; ?> </td> -->
                                 <td> <?php echo $row['soluong']; ?> </td>
@@ -183,11 +183,11 @@
                                 <td> <?php echo $row['manongsan']; ?> </td>
                                 <td> <?php echo $row['tennongsan']; ?> </td>
                                 <td> <?php echo $row['tenloai']; ?> </td>
-                                <td> <?php echo "<img width=80px height=80px src='../../img/".$row['hinhanh']."'/>"; ?> </td>
+                                <td> <?php echo "<img width=80px height=80px src='img/".$row['hinhanh']."'/>"; ?> </td>
                 <!-- echo "<br>"."<img width=150px height=150px src='image/".$row['ProdImage']."'/>"; -->
                 <!-- <td> <img width=50px height=50px src='../../img/soai.jpg'/></td> -->
                                 <td style="display: none;"> <?php echo $row['trongluong']; ?> </td>
-                                <td> <?php echo "<img width=80px height=80px src='../../Model/nhacungcapnongsan/qr_assets/".$row['hinh']."'/>"; ?> </td>
+                                <td> <?php echo "<img width=80px height=80px src='Model/nhacungcapnongsan/qr_assets/".$row['hinh']."'/>"; ?> </td>
                                 <td > <?php echo $row['soluong']; ?> </td>
                                 <td style="display: none;"> <?php echo $row['mota']; ?> </td>
 
@@ -200,7 +200,7 @@
                                 <td>
                                     <!-- <button type="button" class="btn btn-success editbtn"> Cập nhật mã </button> |  -->
                                     <button type="button" class="btn btn-success deletebtn"> Cập nhật lại mã </button> | 
-                                    <a href="../../download.php?file=<?php echo $row['hinh'];?>" value="">Tải xuống</a>
+                                    <a href="download.php?file=<?php echo $row['hinh'];?>" value="">Tải xuống</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -237,7 +237,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/nhacungcapnongsan/xoamaqr.php" method="POST">
+                <form action="ajax/nhacungcapnongsan/xoamaqr.php" method="POST">
 
                     <div class="modal-body">
 
@@ -266,7 +266,7 @@
                     </button>
                 </div>
 
-                <form action="../../Model/nhacungcapnongsan/mtaomaqrcode.php" method="POST">
+                <form action="Model/nhacungcapnongsan/mtaomaqrcode.php" method="POST">
 
                     <div class="modal-body">
 

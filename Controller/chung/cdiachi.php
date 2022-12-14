@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/chung/mdiachi.php");
+	include_once("Model/chung/mdiachi.php");
 
 	class cdiachi{
 		function hienthi_diachi(){

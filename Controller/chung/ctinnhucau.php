@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/chung/mtinnhucau.php");
+	include_once("Model/chung/mtinnhucau.php");
 
 	class ctinnhucau{
 		function view_tinnhucau(){
@@ -9,18 +9,17 @@
 			//var_dump($table);
 			return $table;
 		}
-		function hienthi_nongsan(){
-			$p = new mnongsan();
-			$table  = $p -> xem_nongsan();
+		function hienthi_danhsachtinnhucau(){
+			$p = new mtinnhucau();
+			$table  = $p -> xem_danhsachtinnhucau();
 			//var_dump($table);
 			return $table;
 		}
-		function getAllchitietBynongsan($comp){
-                $p = new mnongsan();
-                $tblProduct = $p->SelectAllchitietBynongsan($comp);
-                return $tblProduct;
-            }
-
+		function hienthibaitinnhucau_mabaitin($comp){
+			$p = new mtinnhucau();
+			$tblProduct = $p->xemtinnhucau_mabaitin($comp);
+			return $tblProduct;
+		}
 		function capnhat_trangthai($mabaitin,$trangthai){
 			$p = new mtinnhucau();
 			$update = $p -> capnhattrangthai($mabaitin,$trangthai);

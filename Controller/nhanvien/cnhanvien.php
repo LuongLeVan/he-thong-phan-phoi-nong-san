@@ -1,6 +1,6 @@
 <?php
 
-	include_once("../../Model/nhanvien/mnhanvien.php");
+	include_once("Model/nhanvien/mnhanvien.php");
 
 	class cnhanvien{
 		function view_nhanvien(){

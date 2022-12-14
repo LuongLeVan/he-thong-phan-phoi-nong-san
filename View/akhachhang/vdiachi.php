@@ -1,9 +1,9 @@
 <?php
 
-	include("../../Controller/chung/cdiachi.php");
+	include("Controller/chung/cdiachi.php");
 
 	$p = new cdiachi();
-	$table = $p-> hienthi_diachi();
+	$table = $p-> hienthi_diachi_khachhang();
 	//var_dump($table);
 	if($table){
 			while($row = mysqli_fetch_array($table)){

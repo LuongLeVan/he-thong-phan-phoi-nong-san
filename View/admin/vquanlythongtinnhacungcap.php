@@ -9,16 +9,16 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../../dist/js/ajax.js"></script>
+  <script src="dist/js/ajax.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -109,7 +109,7 @@
                             <tr>
                                 <td> <?php echo $row['mancc']; ?> </td>
                                 <td> <?php echo $row['tennguoidaidien']; ?> </td>
-                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='../../img/".$row['hinh']."'/>"; ?> </td>
+                                <td> <?php echo "<img style='border-radius: 50%;' width=90px height=90px src='img/".$row['hinh']."'/>"; ?> </td>
                                 <td> <?php echo $row['sdt']; ?> </td>
                                 <td> <?php echo $row['email']; ?> </td>
                                 <td> <?php echo $row['username']; ?> </td>
@@ -156,7 +156,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/themnhacungcap.php" method="POST">
+                <form action="ajax/admin/themnhacungcap.php" method="POST">
 
                     <div class="modal-body">
                         <div class="row mt-6">
@@ -213,7 +213,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/capnhatnhacungcap.php" method="POST">
+                <form action="ajax/admin/capnhatnhacungcap.php" method="POST">
 
                     <div class="modal-body">
 
@@ -299,7 +299,7 @@
                     </button>
                 </div>
 
-                <form action="../../ajax/admin/xoanhacungcap.php" method="POST">
+                <form action="ajax/admin/xoanhacungcap.php" method="POST">
 
                     <div class="modal-body">
 

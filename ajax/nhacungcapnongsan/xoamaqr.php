@@ -15,7 +15,7 @@ if(isset($_POST['deletedata']))
         echo '<script> alert("Nông sản đã được xóa thành công"); </script>';
         //header("Location:index.php");
         echo "<script>
-            window.location.href='../../View/anhacungcapnongsan/trangquanly.php?taomaqr';
+            window.location.href='../../trangquanly.php?taomaqr';
         </script>"; 
          
     }
@@ -23,7 +23,7 @@ if(isset($_POST['deletedata']))
     {
         echo '<script> alert("Không thành công"); </script>';
         echo "<script>
-            window.location.href='../../View/anhacungcapnongsan/trangquanly.php?taomaqr';
+            window.location.href='../../trangquanly.php?taomaqr';
         </script>"; 
     }
 }

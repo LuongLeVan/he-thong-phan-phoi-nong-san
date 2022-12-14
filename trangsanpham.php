@@ -119,7 +119,6 @@ if(isset($_SESSION['login_id'])){
                                         echo '</ul>';
                                     echo '</li>';
                                   echo '</ul>';
-                        
                                   }elseif($_SESSION['role']==3){
                                     //include('View/adoanhnghiep/vdndoanhnghiep.php');
                                     echo '<ul class="navbar__list" >';
@@ -224,9 +223,7 @@ if(isset($_SESSION['login_id'])){
               </nav>
             </div>
             <!-- END nav -->
-
 <!-- Slider -->
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner"> 
       <div class="carousel-item active">
